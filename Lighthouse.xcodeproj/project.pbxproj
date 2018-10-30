@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F202CA762187DEAE00A2490F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA752187DEAE00A2490F /* AppDelegate.swift */; };
+		F202CA782187DEAE00A2490F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA772187DEAE00A2490F /* ViewController.swift */; };
+		F202CA7B2187DEAE00A2490F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F202CA792187DEAE00A2490F /* Main.storyboard */; };
+		F202CA7E2187DEAE00A2490F /* Lighthouse.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F202CA7C2187DEAE00A2490F /* Lighthouse.xcdatamodeld */; };
+		F202CA802187DEAE00A2490F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F202CA7F2187DEAE00A2490F /* Assets.xcassets */; };
+		F202CA832187DEAE00A2490F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F202CA812187DEAE00A2490F /* LaunchScreen.storyboard */; };
+		F202CA8E2187DEAE00A2490F /* LighthouseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA8D2187DEAE00A2490F /* LighthouseTests.swift */; };
+		F202CA992187DEAE00A2490F /* LighthouseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA982187DEAE00A2490F /* LighthouseUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F202CA8A2187DEAE00A2490F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F202CA6A2187DEAE00A2490F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F202CA712187DEAE00A2490F;
+			remoteInfo = Lighthouse;
+		};
+		F202CA952187DEAE00A2490F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F202CA6A2187DEAE00A2490F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F202CA712187DEAE00A2490F;
+			remoteInfo = Lighthouse;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F202CA722187DEAE00A2490F /* Lighthouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lighthouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F202CA752187DEAE00A2490F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F202CA772187DEAE00A2490F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F202CA7A2187DEAE00A2490F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F202CA7D2187DEAE00A2490F /* Lighthouse.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lighthouse.xcdatamodel; sourceTree = "<group>"; };
+		F202CA7F2187DEAE00A2490F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F202CA822187DEAE00A2490F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F202CA842187DEAE00A2490F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F202CA892187DEAE00A2490F /* LighthouseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LighthouseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F202CA8D2187DEAE00A2490F /* LighthouseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LighthouseTests.swift; sourceTree = "<group>"; };
+		F202CA8F2187DEAE00A2490F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F202CA942187DEAE00A2490F /* LighthouseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LighthouseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F202CA982187DEAE00A2490F /* LighthouseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LighthouseUITests.swift; sourceTree = "<group>"; };
+		F202CA9A2187DEAE00A2490F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F202CA6F2187DEAE00A2490F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F202CA862187DEAE00A2490F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F202CA912187DEAE00A2490F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F202CA692187DEAE00A2490F = {
+			isa = PBXGroup;
+			children = (
+				F202CA742187DEAE00A2490F /* Lighthouse */,
+				F202CA8C2187DEAE00A2490F /* LighthouseTests */,
+				F202CA972187DEAE00A2490F /* LighthouseUITests */,
+				F202CA732187DEAE00A2490F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F202CA732187DEAE00A2490F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F202CA722187DEAE00A2490F /* Lighthouse.app */,
+				F202CA892187DEAE00A2490F /* LighthouseTests.xctest */,
+				F202CA942187DEAE00A2490F /* LighthouseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F202CA742187DEAE00A2490F /* Lighthouse */ = {
+			isa = PBXGroup;
+			children = (
+				F202CA752187DEAE00A2490F /* AppDelegate.swift */,
+				F202CA772187DEAE00A2490F /* ViewController.swift */,
+				F202CA792187DEAE00A2490F /* Main.storyboard */,
+				F202CA7F2187DEAE00A2490F /* Assets.xcassets */,
+				F202CA812187DEAE00A2490F /* LaunchScreen.storyboard */,
+				F202CA842187DEAE00A2490F /* Info.plist */,
+				F202CA7C2187DEAE00A2490F /* Lighthouse.xcdatamodeld */,
+			);
+			path = Lighthouse;
+			sourceTree = "<group>";
+		};
+		F202CA8C2187DEAE00A2490F /* LighthouseTests */ = {
+			isa = PBXGroup;
+			children = (
+				F202CA8D2187DEAE00A2490F /* LighthouseTests.swift */,
+				F202CA8F2187DEAE00A2490F /* Info.plist */,
+			);
+			path = LighthouseTests;
+			sourceTree = "<group>";
+		};
+		F202CA972187DEAE00A2490F /* LighthouseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F202CA982187DEAE00A2490F /* LighthouseUITests.swift */,
+				F202CA9A2187DEAE00A2490F /* Info.plist */,
+			);
+			path = LighthouseUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F202CA712187DEAE00A2490F /* Lighthouse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F202CA9D2187DEAE00A2490F /* Build configuration list for PBXNativeTarget "Lighthouse" */;
+			buildPhases = (
+				F202CA6E2187DEAE00A2490F /* Sources */,
+				F202CA6F2187DEAE00A2490F /* Frameworks */,
+				F202CA702187DEAE00A2490F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lighthouse;
+			productName = Lighthouse;
+			productReference = F202CA722187DEAE00A2490F /* Lighthouse.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F202CA882187DEAE00A2490F /* LighthouseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F202CAA02187DEAE00A2490F /* Build configuration list for PBXNativeTarget "LighthouseTests" */;
+			buildPhases = (
+				F202CA852187DEAE00A2490F /* Sources */,
+				F202CA862187DEAE00A2490F /* Frameworks */,
+				F202CA872187DEAE00A2490F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F202CA8B2187DEAE00A2490F /* PBXTargetDependency */,
+			);
+			name = LighthouseTests;
+			productName = LighthouseTests;
+			productReference = F202CA892187DEAE00A2490F /* LighthouseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F202CA932187DEAE00A2490F /* LighthouseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F202CAA32187DEAE00A2490F /* Build configuration list for PBXNativeTarget "LighthouseUITests" */;
+			buildPhases = (
+				F202CA902187DEAE00A2490F /* Sources */,
+				F202CA912187DEAE00A2490F /* Frameworks */,
+				F202CA922187DEAE00A2490F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F202CA962187DEAE00A2490F /* PBXTargetDependency */,
+			);
+			name = LighthouseUITests;
+			productName = LighthouseUITests;
+			productReference = F202CA942187DEAE00A2490F /* LighthouseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F202CA6A2187DEAE00A2490F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Alina Yu";
+				TargetAttributes = {
+					F202CA712187DEAE00A2490F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					F202CA882187DEAE00A2490F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F202CA712187DEAE00A2490F;
+					};
+					F202CA932187DEAE00A2490F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F202CA712187DEAE00A2490F;
+					};
+				};
+			};
+			buildConfigurationList = F202CA6D2187DEAE00A2490F /* Build configuration list for PBXProject "Lighthouse" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F202CA692187DEAE00A2490F;
+			productRefGroup = F202CA732187DEAE00A2490F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F202CA712187DEAE00A2490F /* Lighthouse */,
+				F202CA882187DEAE00A2490F /* LighthouseTests */,
+				F202CA932187DEAE00A2490F /* LighthouseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F202CA702187DEAE00A2490F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F202CA832187DEAE00A2490F /* LaunchScreen.storyboard in Resources */,
+				F202CA802187DEAE00A2490F /* Assets.xcassets in Resources */,
+				F202CA7B2187DEAE00A2490F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F202CA872187DEAE00A2490F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F202CA922187DEAE00A2490F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F202CA6E2187DEAE00A2490F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F202CA7E2187DEAE00A2490F /* Lighthouse.xcdatamodeld in Sources */,
+				F202CA782187DEAE00A2490F /* ViewController.swift in Sources */,
+				F202CA762187DEAE00A2490F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F202CA852187DEAE00A2490F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F202CA8E2187DEAE00A2490F /* LighthouseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F202CA902187DEAE00A2490F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F202CA992187DEAE00A2490F /* LighthouseUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F202CA8B2187DEAE00A2490F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F202CA712187DEAE00A2490F /* Lighthouse */;
+			targetProxy = F202CA8A2187DEAE00A2490F /* PBXContainerItemProxy */;
+		};
+		F202CA962187DEAE00A2490F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F202CA712187DEAE00A2490F /* Lighthouse */;
+			targetProxy = F202CA952187DEAE00A2490F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F202CA792187DEAE00A2490F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F202CA7A2187DEAE00A2490F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F202CA812187DEAE00A2490F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F202CA822187DEAE00A2490F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F202CA9B2187DEAE00A2490F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F202CA9C2187DEAE00A2490F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F202CA9E2187DEAE00A2490F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78W99T5745;
+				INFOPLIST_FILE = Lighthouse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alina-Yu.Lighthouse";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F202CA9F2187DEAE00A2490F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78W99T5745;
+				INFOPLIST_FILE = Lighthouse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alina-Yu.Lighthouse";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F202CAA12187DEAE00A2490F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78W99T5745;
+				INFOPLIST_FILE = LighthouseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alina-Yu.LighthouseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lighthouse.app/Lighthouse";
+			};
+			name = Debug;
+		};
+		F202CAA22187DEAE00A2490F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78W99T5745;
+				INFOPLIST_FILE = LighthouseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alina-Yu.LighthouseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lighthouse.app/Lighthouse";
+			};
+			name = Release;
+		};
+		F202CAA42187DEAE00A2490F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78W99T5745;
+				INFOPLIST_FILE = LighthouseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alina-Yu.LighthouseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Lighthouse;
+			};
+			name = Debug;
+		};
+		F202CAA52187DEAE00A2490F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78W99T5745;
+				INFOPLIST_FILE = LighthouseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Alina-Yu.LighthouseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Lighthouse;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F202CA6D2187DEAE00A2490F /* Build configuration list for PBXProject "Lighthouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F202CA9B2187DEAE00A2490F /* Debug */,
+				F202CA9C2187DEAE00A2490F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F202CA9D2187DEAE00A2490F /* Build configuration list for PBXNativeTarget "Lighthouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F202CA9E2187DEAE00A2490F /* Debug */,
+				F202CA9F2187DEAE00A2490F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F202CAA02187DEAE00A2490F /* Build configuration list for PBXNativeTarget "LighthouseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F202CAA12187DEAE00A2490F /* Debug */,
+				F202CAA22187DEAE00A2490F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F202CAA32187DEAE00A2490F /* Build configuration list for PBXNativeTarget "LighthouseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F202CAA42187DEAE00A2490F /* Debug */,
+				F202CAA52187DEAE00A2490F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F202CA7C2187DEAE00A2490F /* Lighthouse.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F202CA7D2187DEAE00A2490F /* Lighthouse.xcdatamodel */,
+			);
+			currentVersion = F202CA7D2187DEAE00A2490F /* Lighthouse.xcdatamodel */;
+			path = Lighthouse.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F202CA6A2187DEAE00A2490F /* Project object */;
+}
