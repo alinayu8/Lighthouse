@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		F202CA762187DEAE00A2490F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA752187DEAE00A2490F /* AppDelegate.swift */; };
-		F202CA782187DEAE00A2490F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA772187DEAE00A2490F /* ViewController.swift */; };
+		F202CA782187DEAE00A2490F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA772187DEAE00A2490F /* HomeViewController.swift */; };
 		F202CA7B2187DEAE00A2490F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F202CA792187DEAE00A2490F /* Main.storyboard */; };
 		F202CA7E2187DEAE00A2490F /* Lighthouse.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F202CA7C2187DEAE00A2490F /* Lighthouse.xcdatamodeld */; };
 		F202CA802187DEAE00A2490F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F202CA7F2187DEAE00A2490F /* Assets.xcassets */; };
 		F202CA832187DEAE00A2490F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F202CA812187DEAE00A2490F /* LaunchScreen.storyboard */; };
 		F202CA8E2187DEAE00A2490F /* LighthouseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA8D2187DEAE00A2490F /* LighthouseTests.swift */; };
 		F202CA992187DEAE00A2490F /* LighthouseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA982187DEAE00A2490F /* LighthouseUITests.swift */; };
+		F29DE7A4218CF03800F16F5A /* FocusSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7A3218CF03800F16F5A /* FocusSupportViewController.swift */; };
+		F29DE7A6218CF0C000F16F5A /* TrackButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7A5218CF0C000F16F5A /* TrackButtonsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,7 @@
 /* Begin PBXFileReference section */
 		F202CA722187DEAE00A2490F /* Lighthouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lighthouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F202CA752187DEAE00A2490F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F202CA772187DEAE00A2490F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F202CA772187DEAE00A2490F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F202CA7A2187DEAE00A2490F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F202CA7D2187DEAE00A2490F /* Lighthouse.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lighthouse.xcdatamodel; sourceTree = "<group>"; };
 		F202CA7F2187DEAE00A2490F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		F202CA942187DEAE00A2490F /* LighthouseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LighthouseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F202CA982187DEAE00A2490F /* LighthouseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LighthouseUITests.swift; sourceTree = "<group>"; };
 		F202CA9A2187DEAE00A2490F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F29DE7A3218CF03800F16F5A /* FocusSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSupportViewController.swift; sourceTree = "<group>"; };
+		F29DE7A5218CF0C000F16F5A /* TrackButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackButtonsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +103,8 @@
 		F202CA742187DEAE00A2490F /* Lighthouse */ = {
 			isa = PBXGroup;
 			children = (
-				F202CA752187DEAE00A2490F /* AppDelegate.swift */,
-				F202CA772187DEAE00A2490F /* ViewController.swift */,
-				F202CA792187DEAE00A2490F /* Main.storyboard */,
-				F202CA7F2187DEAE00A2490F /* Assets.xcassets */,
-				F202CA812187DEAE00A2490F /* LaunchScreen.storyboard */,
-				F202CA842187DEAE00A2490F /* Info.plist */,
-				F202CA7C2187DEAE00A2490F /* Lighthouse.xcdatamodeld */,
+				F29DE7A0218CEF8900F16F5A /* Main Items */,
+				F29DE79F218CEF6D00F16F5A /* Attack */,
 			);
 			path = Lighthouse;
 			sourceTree = "<group>";
@@ -126,6 +125,29 @@
 				F202CA9A2187DEAE00A2490F /* Info.plist */,
 			);
 			path = LighthouseUITests;
+			sourceTree = "<group>";
+		};
+		F29DE79F218CEF6D00F16F5A /* Attack */ = {
+			isa = PBXGroup;
+			children = (
+				F29DE7A3218CF03800F16F5A /* FocusSupportViewController.swift */,
+				F29DE7A5218CF0C000F16F5A /* TrackButtonsViewController.swift */,
+			);
+			path = Attack;
+			sourceTree = "<group>";
+		};
+		F29DE7A0218CEF8900F16F5A /* Main Items */ = {
+			isa = PBXGroup;
+			children = (
+				F202CA752187DEAE00A2490F /* AppDelegate.swift */,
+				F202CA772187DEAE00A2490F /* HomeViewController.swift */,
+				F202CA792187DEAE00A2490F /* Main.storyboard */,
+				F202CA7F2187DEAE00A2490F /* Assets.xcassets */,
+				F202CA812187DEAE00A2490F /* LaunchScreen.storyboard */,
+				F202CA842187DEAE00A2490F /* Info.plist */,
+				F202CA7C2187DEAE00A2490F /* Lighthouse.xcdatamodeld */,
+			);
+			path = "Main Items";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F29DE7A6218CF0C000F16F5A /* TrackButtonsViewController.swift in Sources */,
 				F202CA7E2187DEAE00A2490F /* Lighthouse.xcdatamodeld in Sources */,
-				F202CA782187DEAE00A2490F /* ViewController.swift in Sources */,
+				F202CA782187DEAE00A2490F /* HomeViewController.swift in Sources */,
+				F29DE7A4218CF03800F16F5A /* FocusSupportViewController.swift in Sources */,
 				F202CA762187DEAE00A2490F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
