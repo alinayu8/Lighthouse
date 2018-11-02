@@ -115,8 +115,14 @@
 		F202CA742187DEAE00A2490F /* Lighthouse */ = {
 			isa = PBXGroup;
 			children = (
+				F202CA752187DEAE00A2490F /* AppDelegate.swift */,
+				F202CA772187DEAE00A2490F /* HomeViewController.swift */,
+				F202CA792187DEAE00A2490F /* Main.storyboard */,
+				F202CA7F2187DEAE00A2490F /* Assets.xcassets */,
+				F202CA812187DEAE00A2490F /* LaunchScreen.storyboard */,
+				F202CA842187DEAE00A2490F /* Info.plist */,
+				F202CA7C2187DEAE00A2490F /* Lighthouse.xcdatamodeld */,
 				F29DE7A9218CF28100F16F5A /* Log */,
-				F29DE7A0218CEF8900F16F5A /* Main Items */,
 				F29DE79F218CEF6D00F16F5A /* Attack */,
 			);
 			path = Lighthouse;
@@ -148,20 +154,6 @@
 				F29DE7A7218CF24E00F16F5A /* AttackOverViewController.swift */,
 			);
 			path = Attack;
-			sourceTree = "<group>";
-		};
-		F29DE7A0218CEF8900F16F5A /* Main Items */ = {
-			isa = PBXGroup;
-			children = (
-				F202CA752187DEAE00A2490F /* AppDelegate.swift */,
-				F202CA772187DEAE00A2490F /* HomeViewController.swift */,
-				F202CA792187DEAE00A2490F /* Main.storyboard */,
-				F202CA7F2187DEAE00A2490F /* Assets.xcassets */,
-				F202CA812187DEAE00A2490F /* LaunchScreen.storyboard */,
-				F202CA842187DEAE00A2490F /* Info.plist */,
-				F202CA7C2187DEAE00A2490F /* Lighthouse.xcdatamodeld */,
-			);
-			path = "Main Items";
 			sourceTree = "<group>";
 		};
 		F29DE7A9218CF28100F16F5A /* Log */ = {
