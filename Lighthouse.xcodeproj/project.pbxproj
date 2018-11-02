@@ -17,6 +17,12 @@
 		F202CA992187DEAE00A2490F /* LighthouseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA982187DEAE00A2490F /* LighthouseUITests.swift */; };
 		F29DE7A4218CF03800F16F5A /* FocusSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7A3218CF03800F16F5A /* FocusSupportViewController.swift */; };
 		F29DE7A6218CF0C000F16F5A /* TrackButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7A5218CF0C000F16F5A /* TrackButtonsViewController.swift */; };
+		F29DE7A8218CF24E00F16F5A /* AttackOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7A7218CF24E00F16F5A /* AttackOverViewController.swift */; };
+		F29DE7AB218CF2A000F16F5A /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7AA218CF2A000F16F5A /* LogViewController.swift */; };
+		F29DE7AD218CF2BB00F16F5A /* LogListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7AC218CF2BB00F16F5A /* LogListViewController.swift */; };
+		F29DE7AF218CF2DE00F16F5A /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7AE218CF2DE00F16F5A /* EntryViewController.swift */; };
+		F29DE7B1218CF31300F16F5A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7B0218CF31300F16F5A /* StatsViewController.swift */; };
+		F29DE7B3218CF39400F16F5A /* EntryGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7B2218CF39400F16F5A /* EntryGraphViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,12 @@
 		F202CA9A2187DEAE00A2490F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F29DE7A3218CF03800F16F5A /* FocusSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSupportViewController.swift; sourceTree = "<group>"; };
 		F29DE7A5218CF0C000F16F5A /* TrackButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackButtonsViewController.swift; sourceTree = "<group>"; };
+		F29DE7A7218CF24E00F16F5A /* AttackOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackOverViewController.swift; sourceTree = "<group>"; };
+		F29DE7AA218CF2A000F16F5A /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		F29DE7AC218CF2BB00F16F5A /* LogListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListViewController.swift; sourceTree = "<group>"; };
+		F29DE7AE218CF2DE00F16F5A /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		F29DE7B0218CF31300F16F5A /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		F29DE7B2218CF39400F16F5A /* EntryGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryGraphViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,7 @@
 		F202CA742187DEAE00A2490F /* Lighthouse */ = {
 			isa = PBXGroup;
 			children = (
+				F29DE7A9218CF28100F16F5A /* Log */,
 				F29DE7A0218CEF8900F16F5A /* Main Items */,
 				F29DE79F218CEF6D00F16F5A /* Attack */,
 			);
@@ -132,6 +145,7 @@
 			children = (
 				F29DE7A3218CF03800F16F5A /* FocusSupportViewController.swift */,
 				F29DE7A5218CF0C000F16F5A /* TrackButtonsViewController.swift */,
+				F29DE7A7218CF24E00F16F5A /* AttackOverViewController.swift */,
 			);
 			path = Attack;
 			sourceTree = "<group>";
@@ -148,6 +162,18 @@
 				F202CA7C2187DEAE00A2490F /* Lighthouse.xcdatamodeld */,
 			);
 			path = "Main Items";
+			sourceTree = "<group>";
+		};
+		F29DE7A9218CF28100F16F5A /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				F29DE7AA218CF2A000F16F5A /* LogViewController.swift */,
+				F29DE7AC218CF2BB00F16F5A /* LogListViewController.swift */,
+				F29DE7AE218CF2DE00F16F5A /* EntryViewController.swift */,
+				F29DE7B0218CF31300F16F5A /* StatsViewController.swift */,
+				F29DE7B2218CF39400F16F5A /* EntryGraphViewController.swift */,
+			);
+			path = Log;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,11 +310,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F29DE7B3218CF39400F16F5A /* EntryGraphViewController.swift in Sources */,
 				F29DE7A6218CF0C000F16F5A /* TrackButtonsViewController.swift in Sources */,
 				F202CA7E2187DEAE00A2490F /* Lighthouse.xcdatamodeld in Sources */,
 				F202CA782187DEAE00A2490F /* HomeViewController.swift in Sources */,
+				F29DE7AD218CF2BB00F16F5A /* LogListViewController.swift in Sources */,
 				F29DE7A4218CF03800F16F5A /* FocusSupportViewController.swift in Sources */,
+				F29DE7AF218CF2DE00F16F5A /* EntryViewController.swift in Sources */,
 				F202CA762187DEAE00A2490F /* AppDelegate.swift in Sources */,
+				F29DE7AB218CF2A000F16F5A /* LogViewController.swift in Sources */,
+				F29DE7B1218CF31300F16F5A /* StatsViewController.swift in Sources */,
+				F29DE7A8218CF24E00F16F5A /* AttackOverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
