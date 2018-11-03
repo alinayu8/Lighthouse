@@ -2,3 +2,4 @@
 !*.xcworkspace/contents.xcworkspacedata
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
+.DS_Store
