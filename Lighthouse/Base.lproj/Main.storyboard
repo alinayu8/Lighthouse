@@ -227,6 +227,9 @@
                                     <segment title="Stats"/>
                                 </segments>
                                 <color key="tintColor" red="0.32549019610000002" green="0.4431372549" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="cy1-BI-lxS" eventType="valueChanged" id="dCt-ft-TSt"/>
+                                </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1G-zd-Uoo" userLabel="List Container View">
                                 <rect key="frame" x="0.0" y="160" width="375" height="507"/>
@@ -276,6 +279,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UY1-VP-a8d"/>
                     </view>
+                    <connections>
+                        <outlet property="listContainer" destination="R1G-zd-Uoo" id="KMk-4C-AwZ"/>
+                        <outlet property="segmentedControl" destination="gMk-eA-pLg" id="XQH-TS-ZcK"/>
+                        <outlet property="statsContainer" destination="fhT-3o-Wn6" id="uaw-5e-pia"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r9D-l0-gCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
