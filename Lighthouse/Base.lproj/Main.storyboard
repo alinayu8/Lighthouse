@@ -47,6 +47,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="beginEntry:" destination="Yrc-go-WfF" eventType="touchUpInside" id="wJd-Q4-tjA"/>
                                     <action selector="triggerButton:" destination="Yrc-go-WfF" eventType="touchUpInside" id="uXQ-fp-PFQ"/>
                                     <segue destination="IoX-O5-wWK" kind="show" id="LjF-Rp-9tL"/>
                                 </connections>
@@ -132,6 +133,7 @@
         <!--Track Buttons View Controller-->
         <scene sceneID="xtk-pt-VGe">
             <objects>
+                <exit id="605-Db-Ynz" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="how-Bq-oOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="TrackButtonsViewController" autoresizesArchivedViewToFullSize="NO" id="1l0-WZ-COH" customClass="TrackButtonsViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleAspectFit" id="KIO-rY-8Ld">
@@ -142,6 +144,7 @@
                                 <rect key="frame" x="143" y="364" width="89" height="30"/>
                                 <state key="normal" title="I'm okay now"/>
                                 <connections>
+                                    <action selector="endEntry:" destination="605-Db-Ynz" eventType="touchUpInside" id="vAt-9k-f4j"/>
                                     <segue destination="WQ5-SY-wpR" kind="show" id="A8Q-6R-dXe"/>
                                 </connections>
                             </button>

@@ -7,19 +7,20 @@
 //
 
 import Foundation
+import CoreLocation
 
 class Entry: NSObject {
     var startTime: Date = Date()
     var endTime: Date?
-    var latitude: Float?
-    var longitude: Float?
+    var latitude: CLLocationDegrees?
+    var longitude: CLLocationDegrees?
     var notes: String?
     
     override init() {
         super.init()
     }
     
-    init(startTime: Date, endTime: Date, latitude: Float, longitude: Float, notes: String) {
+    init(startTime: Date, endTime: Date, latitude: CLLocationDegrees, longitude: CLLocationDegrees, notes: String) {
         self.startTime = startTime
         self.endTime = endTime
         self.latitude = latitude

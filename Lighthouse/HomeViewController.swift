@@ -11,15 +11,19 @@ import CoreData
 import CoreLocation
 
 class HomeViewController: UIViewController {
-    
+    // MARK: - Location
+    let location = Location() // set lats and longs of place
+
     // MARK: - Buttons
-    @IBAction func triggerButton(_ sender: UIButton) {
+    @IBAction func beginEntry(_ sender: UIButton) {
         let entry = Entry()
         entry.startTime = Date() //set start time of attack, time zone
+        
+        entry.latitude = Double(location.latitude)
+        entry.longitude = Double(location.longitude)
+        
         saveEntry(entry: entry)
-        print(entry.startTime)
     }
-    
     
     // MARK: - CoreData functions
     func saveEntry(entry: Entry){
@@ -42,10 +46,14 @@ class HomeViewController: UIViewController {
         }
     }
     
+    // MARK: - Location
+    
+        
     // MARK: - General
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        location.getCurrentLocation()
     }
 
     override func didReceiveMemoryWarning() {
