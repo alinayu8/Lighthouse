@@ -47,6 +47,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="triggerButton:" destination="Yrc-go-WfF" eventType="touchUpInside" id="uXQ-fp-PFQ"/>
                                     <segue destination="IoX-O5-wWK" kind="show" id="LjF-Rp-9tL"/>
                                 </connections>
                             </button>
