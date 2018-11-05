@@ -48,7 +48,7 @@
                                 </state>
                                 <connections>
                                     <action selector="beginEntry:" destination="Yrc-go-WfF" eventType="touchUpInside" id="wJd-Q4-tjA"/>
-                                    <segue destination="IoX-O5-wWK" kind="show" id="LjF-Rp-9tL"/>
+                                    <segue destination="IoX-O5-wWK" kind="show" identifier="homeVC" id="LjF-Rp-9tL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -146,7 +146,7 @@
                                 <connections>
                                     <action selector="endEntry:" destination="605-Db-Ynz" eventType="touchUpInside" id="vAt-9k-f4j"/>
                                     <action selector="stopEntryButton:" destination="1l0-WZ-COH" eventType="touchUpInside" id="4EI-OG-el1"/>
-                                    <segue destination="WQ5-SY-wpR" kind="show" id="A8Q-6R-dXe"/>
+                                    <segue destination="WQ5-SY-wpR" kind="show" identifier="trackVC" id="A8Q-6R-dXe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfk-Nw-49v">

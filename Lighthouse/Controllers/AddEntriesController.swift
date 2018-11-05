@@ -10,18 +10,18 @@ import UIKit
 import Foundation
 import CoreData
 
-class AddEntriesController: UITableViewController, HomeViewControllerDelegate, TrackButtonsViewController {
-
+class AddEntriesController: UIViewController, HomeViewControllerDelegate, TrackButtonsViewControllerDelegate {
+    
     // MARK: - General
     
     var entries: [Entry] = []
 
-    // MARK: - CoreData functions
+    // MARK: - CoreData functions for HomeView
     
     // Connect to the context for the container stack
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    func saveEntry(controller: HomeViewController, entry: Entry){
+    func saveEntry(entry: Entry) {
         let context = appDelegate.persistentContainer.viewContext
         // Specifically select the Entry entity to save this object to
         let entity = NSEntityDescription.entity(forEntityName: "Entries", in: context)
@@ -61,5 +61,16 @@ class AddEntriesController: UITableViewController, HomeViewControllerDelegate, T
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "homeVC" {
+            let homeVC: HomeViewController = segue.destination as! HomeViewController
+            homeVC.delegate = self as HomeViewControllerDelegate
+            print("\n-- I'm \(String(describing: homeVC))'s delegate: \(String(describing: homeVC.delegate))\n")
+        } else if segue.identifier == "trackVC" {
+            let trackVC: TrackButtonsViewController = segue.destination as! TrackButtonsViewController
+            trackVC.delegate = self as TrackButtonsViewControllerDelegate
+            print("\n-- I'm \(String(describing: trackVC))'s delegate: \(String(describing: trackVC.delegate))\n")
+        }
+    }
     
 }

@@ -25,7 +25,6 @@
 		F29DE7B3218CF39400F16F5A /* EntryGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7B2218CF39400F16F5A /* EntryGraphViewController.swift */; };
 		F29DE7B6218E502000F16F5A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7B5218E502000F16F5A /* Entry.swift */; };
 		F29DE7BA218E904400F16F5A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7B9218E904400F16F5A /* Location.swift */; };
-		F29DE7BD218E9AC200F16F5A /* AddEntriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7BC218E9AC200F16F5A /* AddEntriesController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +69,6 @@
 		F29DE7B2218CF39400F16F5A /* EntryGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryGraphViewController.swift; sourceTree = "<group>"; };
 		F29DE7B5218E502000F16F5A /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		F29DE7B9218E904400F16F5A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		F29DE7BC218E9AC200F16F5A /* AddEntriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntriesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +186,6 @@
 		F29DE7BB218E9AA700F16F5A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F29DE7BC218E9AC200F16F5A /* AddEntriesController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -327,7 +324,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F29DE7BD218E9AC200F16F5A /* AddEntriesController.swift in Sources */,
 				F29DE7B6218E502000F16F5A /* Entry.swift in Sources */,
 				F29DE7B3218CF39400F16F5A /* EntryGraphViewController.swift in Sources */,
 				F29DE7A6218CF0C000F16F5A /* TrackButtonsViewController.swift in Sources */,

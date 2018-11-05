@@ -7,27 +7,41 @@
 //
 
 import UIKit
-
-// MARK: Protocol Methods
-
-protocol TrackButtonsViewControllerDelegate: class {
-    func saveEntry(controller: TrackButtonsViewController, entry: Entry)
-    func lastEntry(controller: TrackButtonsViewController) -> Entry?
-}
+import CoreData
 
 class TrackButtonsViewController: UIViewController {
-    
-    // MARK: - Properties
-    
-    weak var delegate: TrackButtonsViewControllerDelegate?
-    
     // MARK: - Buttons
     
     @IBAction func stopEntryButton(_ sender: UIButton) {
-        let entry = delegate?.lastEntry(controller: self)
-        entry?.endTime = Date()
-        delegate?.saveEntry(controller: self, entry: entry!)
+        updateEntry()
     }
+    
+    // MARK: - CoreData functions
+    
+    // Connect to the context for the container stack
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    func updateEntry() {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entries")
+        request.sortDescriptors = [NSSortDescriptor(key: "start_time", ascending: false)]
+        request.fetchLimit = 1
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            let objectUpdate = result[0] as! NSManagedObject
+            objectUpdate.setValue(Date(), forKey: "end_time")
+            do {
+                try context.save()
+            } catch {
+                print("Failed")
+            }
+        } catch {
+            print("Failed")
+        }
+    }
+    
+    // MARK: - General
     
     override func viewDidLoad() {
         super.viewDidLoad()
