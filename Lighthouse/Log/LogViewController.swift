@@ -10,6 +10,8 @@ import UIKit
 
 class LogViewController: UIViewController {
     
+    //MARK: - Segmented Control
+    
     @IBOutlet weak var listContainer: UIView!
     @IBOutlet weak var statsContainer: UIView!
     
@@ -27,6 +29,8 @@ class LogViewController: UIViewController {
             break
         }
     }
+    
+    //MARK: - General
     
     override func viewDidLoad() {
         super.viewDidLoad()
