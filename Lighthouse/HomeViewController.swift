@@ -10,7 +10,21 @@ import UIKit
 import CoreData
 import CoreLocation
 
+// MARK: Protocol Methods
+
+//protocol HomeViewControllerDelegate: class {
+//
+//    func saveEntry(controller: HomeViewController, entry: Entry)
+//
+//}
+
+// MARK: - AddEntriesController
+
 class HomeViewController: UIViewController {
+    
+    // MARK: - Properties
+//    weak var delegate: HomeViewControllerDelegate?
+    
     // MARK: - Location
     let location = Location() // set lats and longs of place
 
@@ -22,33 +36,9 @@ class HomeViewController: UIViewController {
         entry.latitude = Double(location.latitude)
         entry.longitude = Double(location.longitude)
         
-        saveEntry(entry: entry)
+        entry.saveEntry()
     }
     
-    // MARK: - CoreData functions
-    func saveEntry(entry: Entry){
-        // Connect to the context for the container stack
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        // Specifically select the Entry entity to save this object to
-        let entity = NSEntityDescription.entity(forEntityName: "Entries", in: context)
-        let newEntity = NSManagedObject(entity: entity!, insertInto: context)
-        // Set values one at a time and save
-        newEntity.setValue(entry.startTime, forKey: "start_time")
-        newEntity.setValue(entry.endTime, forKey: "end_time")
-        newEntity.setValue(entry.latitude, forKey: "latitude")
-        newEntity.setValue(entry.longitude, forKey: "longitude")
-        newEntity.setValue(entry.notes, forKey: "notes")
-        do {
-            try context.save()
-        } catch {
-            print("Failed saving")
-        }
-    }
-    
-    // MARK: - Location
-    
-        
     // MARK: - General
     override func viewDidLoad() {
         super.viewDidLoad()

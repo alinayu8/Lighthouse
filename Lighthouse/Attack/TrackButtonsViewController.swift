@@ -8,7 +8,26 @@
 
 import UIKit
 
+// MARK: Protocol Methods
+
+protocol TrackButtonsViewControllerDelegate: class {
+    func saveEntry(controller: TrackButtonsViewController, entry: Entry)
+    func lastEntry(controller: TrackButtonsViewController) -> Entry?
+}
+
 class TrackButtonsViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    weak var delegate: TrackButtonsViewControllerDelegate?
+    
+    // MARK: - Buttons
+    
+    @IBAction func stopEntryButton(_ sender: UIButton) {
+        let entry = delegate?.lastEntry(controller: self)
+        entry?.endTime = Date()
+        delegate?.saveEntry(controller: self, entry: entry!)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

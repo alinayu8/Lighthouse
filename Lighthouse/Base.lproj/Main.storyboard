@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="Yrc-go-WfF" customClass="HomeViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LlX-wo-Req" customClass="HomeViewController">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="panic_button" translatesAutoresizingMaskIntoConstraints="NO" id="wMO-3q-hbv">
-                                <rect key="frame" x="84.5" y="239" width="206" height="209"/>
+                                <rect key="frame" x="84.5" y="159" width="206" height="209"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZG-sG-OVA">
                                 <rect key="frame" x="323" y="20" width="36" height="39"/>
@@ -33,22 +33,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEw-MV-m5e">
-                                <rect key="frame" x="323" y="611" width="36" height="36"/>
+                                <rect key="frame" x="323" y="451" width="36" height="36"/>
                                 <state key="normal" image="question_icon"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2o-dp-kJ3">
-                                <rect key="frame" x="16" y="610" width="26" height="37"/>
+                                <rect key="frame" x="16" y="450" width="26" height="37"/>
                                 <state key="normal" image="speaker_icon"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4W-92-Ua2">
-                                <rect key="frame" x="106" y="328" width="162" height="30"/>
+                                <rect key="frame" x="106" y="248" width="162" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="I am not okay.">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="beginEntry:" destination="Yrc-go-WfF" eventType="touchUpInside" id="wJd-Q4-tjA"/>
-                                    <action selector="triggerButton:" destination="Yrc-go-WfF" eventType="touchUpInside" id="uXQ-fp-PFQ"/>
                                     <segue destination="IoX-O5-wWK" kind="show" id="LjF-Rp-9tL"/>
                                 </connections>
                             </button>
@@ -59,13 +58,11 @@
                             <constraint firstItem="zZG-sG-OVA" firstAttribute="top" secondItem="F9u-wx-JxJ" secondAttribute="top" id="4jH-Mk-q22"/>
                             <constraint firstItem="F9u-wx-JxJ" firstAttribute="bottom" secondItem="Y2o-dp-kJ3" secondAttribute="bottom" constant="20" id="7bQ-7i-6XR"/>
                             <constraint firstItem="b4W-92-Ua2" firstAttribute="centerX" secondItem="wMO-3q-hbv" secondAttribute="centerX" id="7s4-TY-ivk"/>
-                            <constraint firstItem="b4W-92-Ua2" firstAttribute="centerX" secondItem="F9u-wx-JxJ" secondAttribute="centerX" id="AQf-0K-DUO"/>
                             <constraint firstItem="BIz-fd-QpP" firstAttribute="leading" secondItem="F9u-wx-JxJ" secondAttribute="leading" constant="16" id="B5k-q0-usD"/>
                             <constraint firstItem="F9u-wx-JxJ" firstAttribute="bottom" secondItem="mEw-MV-m5e" secondAttribute="bottom" constant="20" id="BOc-tM-2Lc"/>
                             <constraint firstItem="BIz-fd-QpP" firstAttribute="top" secondItem="F9u-wx-JxJ" secondAttribute="top" id="C3E-9v-S4d"/>
                             <constraint firstItem="F9u-wx-JxJ" firstAttribute="trailing" secondItem="zZG-sG-OVA" secondAttribute="trailing" constant="16" id="WJ9-Nk-a84"/>
                             <constraint firstItem="wMO-3q-hbv" firstAttribute="centerX" secondItem="F9u-wx-JxJ" secondAttribute="centerX" id="cNc-rm-Vpk"/>
-                            <constraint firstItem="b4W-92-Ua2" firstAttribute="centerY" secondItem="F9u-wx-JxJ" secondAttribute="centerY" id="cac-57-nQt"/>
                             <constraint firstItem="Y2o-dp-kJ3" firstAttribute="leading" secondItem="F9u-wx-JxJ" secondAttribute="leading" constant="16" id="dee-9I-VrQ"/>
                             <constraint firstItem="b4W-92-Ua2" firstAttribute="centerY" secondItem="wMO-3q-hbv" secondAttribute="centerY" id="fjM-yX-hok"/>
                             <constraint firstItem="wMO-3q-hbv" firstAttribute="centerY" secondItem="F9u-wx-JxJ" secondAttribute="centerY" id="giu-e1-Q77"/>
@@ -82,7 +79,7 @@
             <objects>
                 <viewController id="IoX-O5-wWK" customClass="FocusSupportViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mdt-3Z-jyr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D8w-A3-i2B">
@@ -94,7 +91,7 @@
                                 <color key="tintColor" red="0.32549019610000002" green="0.4431372549" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </segmentedControl>
                             <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ND-At-R0g" userLabel="Support Container View">
-                                <rect key="frame" x="0.0" y="160" width="375" height="507"/>
+                                <rect key="frame" x="0.0" y="160" width="375" height="347"/>
                                 <connections>
                                     <segue destination="1l0-WZ-COH" kind="embed" id="6Cs-Mo-ExV"/>
                                 </connections>
@@ -102,6 +99,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9L-Sd-QHy">
                                 <rect key="frame" x="16" y="20" width="37" height="35"/>
                                 <state key="normal" image="home_icon"/>
+                                <connections>
+                                    <segue destination="Yrc-go-WfF" kind="show" id="3mK-Kr-lbL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -145,6 +145,7 @@
                                 <state key="normal" title="I'm okay now"/>
                                 <connections>
                                     <action selector="endEntry:" destination="605-Db-Ynz" eventType="touchUpInside" id="vAt-9k-f4j"/>
+                                    <action selector="stopEntryButton:" destination="1l0-WZ-COH" eventType="touchUpInside" id="4EI-OG-el1"/>
                                     <segue destination="WQ5-SY-wpR" kind="show" id="A8Q-6R-dXe"/>
                                 </connections>
                             </button>
@@ -180,12 +181,15 @@
             <objects>
                 <viewController id="WQ5-SY-wpR" customClass="AttackOverViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gDS-L3-e9s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFB-Uh-NVi">
-                                <rect key="frame" x="16" y="20" width="86" height="35"/>
+                                <rect key="frame" x="16" y="0.0" width="86" height="35"/>
                                 <state key="normal" title="Home" image="home_icon"/>
+                                <connections>
+                                    <segue destination="Yrc-go-WfF" kind="show" id="Y4t-sa-haJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -257,7 +261,7 @@
                                 <rect key="frame" x="16" y="20" width="37" height="35"/>
                                 <state key="normal" image="home_icon"/>
                                 <connections>
-                                    <segue destination="Yrc-go-WfF" kind="show" id="UKn-T3-8ws"/>
+                                    <segue destination="Yrc-go-WfF" kind="show" id="tAG-s7-I6f"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -336,6 +340,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVA-Vj-WII">
                                 <rect key="frame" x="16" y="20" width="37" height="35"/>
                                 <state key="normal" image="home_icon"/>
+                                <connections>
+                                    <segue destination="Yrc-go-WfF" kind="show" id="cdx-0q-QYe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8z-cF-klP">
                                 <rect key="frame" x="40" y="99" width="88" height="22"/>
@@ -483,4 +490,7 @@
         <image name="question_icon" width="36" height="36"/>
         <image name="speaker_icon" width="26" height="37"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="cdx-0q-QYe"/>
+    </inferredMetricsTieBreakers>
 </document>
