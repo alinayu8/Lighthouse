@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class EntryViewController: UIViewController {
     
@@ -18,67 +19,116 @@ class EntryViewController: UIViewController {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var notesField: UITextView!
     @IBAction func saveEntryButton(_ sender: Any) {
+        updateEntry(notes: notesField.text)
     }
     
-    // MARK: - Entry details
+    // MARK: - Configure Entry details
     
-//    var entryDetail: Entry? {
-//        didSet {
-//            // Update the view.
-//            self.configureView()
-//        }
-//    }
-//    
-//    func configureView() {
-//        // Update the user interface for the detail item.
-//        if let detail: Entry = self.entryDetail {
-//            if let location = self.locationLabel {
-//                location.text = locationName(latitude: detail.latitude!, longitude: detail.longitude!)
-//            }
-//            if let dateTime = self.dateTimeLabel {
-//                dateTime.text = "bloop"
-//            }
-//            if let duration = self.dateTimeLabel {
-//                duration.text = "bloop"
-//            }
-//            if let notes = self.notesField {
-//                notes.text = "bloop"
-//            }
-//        }
-//    }
+    var entryDetail: Entry? {
+        didSet {
+            // Update the view.
+            print("hallo1")
+            self.configureView()
+        }
+    }
+    
+    func configureView() {
+        // Update the user interface for the detail item.
+        print("hallo2")
+        if let detail: Entry = self.entryDetail {
+            if let location = self.locationLabel {
+                let currentLocation = CLLocation(latitude: detail.latitude!, longitude: detail.longitude!)
+                // convert lat and long to readable address
+                CLGeocoder().reverseGeocodeLocation(currentLocation, completionHandler: {(placemarks, error) -> Void in
+                    
+                    if placemarks!.count > 0 {
+                        let pm = placemarks![0]
+                        let address = pm.subThoroughfare!
+                        let street = pm.thoroughfare!
+                        let city = pm.locality!
+                        let postalCode = pm.postalCode!
+                        //let locationString3 = pm.country! // USA users?
+                        print("no?")
+                        location.text = ("\(address) \(street), \(city) \(postalCode)")
+                    }
+                    else {
+                        print("Problem with the data received from geocoder")
+                    }
+                })
+            }
+            if let dateTime = self.dateTimeLabel {
+                dateTime.text = dateTimeFormat(startTime: detail.startTime!)
+            }
+            if let duration = self.durationLabel {
+                duration.text = durationTime(startTime: detail.startTime!, endTime: detail.endTime!)
+            }
+            if let notes = self.notesField {
+                notes.text = detail.notes ?? ""
+            }
+        }
+    }
     
     // MARK: - Functions
-//    func locationName(latitude: CLLocationDegrees, longitude: CLLocationDegrees) -> String {
-//        var location = CLLocation(latitude: latitude, longitude: longitude)
-//        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
-//            print(location)
-//
-//            if error != nil {
-//                println("Reverse geocoder failed with error" + error.localizedDescription)
-//                return
-//            }
-//
-//            if placemarks.count > 0 {
-//                let pm = placemarks[0] as! CLPlacemark
-//                println(pm.locality)
-//            }
-//            else {
-//                println("Problem with the data received from geocoder")
-//            }
-//        })
-//    }
+ 
+    func dateTimeFormat(startTime: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a MMMM dd, yyyy"
+        return dateFormatter.string(from: startTime)
+    }
+
+    func durationTime(startTime: Date, endTime: Date) -> String {
+        let duration = endTime.timeIntervalSince(startTime)
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        formatter.includesApproximationPhrase = false
+        formatter.includesTimeRemainingPhrase = false
+        formatter.allowedUnits = [.hour, .minute, .second]
+        
+        // Use the configured formatter to generate the string.
+        let timeString = formatter.string(from: duration) ?? ""
+        return timeString
+    }
     
-//    func dateTimeFormat(startTime: Date) -> String {
-//        
-//    }
-//    
-//    func durationTime(startTime: Date, endTime: Date) -> String {
-//        
-//    }
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    func updateEntry(notes: String) {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entries")
+        request.sortDescriptors = [NSSortDescriptor(key: "start_time", ascending: false)]
+        request.fetchLimit = 1
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+                if let detail: Entry = self.entryDetail {
+                    if (detail.startTime == (data.value(forKey: "start_time") as! Date) &&
+                        detail.endTime == (data.value(forKey: "end_time") as! Date) &&
+                        detail.latitude == (data.value(forKey: "latitude") as! Double) &&
+                        detail.longitude == (data.value(forKey: "longitude") as? Double) &&
+                        detail.notes == (data.value(forKey: "notes") as? String)) {
+                        print(notes)
+                        data.setValue(notes, forKey: "notes")
+                        try context.save()
+                    }
+                }
+            }
+        } catch {
+            print("Failed")
+        }
+    }
+    
+    // MARK: - General
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.configureView()
+        
+        // Style text view
+        let myColor = UIColor.gray
+        notesField.layer.borderColor = myColor.cgColor
+        notesField.layer.borderWidth = 1.0
+        notesField.layer.cornerRadius = 10.0
     }
     
     override func didReceiveMemoryWarning() {
