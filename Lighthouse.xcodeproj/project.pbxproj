@@ -17,6 +17,7 @@
 		464B8DCA2195E9DB0024ECB2 /* EntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DC92195E9DB0024ECB2 /* EntryTests.swift */; };
 		464B8DCC219601450024ECB2 /* LogListTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DCB219601450024ECB2 /* LogListTableViewControllerTests.swift */; };
 		464B8DCE219604CE0024ECB2 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DCD219604CE0024ECB2 /* LocationTests.swift */; };
+		464B8DD021960C370024ECB2 /* Datapoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DCF21960C370024ECB2 /* Datapoint.swift */; };
 		4B20228835C4D86BDD09D414 /* Pods_Lighthouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A68D54E6298EA499E4AB9CF /* Pods_Lighthouse.framework */; };
 		F202CA762187DEAE00A2490F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA752187DEAE00A2490F /* AppDelegate.swift */; };
 		F202CA782187DEAE00A2490F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA772187DEAE00A2490F /* HomeViewController.swift */; };
@@ -71,6 +72,7 @@
 		464B8DC92195E9DB0024ECB2 /* EntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTests.swift; sourceTree = "<group>"; };
 		464B8DCB219601450024ECB2 /* LogListTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListTableViewControllerTests.swift; sourceTree = "<group>"; };
 		464B8DCD219604CE0024ECB2 /* LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
+		464B8DCF21960C370024ECB2 /* Datapoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datapoint.swift; sourceTree = "<group>"; };
 		6795C7EBBC23C7361BF41BA7 /* Pods-LighthouseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LighthouseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LighthouseTests/Pods-LighthouseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A68D54E6298EA499E4AB9CF /* Pods_Lighthouse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lighthouse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A564F7AA4C0ECD5EB4FEF03 /* Pods-LighthouseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LighthouseUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LighthouseUITests/Pods-LighthouseUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				F29DE7B5218E502000F16F5A /* Entry.swift */,
+				464B8DCF21960C370024ECB2 /* Datapoint.swift */,
 				F29DE7B9218E904400F16F5A /* Location.swift */,
 			);
 			path = Models;
@@ -526,6 +529,7 @@
 				F202CA782187DEAE00A2490F /* HomeViewController.swift in Sources */,
 				F29DE7BA218E904400F16F5A /* Location.swift in Sources */,
 				F29DE7A4218CF03800F16F5A /* FocusSupportViewController.swift in Sources */,
+				464B8DD021960C370024ECB2 /* Datapoint.swift in Sources */,
 				F29DE7AF218CF2DE00F16F5A /* EntryViewController.swift in Sources */,
 				F24086C02194EC80007991A1 /* LogListTableViewController.swift in Sources */,
 				F202CA762187DEAE00A2490F /* AppDelegate.swift in Sources */,

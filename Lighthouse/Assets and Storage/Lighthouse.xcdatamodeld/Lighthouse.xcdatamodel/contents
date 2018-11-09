@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Datapoints" representedClassName="Datapoints" syncable="YES" codeGenerationType="class">
+        <attribute name="better_tap" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="worse_tap" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <entity name="Entries" representedClassName="Entries" syncable="YES" codeGenerationType="class">
         <attribute name="end_time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -9,5 +14,6 @@
     </entity>
     <elements>
         <element name="Entries" positionX="-54" positionY="-9" width="128" height="120"/>
+        <element name="Datapoints" positionX="-54" positionY="27" width="128" height="90"/>
     </elements>
 </model>
