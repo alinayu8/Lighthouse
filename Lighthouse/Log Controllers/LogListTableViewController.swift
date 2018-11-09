@@ -19,7 +19,6 @@ class LogListTableViewController: UITableViewController {
         fetchEntries() // get entries from CoreData
         
         tableView.register(UINib(nibName: "LogListViewCell", bundle: nil), forCellReuseIdentifier: "LogListCell")
-        tableView.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -105,6 +104,8 @@ class LogListTableViewController: UITableViewController {
                 (segue.destination as! EntryViewController).entryDetail = entry
             }
         }
+        
+        tableView.reloadData()
     }
     
     // MARK: - Fetch CoreData
