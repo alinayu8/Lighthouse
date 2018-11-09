@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		464B8DBC2195B5EB0024ECB2 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DBB2195B5EB0024ECB2 /* HomeViewControllerTests.swift */; };
+		464B8DBE2195BEA00024ECB2 /* EntryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DBD2195BEA00024ECB2 /* EntryViewControllerTests.swift */; };
+		464B8DC02195C1C60024ECB2 /* LogViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DBF2195C1C60024ECB2 /* LogViewControllerTests.swift */; };
+		464B8DC22195C27B0024ECB2 /* StatsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DC12195C27B0024ECB2 /* StatsViewControllerTests.swift */; };
+		464B8DC42195C2FB0024ECB2 /* FocusSupportViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DC32195C2FB0024ECB2 /* FocusSupportViewControllerTests.swift */; };
+		464B8DC62195C3780024ECB2 /* TrackButtonsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DC52195C3780024ECB2 /* TrackButtonsViewControllerTests.swift */; };
+		464B8DC82195C3A60024ECB2 /* AttackOverViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DC72195C3A60024ECB2 /* AttackOverViewControllerTests.swift */; };
 		4B20228835C4D86BDD09D414 /* Pods_Lighthouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A68D54E6298EA499E4AB9CF /* Pods_Lighthouse.framework */; };
 		F202CA762187DEAE00A2490F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA752187DEAE00A2490F /* AppDelegate.swift */; };
 		F202CA782187DEAE00A2490F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA772187DEAE00A2490F /* HomeViewController.swift */; };
@@ -51,6 +58,13 @@
 		0056F21FC77F1C4DFEA2EF2A /* Pods-LighthouseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LighthouseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LighthouseTests/Pods-LighthouseTests.release.xcconfig"; sourceTree = "<group>"; };
 		0DBD685B5E844FD36B6F89AE /* Pods-LighthouseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LighthouseUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LighthouseUITests/Pods-LighthouseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		340F68EEA0AA9E6DDFFC440D /* Pods-Lighthouse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lighthouse.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lighthouse/Pods-Lighthouse.release.xcconfig"; sourceTree = "<group>"; };
+		464B8DBB2195B5EB0024ECB2 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
+		464B8DBD2195BEA00024ECB2 /* EntryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewControllerTests.swift; sourceTree = "<group>"; };
+		464B8DBF2195C1C60024ECB2 /* LogViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewControllerTests.swift; sourceTree = "<group>"; };
+		464B8DC12195C27B0024ECB2 /* StatsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewControllerTests.swift; sourceTree = "<group>"; };
+		464B8DC32195C2FB0024ECB2 /* FocusSupportViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSupportViewControllerTests.swift; sourceTree = "<group>"; };
+		464B8DC52195C3780024ECB2 /* TrackButtonsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackButtonsViewControllerTests.swift; sourceTree = "<group>"; };
+		464B8DC72195C3A60024ECB2 /* AttackOverViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackOverViewControllerTests.swift; sourceTree = "<group>"; };
 		6795C7EBBC23C7361BF41BA7 /* Pods-LighthouseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LighthouseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LighthouseTests/Pods-LighthouseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A68D54E6298EA499E4AB9CF /* Pods_Lighthouse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lighthouse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A564F7AA4C0ECD5EB4FEF03 /* Pods-LighthouseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LighthouseUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LighthouseUITests/Pods-LighthouseUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +185,13 @@
 			isa = PBXGroup;
 			children = (
 				F202CA8D2187DEAE00A2490F /* LighthouseTests.swift */,
+				464B8DBB2195B5EB0024ECB2 /* HomeViewControllerTests.swift */,
+				464B8DC12195C27B0024ECB2 /* StatsViewControllerTests.swift */,
+				464B8DC32195C2FB0024ECB2 /* FocusSupportViewControllerTests.swift */,
+				464B8DC52195C3780024ECB2 /* TrackButtonsViewControllerTests.swift */,
+				464B8DC72195C3A60024ECB2 /* AttackOverViewControllerTests.swift */,
+				464B8DBF2195C1C60024ECB2 /* LogViewControllerTests.swift */,
+				464B8DBD2195BEA00024ECB2 /* EntryViewControllerTests.swift */,
 				F202CA8F2187DEAE00A2490F /* Info.plist */,
 			);
 			path = LighthouseTests;
@@ -511,6 +532,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F202CA8E2187DEAE00A2490F /* LighthouseTests.swift in Sources */,
+				464B8DC42195C2FB0024ECB2 /* FocusSupportViewControllerTests.swift in Sources */,
+				464B8DBC2195B5EB0024ECB2 /* HomeViewControllerTests.swift in Sources */,
+				464B8DC62195C3780024ECB2 /* TrackButtonsViewControllerTests.swift in Sources */,
+				464B8DC82195C3A60024ECB2 /* AttackOverViewControllerTests.swift in Sources */,
+				464B8DC22195C27B0024ECB2 /* StatsViewControllerTests.swift in Sources */,
+				464B8DBE2195BEA00024ECB2 /* EntryViewControllerTests.swift in Sources */,
+				464B8DC02195C1C60024ECB2 /* LogViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
