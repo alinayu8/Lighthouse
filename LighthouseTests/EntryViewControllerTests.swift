@@ -8,11 +8,16 @@
 
 import XCTest
 import Charts
+import CoreLocation
+import CoreData
+
 @testable import Lighthouse
+
 class EntryViewControllerTests: XCTestCase {
   
     var testVC: EntryViewController! = EntryViewController()
-
+    let date = Date()
+  let endDate = Date(timeIntervalSinceNow: -123456.0)
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
       super.setUp()
@@ -35,12 +40,23 @@ class EntryViewControllerTests: XCTestCase {
       XCTAssert(data != nil)
       
     }
+  func testDateTimeFormat() {
+    let startDateText = testVC.dateTimeFormat(startTime: date)
+    let endDateText = testVC.dateTimeFormat(startTime: endDate)
+    XCTAssertTrue(startDateText is String)
+    print(startDateText)
+    let stringDate = startDateText
+    XCTAssertTrue(endDateText != startDateText)
+    XCTAssertTrue(stringDate==testVC.dateTimeFormat(startTime: date))
+  }
+  
+  func testDurationTime() {
+    
+    var diff = testVC.durationTime(startTime: endDate, endTime: date)
+    print(diff)
+    XCTAssertTrue(diff == "34 hours, 17 minutes, 36 seconds")
+  }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+  
 
 }
