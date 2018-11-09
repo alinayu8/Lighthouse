@@ -358,14 +358,14 @@
                                 <color key="textColor" red="0.32549019610000002" green="0.4431372549" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4V-1A-uEm">
-                                <rect key="frame" x="41" y="219" width="69" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date/Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4V-1A-uEm">
+                                <rect key="frame" x="41" y="219" width="83" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" red="0.32549019610000002" green="0.4431372549" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date/Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVE-et-2Cj">
-                                <rect key="frame" x="41" y="274" width="83" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVE-et-2Cj">
+                                <rect key="frame" x="41" y="274" width="69" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" red="0.32549019610000002" green="0.4431372549" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -389,14 +389,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnJ-jQ-TcE">
-                                <rect key="frame" x="181" y="220" width="99" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date/time text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnJ-jQ-TcE">
+                                <rect key="frame" x="172" y="220" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date/time text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghR-pm-LDO">
-                                <rect key="frame" x="172" y="274" width="108" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghR-pm-LDO">
+                                <rect key="frame" x="181" y="274" width="99" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -407,9 +407,17 @@
                                 <color key="textColor" red="0.32549019610000002" green="0.4431372549" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdX-AT-9LH">
+                                <rect key="frame" x="124" y="620" width="73" height="30"/>
+                                <state key="normal" title="Save Entry"/>
+                                <connections>
+                                    <action selector="saveEntryButton:" destination="LuV-CD-rwG" eventType="touchUpInside" id="I58-mW-0Lb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="9ES-tV-x0Y" firstAttribute="bottom" secondItem="PdX-AT-9LH" secondAttribute="bottom" constant="20" id="0lW-H6-KIq"/>
                             <constraint firstItem="x4V-1A-uEm" firstAttribute="leading" secondItem="9ES-tV-x0Y" secondAttribute="leading" constant="41" id="3GP-Ae-dYi"/>
                             <constraint firstItem="EqA-SW-JgS" firstAttribute="trailing" secondItem="JOa-9S-iqa" secondAttribute="trailing" id="6uQ-4G-ptd"/>
                             <constraint firstItem="ghR-pm-LDO" firstAttribute="top" secondItem="9ES-tV-x0Y" secondAttribute="top" constant="254" id="E1z-vb-ufP"/>
@@ -433,6 +441,7 @@
                             <constraint firstItem="3CC-j6-uV4" firstAttribute="top" secondItem="9ES-tV-x0Y" secondAttribute="top" constant="5" id="hLm-Ck-QcI"/>
                             <constraint firstItem="9ES-tV-x0Y" firstAttribute="trailing" secondItem="v0O-C5-2aT" secondAttribute="trailing" constant="38" id="jfr-1B-D6t"/>
                             <constraint firstItem="5D1-JW-U5D" firstAttribute="leading" secondItem="9ES-tV-x0Y" secondAttribute="leading" constant="40" id="lvO-Yy-eM6"/>
+                            <constraint firstItem="PdX-AT-9LH" firstAttribute="centerX" secondItem="9ES-tV-x0Y" secondAttribute="centerX" id="mNi-Xb-BSU"/>
                             <constraint firstItem="EqA-SW-JgS" firstAttribute="top" secondItem="ZVE-et-2Cj" secondAttribute="bottom" constant="31" id="ruc-XR-ZCZ"/>
                             <constraint firstItem="5D1-JW-U5D" firstAttribute="top" secondItem="EqA-SW-JgS" secondAttribute="bottom" constant="33" id="sba-bj-N79"/>
                             <constraint firstItem="9ES-tV-x0Y" firstAttribute="bottom" secondItem="EqA-SW-JgS" secondAttribute="bottom" constant="216" id="srd-Ay-dQu"/>
@@ -443,6 +452,12 @@
                         <viewLayoutGuide key="safeArea" id="9ES-tV-x0Y"/>
                     </view>
                     <size key="freeformSize" width="320" height="670"/>
+                    <connections>
+                        <outlet property="dateTimeLabel" destination="wnJ-jQ-TcE" id="t77-4B-6IB"/>
+                        <outlet property="durationLabel" destination="ghR-pm-LDO" id="FIQ-hq-6f8"/>
+                        <outlet property="locationLabel" destination="JOa-9S-iqa" id="A8Z-rc-59t"/>
+                        <outlet property="notesField" destination="5D1-JW-U5D" id="pT8-LB-HvS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiG-8z-ILK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
