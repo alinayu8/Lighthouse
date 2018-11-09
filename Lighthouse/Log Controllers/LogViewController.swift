@@ -20,11 +20,11 @@ class LogViewController: UIViewController {
         switch segmentedControl.selectedSegmentIndex
         {
         case 0:
-            listContainer.isHidden = true
-            statsContainer.isHidden = false
-        case 1:
             listContainer.isHidden = false
             statsContainer.isHidden = true
+        case 1:
+            listContainer.isHidden = true
+            statsContainer.isHidden = false
         default:
             break
         }

@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 class Entry: NSObject {
-    var startTime: Date = Date()
+    var startTime: Date?
     var endTime: Date?
     var latitude: CLLocationDegrees?
     var longitude: CLLocationDegrees?

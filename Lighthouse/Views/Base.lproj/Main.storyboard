@@ -133,8 +133,6 @@
         <!--Track Buttons View Controller-->
         <scene sceneID="xtk-pt-VGe">
             <objects>
-                <exit id="605-Db-Ynz" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="how-Bq-oOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="TrackButtonsViewController" autoresizesArchivedViewToFullSize="NO" id="1l0-WZ-COH" customClass="TrackButtonsViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleAspectFit" id="KIO-rY-8Ld">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
@@ -173,6 +171,8 @@
                     </view>
                     <size key="freeformSize" width="375" height="507"/>
                 </viewController>
+                <exit id="605-Db-Ynz" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="how-Bq-oOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3891" y="-886"/>
         </scene>
@@ -207,7 +207,6 @@
         <!--View Controller-->
         <scene sceneID="hRP-sJ-xzN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5jX-1i-lwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Pdp-08-GoA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Y1-cr-SjH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="408"/>
@@ -217,6 +216,7 @@
                     </view>
                     <size key="freeformSize" width="320" height="408"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5jX-1i-lwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3891" y="-199"/>
         </scene>
@@ -239,16 +239,16 @@
                                     <action selector="indexChanged:" destination="cy1-BI-lxS" eventType="valueChanged" id="dCt-ft-TSt"/>
                                 </connections>
                             </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1G-zd-Uoo" userLabel="List Container View">
-                                <rect key="frame" x="0.0" y="160" width="375" height="507"/>
-                                <connections>
-                                    <segue destination="Ex6-da-Bi6" kind="embed" id="iMF-bs-4wZ"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhT-3o-Wn6" userLabel="Stats Container View">
                                 <rect key="frame" x="0.0" y="160" width="375" height="507"/>
                                 <connections>
                                     <segue destination="yk8-2D-LX4" kind="embed" id="Rck-Bf-yc4"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1G-zd-Uoo" userLabel="List Container View">
+                                <rect key="frame" x="0.0" y="160" width="375" height="507"/>
+                                <connections>
+                                    <segue destination="Ex6-da-Bi6" kind="embed" id="iMF-bs-4wZ"/>
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LOG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lg-0B-SSW">
@@ -297,10 +297,10 @@
             </objects>
             <point key="canvasLocation" x="1655" y="-1607"/>
         </scene>
-        <!--Log List View Controller-->
+        <!--Log List Table View Controller-->
         <scene sceneID="XHg-QQ-joD">
             <objects>
-                <tableViewController id="Ex6-da-Bi6" customClass="LogListViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Ex6-da-Bi6" customClass="LogListTableViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Byl-ee-oyH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="408"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,7 +314,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="LuV-CD-rwG" kind="showDetail" id="sUe-H4-giT"/>
+                                    <segue destination="LuV-CD-rwG" kind="show" identifier="showEntry" id="C4d-aQ-EuU"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
