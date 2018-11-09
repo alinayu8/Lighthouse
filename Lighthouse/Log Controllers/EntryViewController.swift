@@ -8,12 +8,9 @@
 
 import UIKit
 import CoreLocation
-<<<<<<< HEAD
 import CoreData
-
-=======
 import Charts
->>>>>>> 9f7de4c22e749a4d6ba34b784850038d1cdf5748
+
 class EntryViewController: UIViewController {
     
     // MARK: - Buttons and Labels
