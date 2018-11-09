@@ -239,16 +239,16 @@
                                     <action selector="indexChanged:" destination="cy1-BI-lxS" eventType="valueChanged" id="dCt-ft-TSt"/>
                                 </connections>
                             </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1G-zd-Uoo" userLabel="List Container View">
-                                <rect key="frame" x="0.0" y="160" width="375" height="507"/>
-                                <connections>
-                                    <segue destination="Ex6-da-Bi6" kind="embed" id="iMF-bs-4wZ"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhT-3o-Wn6" userLabel="Stats Container View">
                                 <rect key="frame" x="0.0" y="160" width="375" height="507"/>
                                 <connections>
                                     <segue destination="yk8-2D-LX4" kind="embed" id="Rck-Bf-yc4"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1G-zd-Uoo" userLabel="List Container View">
+                                <rect key="frame" x="0.0" y="160" width="375" height="507"/>
+                                <connections>
+                                    <segue destination="Ex6-da-Bi6" kind="embed" id="iMF-bs-4wZ"/>
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LOG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lg-0B-SSW">
@@ -297,10 +297,10 @@
             </objects>
             <point key="canvasLocation" x="1655" y="-1607"/>
         </scene>
-        <!--Log List View Controller-->
+        <!--Log List Table View Controller-->
         <scene sceneID="XHg-QQ-joD">
             <objects>
-                <tableViewController id="Ex6-da-Bi6" customClass="LogListViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Ex6-da-Bi6" customClass="LogListTableViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Byl-ee-oyH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="408"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -314,7 +314,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="LuV-CD-rwG" kind="showDetail" id="sUe-H4-giT"/>
+                                    <segue destination="LuV-CD-rwG" kind="show" identifier="showEntry" id="C4d-aQ-EuU"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
