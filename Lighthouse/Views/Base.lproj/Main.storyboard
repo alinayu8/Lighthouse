@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yrc-go-WfF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yrc-go-WfF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -251,7 +251,7 @@
                                     <segue destination="Ex6-da-Bi6" kind="embed" id="iMF-bs-4wZ"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LOG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lg-0B-SSW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LOG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lg-0B-SSW">
                                 <rect key="frame" x="155" y="41" width="64" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <color key="textColor" red="0.32549019610000002" green="0.4431372549" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -398,8 +398,7 @@
                                 <rect key="frame" x="123.5" y="620" width="73" height="30"/>
                                 <state key="normal" title="Save Entry"/>
                                 <connections>
-                                    <action selector="saveEntryButton:" destination="LuV-CD-rwG" eventType="touchUpInside" id="I58-mW-0Lb"/>
-                                    <segue destination="cy1-BI-lxS" kind="show" id="haV-L9-z8U"/>
+                                    <action selector="saveEntryButton:" destination="LuV-CD-rwG" eventType="touchUpInside" id="kpQ-fp-kpw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0O-C5-2aT">
@@ -445,7 +444,6 @@
                     <connections>
                         <outlet property="dateTimeLabel" destination="wnJ-jQ-TcE" id="t77-4B-6IB"/>
                         <outlet property="durationLabel" destination="ghR-pm-LDO" id="FIQ-hq-6f8"/>
-                        <outlet property="lineChart" destination="EqA-SW-JgS" id="AnF-cz-IK9"/>
                         <outlet property="locationLabel" destination="JOa-9S-iqa" id="A8Z-rc-59t"/>
                         <outlet property="notesField" destination="5D1-JW-U5D" id="pT8-LB-HvS"/>
                     </connections>
@@ -481,7 +479,6 @@
         <image name="speaker_icon" width="26" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="haV-L9-z8U"/>
-        <segue reference="cdx-0q-QYe"/>
+        <segue reference="tAG-s7-I6f"/>
     </inferredMetricsTieBreakers>
 </document>

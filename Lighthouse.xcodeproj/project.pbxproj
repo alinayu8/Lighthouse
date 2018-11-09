@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30F436EE59945AC529A27B47 /* Pods_LighthouseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9557C2479C628CE7653B5A98 /* Pods_LighthouseUITests.framework */; };
 		464B8DBC2195B5EB0024ECB2 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DBB2195B5EB0024ECB2 /* HomeViewControllerTests.swift */; };
 		464B8DBE2195BEA00024ECB2 /* EntryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DBD2195BEA00024ECB2 /* EntryViewControllerTests.swift */; };
 		464B8DC02195C1C60024ECB2 /* LogViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DBF2195C1C60024ECB2 /* LogViewControllerTests.swift */; };
@@ -16,8 +15,6 @@
 		464B8DC62195C3780024ECB2 /* TrackButtonsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DC52195C3780024ECB2 /* TrackButtonsViewControllerTests.swift */; };
 		464B8DC82195C3A60024ECB2 /* AttackOverViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DC72195C3A60024ECB2 /* AttackOverViewControllerTests.swift */; };
 		464B8DCA2195E9DB0024ECB2 /* EntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DC92195E9DB0024ECB2 /* EntryTests.swift */; };
-		4B20228835C4D86BDD09D414 /* Pods_Lighthouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A68D54E6298EA499E4AB9CF /* Pods_Lighthouse.framework */; };
-		BC78E0886A88B479ECD485C3 /* Pods_LighthouseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FAE2B3C7E4037FFB4B8441 /* Pods_LighthouseTests.framework */; };
 		F202CA762187DEAE00A2490F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA752187DEAE00A2490F /* AppDelegate.swift */; };
 		F202CA782187DEAE00A2490F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F202CA772187DEAE00A2490F /* HomeViewController.swift */; };
 		F202CA7B2187DEAE00A2490F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F202CA792187DEAE00A2490F /* Main.storyboard */; };
@@ -58,9 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0056F21FC77F1C4DFEA2EF2A /* Pods-LighthouseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LighthouseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LighthouseTests/Pods-LighthouseTests.release.xcconfig"; sourceTree = "<group>"; };
-		0DBD685B5E844FD36B6F89AE /* Pods-LighthouseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LighthouseUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LighthouseUITests/Pods-LighthouseUITests.release.xcconfig"; sourceTree = "<group>"; };
-		340F68EEA0AA9E6DDFFC440D /* Pods-Lighthouse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lighthouse.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lighthouse/Pods-Lighthouse.release.xcconfig"; sourceTree = "<group>"; };
 		464B8DBB2195B5EB0024ECB2 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		464B8DBD2195BEA00024ECB2 /* EntryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewControllerTests.swift; sourceTree = "<group>"; };
 		464B8DBF2195C1C60024ECB2 /* LogViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewControllerTests.swift; sourceTree = "<group>"; };
@@ -69,11 +63,6 @@
 		464B8DC52195C3780024ECB2 /* TrackButtonsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackButtonsViewControllerTests.swift; sourceTree = "<group>"; };
 		464B8DC72195C3A60024ECB2 /* AttackOverViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackOverViewControllerTests.swift; sourceTree = "<group>"; };
 		464B8DC92195E9DB0024ECB2 /* EntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTests.swift; sourceTree = "<group>"; };
-		6795C7EBBC23C7361BF41BA7 /* Pods-LighthouseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LighthouseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LighthouseTests/Pods-LighthouseTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8A68D54E6298EA499E4AB9CF /* Pods_Lighthouse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lighthouse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9557C2479C628CE7653B5A98 /* Pods_LighthouseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LighthouseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		98FAE2B3C7E4037FFB4B8441 /* Pods_LighthouseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LighthouseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A564F7AA4C0ECD5EB4FEF03 /* Pods-LighthouseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LighthouseUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LighthouseUITests/Pods-LighthouseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F202CA722187DEAE00A2490F /* Lighthouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lighthouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F202CA752187DEAE00A2490F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F202CA772187DEAE00A2490F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +89,6 @@
 		F29DE7B2218CF39400F16F5A /* EntryGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryGraphViewController.swift; sourceTree = "<group>"; };
 		F29DE7B5218E502000F16F5A /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		F29DE7B9218E904400F16F5A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		F43C5D3E9E865EBB44BDE1AC /* Pods-Lighthouse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lighthouse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lighthouse/Pods-Lighthouse.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B20228835C4D86BDD09D414 /* Pods_Lighthouse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +103,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC78E0886A88B479ECD485C3 /* Pods_LighthouseTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,36 +110,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30F436EE59945AC529A27B47 /* Pods_LighthouseUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0436D9F344F0F9758EEF2ECF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8A68D54E6298EA499E4AB9CF /* Pods_Lighthouse.framework */,
-				98FAE2B3C7E4037FFB4B8441 /* Pods_LighthouseTests.framework */,
-				9557C2479C628CE7653B5A98 /* Pods_LighthouseUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		82AA16D4BF6880FB634BD7B0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F43C5D3E9E865EBB44BDE1AC /* Pods-Lighthouse.debug.xcconfig */,
-				340F68EEA0AA9E6DDFFC440D /* Pods-Lighthouse.release.xcconfig */,
-				6795C7EBBC23C7361BF41BA7 /* Pods-LighthouseTests.debug.xcconfig */,
-				0056F21FC77F1C4DFEA2EF2A /* Pods-LighthouseTests.release.xcconfig */,
-				9A564F7AA4C0ECD5EB4FEF03 /* Pods-LighthouseUITests.debug.xcconfig */,
-				0DBD685B5E844FD36B6F89AE /* Pods-LighthouseUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		F202CA692187DEAE00A2490F = {
 			isa = PBXGroup;
 			children = (
@@ -161,8 +123,6 @@
 				F202CA8C2187DEAE00A2490F /* LighthouseTests */,
 				F202CA972187DEAE00A2490F /* LighthouseUITests */,
 				F202CA732187DEAE00A2490F /* Products */,
-				82AA16D4BF6880FB634BD7B0 /* Pods */,
-				0436D9F344F0F9758EEF2ECF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,11 +251,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F202CA9D2187DEAE00A2490F /* Build configuration list for PBXNativeTarget "Lighthouse" */;
 			buildPhases = (
-				D7C8829BFC22EDC5C4BFAE8C /* [CP] Check Pods Manifest.lock */,
 				F202CA6E2187DEAE00A2490F /* Sources */,
 				F202CA6F2187DEAE00A2490F /* Frameworks */,
 				F202CA702187DEAE00A2490F /* Resources */,
-				3034B2D9B3B5B7B8E9D5227F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,11 +268,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F202CAA02187DEAE00A2490F /* Build configuration list for PBXNativeTarget "LighthouseTests" */;
 			buildPhases = (
-				53C8A308619006ECC45EBFE5 /* [CP] Check Pods Manifest.lock */,
 				F202CA852187DEAE00A2490F /* Sources */,
 				F202CA862187DEAE00A2490F /* Frameworks */,
 				F202CA872187DEAE00A2490F /* Resources */,
-				6806CDA7A3CC6DCA7C88E524 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -330,7 +286,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F202CAA32187DEAE00A2490F /* Build configuration list for PBXNativeTarget "LighthouseUITests" */;
 			buildPhases = (
-				753A91BC4191D91A8604C59A /* [CP] Check Pods Manifest.lock */,
 				F202CA902187DEAE00A2490F /* Sources */,
 				F202CA912187DEAE00A2490F /* Frameworks */,
 				F202CA922187DEAE00A2490F /* Resources */,
@@ -418,103 +373,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		3034B2D9B3B5B7B8E9D5227F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Lighthouse/Pods-Lighthouse-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lighthouse/Pods-Lighthouse-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		53C8A308619006ECC45EBFE5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LighthouseTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6806CDA7A3CC6DCA7C88E524 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LighthouseTests/Pods-LighthouseTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LighthouseTests/Pods-LighthouseTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		753A91BC4191D91A8604C59A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LighthouseUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D7C8829BFC22EDC5C4BFAE8C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Lighthouse-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F202CA6E2187DEAE00A2490F /* Sources */ = {
@@ -706,7 +564,6 @@
 		};
 		F202CA9E2187DEAE00A2490F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F43C5D3E9E865EBB44BDE1AC /* Pods-Lighthouse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -722,7 +579,6 @@
 		};
 		F202CA9F2187DEAE00A2490F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 340F68EEA0AA9E6DDFFC440D /* Pods-Lighthouse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -738,7 +594,6 @@
 		};
 		F202CAA12187DEAE00A2490F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6795C7EBBC23C7361BF41BA7 /* Pods-LighthouseTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -756,7 +611,6 @@
 		};
 		F202CAA22187DEAE00A2490F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0056F21FC77F1C4DFEA2EF2A /* Pods-LighthouseTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -774,7 +628,6 @@
 		};
 		F202CAA42187DEAE00A2490F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A564F7AA4C0ECD5EB4FEF03 /* Pods-LighthouseUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -791,7 +644,6 @@
 		};
 		F202CAA52187DEAE00A2490F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0DBD685B5E844FD36B6F89AE /* Pods-LighthouseUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

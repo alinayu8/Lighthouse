@@ -13,9 +13,13 @@ class LogListTableViewController: UITableViewController {
     var entries = [Entry]()
     
     // MARK: - General
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // clear entries if already populated
+//        if (entries.count >= 0) {
+//            entries.removeAll()
+//        }
         fetchEntries() // get entries from CoreData
         
         tableView.register(UINib(nibName: "LogListViewCell", bundle: nil), forCellReuseIdentifier: "LogListCell")
@@ -105,7 +109,6 @@ class LogListTableViewController: UITableViewController {
             }
         }
         
-        tableView.reloadData()
     }
     
     // MARK: - Fetch CoreData
@@ -136,6 +139,7 @@ class LogListTableViewController: UITableViewController {
         newEntry.longitude = data.value(forKey: "longitude") as? Double
         newEntry.notes = (data.value(forKey: "notes") as? String)
         entries.append(newEntry)
+        print("re-appending" + newEntry.notes!)
     }
 
     /*
