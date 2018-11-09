@@ -44,7 +44,6 @@
 		40D7DFB3CA9DDD97703803E306ADD472 /* PieHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518D55821F72E55DA54517B48C8FD866 /* PieHighlighter.swift */; };
 		44E54F42E16224BCEF097E6E02DCC653 /* ScatterChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D222C8A28AF0D2A4DC4D794CC705DE24 /* ScatterChartDataSet.swift */; };
 		463F876CB8056924BAE8209BC553739A /* AnimatedViewPortJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF131CEE46B95BD78DD5ECF5BB4CA02A /* AnimatedViewPortJob.swift */; };
-		47828192746D22899CCE6C8FFC497524 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		480B0C59109AA1748CBAAB2168D3B7F1 /* ICandleChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54F711054FEA3C444BF73687C487C12 /* ICandleChartDataSet.swift */; };
 		48C2284F5ACCBC817C5A01C6D02D2F65 /* Charts-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2145EFCCAA2E4673B4EE477165FCCF33 /* Charts-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		499D55F4264E99401902C7EC91F3590E /* YAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50D9BA614D256FBC5EF17A52748635 /* YAxis.swift */; };
@@ -77,7 +76,6 @@
 		6CB91B4E789DD1BADC8FB45DF7014D04 /* Legend.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2FE5FAAD0A6F80FA8A84406C8016E /* Legend.swift */; };
 		6CF48F75C90A05A23B23961D7E62D35E /* IndexAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A15C55E45A1301139E07933C8B842B /* IndexAxisValueFormatter.swift */; };
 		6DC37D60B48B4F0E885385F48BBB987A /* AxisBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA277909CC7EFE5E9A35529F51C4A6C /* AxisBase.swift */; };
-		71838FD7F23B8249086166BB8FCB8622 /* Pods-Lighthouse-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 322BE55AF9FF439EDB3F12C0C6BCEA29 /* Pods-Lighthouse-dummy.m */; };
 		71D30181CFBE52086791D59AC9DC1981 /* IFillFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A27F1B29DCF7FFEA7AB0BC69CB29B6 /* IFillFormatter.swift */; };
 		72CACA59AADECC00F61DF1F1AD02C199 /* CandleStickChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC4F362E9907D084242F7A6CE28BE44 /* CandleStickChartView.swift */; };
 		7455BC249B3F3A5B6ACFC0E9D088887C /* RadarChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F698F71651AC761096FBF4B792D087 /* RadarChartRenderer.swift */; };
@@ -86,6 +84,7 @@
 		75E5E60C0A55E5A92414D25BF82E68D8 /* ChartHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01724C80142E2EDD0D128C0EE19B8C8 /* ChartHighlighter.swift */; };
 		763B16AA87CA8B9A9264EF5D49B3AF37 /* YAxisRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4247C1E2A27C757EA55FD8782902BC27 /* YAxisRenderer.swift */; };
 		7726A13DF5D2AD5EF0C6D484CDC66B02 /* XAxisRendererHorizontalBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E566C3C170C535D24D2E149771A4DF /* XAxisRendererHorizontalBarChart.swift */; };
+		77BA2EEA69270324EFAE0EA708BBE3FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		7A57B9EAD0D9C74A62B291DC58F37142 /* RadarChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80F8CA1102E886BF4FF7A8D134C4FB7 /* RadarChartDataEntry.swift */; };
 		7BB1F8DB12A8D78DE35809A53015B631 /* BarLineScatterCandleBubbleRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D25BAE0008A5AB751C427155D78FD /* BarLineScatterCandleBubbleRenderer.swift */; };
 		7D908E27DDB015E811AA88D62382C057 /* AnimatedMoveViewJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D22ABF2345E0FF66F058C9484758B2 /* AnimatedMoveViewJob.swift */; };
@@ -120,7 +119,6 @@
 		AD16932F7401B183FE9282E5B2B6BE2B /* ComponentBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481FFDE564D736DFA6B05DBDF6507894 /* ComponentBase.swift */; };
 		AFC8BDA2A1141E2224C803A48520CB23 /* ChartDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADCFD5918AC694BC4DF7782B3361C1 /* ChartDataEntry.swift */; };
 		B1DAAC5AA371C25D430320F66EA11FBA /* CandleChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74236E10575D6B47DDF35B1D6E134CE3 /* CandleChartData.swift */; };
-		B386914CFEB35B27A3789FE15E18DC83 /* Pods-Lighthouse-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF1C23F3E8B823A64BBB9374843760A7 /* Pods-Lighthouse-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B3FC8AB752210621085E623A600D796A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		B74F75C08E7A97E935B4A6B2E5FBA9A6 /* ILineRadarChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536637114909E2AF02770B2CF053270A /* ILineRadarChartDataSet.swift */; };
 		BB51931AAB493AC9338F9A1EFAFEE834 /* BarChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F9265BE043B236C0651BA6AC7E996D /* BarChartDataSet.swift */; };
@@ -139,6 +137,7 @@
 		D52BCBD17C065256499815837EB85C9B /* DefaultAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB3D456D6AA3FD81E4C46DA023912F2 /* DefaultAxisValueFormatter.swift */; };
 		D7193D2975FBFFA0B4E3B81A00FF49DF /* YAxisRendererRadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AC6BF50DBBF75BB351D2C8CC52C192 /* YAxisRendererRadarChart.swift */; };
 		D7E0ECF466AC6551B92729F715C24897 /* BarChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F2E20E71529548E88A6B0708EC324 /* BarChartRenderer.swift */; };
+		DB4641A44896532B99E1B6211D1D93DE /* Pods-Lighthouse-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 322BE55AF9FF439EDB3F12C0C6BCEA29 /* Pods-Lighthouse-dummy.m */; };
 		E8686F29432EF7FEC70A8309543A1F42 /* ChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70634A995F802227AA71C2DE6C7F8E7 /* ChartDataSet.swift */; };
 		E910AADF9614E5218FE6D9A2BEBDCB85 /* MoveViewJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374549728B8EAFDDE3AFAE0DC824C47C /* MoveViewJob.swift */; };
 		E969583DD45D79D6111BAEE94E37DFA3 /* CombinedChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3666264EDAF69BD85351ADB3CDE1756 /* CombinedChartData.swift */; };
@@ -154,6 +153,7 @@
 		FA644CA887DD9533356CF7FDBD325D48 /* PieChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF481680712A4AEA32BA14345301F77B /* PieChartRenderer.swift */; };
 		FCCE13FEE0114A809049F323685451BB /* ScatterChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0872B978FF9D00434BA71699F66FCB /* ScatterChartData.swift */; };
 		FD998554C9752596F319A572E6655A4A /* BarLineScatterCandleBubbleChartDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85D9BF7D6AA3FBFCDAEA734F165535 /* BarLineScatterCandleBubbleChartDataProvider.swift */; };
+		FE48D4A4FE95358066F5ABFF3F8BCE8D /* Pods-Lighthouse-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF1C23F3E8B823A64BBB9374843760A7 /* Pods-Lighthouse-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF169438F0868CF8CDB040C9809CC1D6 /* ILineChartDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D081C5389CF9913470DD0BAD692E87FB /* ILineChartDataSet.swift */; };
 /* End PBXBuildFile section */
 
@@ -165,18 +165,25 @@
 			remoteGlobalIDString = EBFD1DA8DB9C5E9C282BBCAD1778A64A;
 			remoteInfo = Charts;
 		};
+		C6667A9083EEF8D6F144BC7272EA00F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBFD1DA8DB9C5E9C282BBCAD1778A64A;
+			remoteInfo = Charts;
+		};
 		DB18037367CE4DD7CABD794E7F0DD979 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3BE07D63E07F6BF82DB64E87A1C13393;
+			remoteGlobalIDString = 33238AD6D7CEE41423B3E457C82F4F03;
 			remoteInfo = "Pods-Lighthouse";
 		};
 		E901C79CF1A6B143BCFCFA326023A20C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3BE07D63E07F6BF82DB64E87A1C13393;
+			remoteGlobalIDString = 33238AD6D7CEE41423B3E457C82F4F03;
 			remoteInfo = "Pods-Lighthouse";
 		};
 /* End PBXContainerItemProxy section */
@@ -387,11 +394,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D26EE1E1F15C05CAD741C93714406164 /* Frameworks */ = {
+		9FFFED2BD2B4B798498F6A70A2370203 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47828192746D22899CCE6C8FFC497524 /* Foundation.framework in Frameworks */,
+				77BA2EEA69270324EFAE0EA708BBE3FC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +685,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		27AB84F98154911633E1CF87B74CC9EE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE48D4A4FE95358066F5ABFF3F8BCE8D /* Pods-Lighthouse-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		58DCD456488EC7C4E3805AD5C05BB80C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -702,29 +717,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2850D58F77726B888737A9B94334A7F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B386914CFEB35B27A3789FE15E18DC83 /* Pods-Lighthouse-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3BE07D63E07F6BF82DB64E87A1C13393 /* Pods-Lighthouse */ = {
+		33238AD6D7CEE41423B3E457C82F4F03 /* Pods-Lighthouse */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 36EF1468FEDF2AC53ABCEFAC63973261 /* Build configuration list for PBXNativeTarget "Pods-Lighthouse" */;
+			buildConfigurationList = B46BD35D0052AA23A131B9E60DD9B2B4 /* Build configuration list for PBXNativeTarget "Pods-Lighthouse" */;
 			buildPhases = (
-				F2850D58F77726B888737A9B94334A7F /* Headers */,
-				FE6C38AA31720E702C39BFB3399DEAC2 /* Sources */,
-				D26EE1E1F15C05CAD741C93714406164 /* Frameworks */,
-				93C80C37FC7A76457901792332A7D300 /* Resources */,
+				27AB84F98154911633E1CF87B74CC9EE /* Headers */,
+				D48AF4E89F5B4632DBB90DAA3FF2A032 /* Sources */,
+				9FFFED2BD2B4B798498F6A70A2370203 /* Frameworks */,
+				01D277106A6453D20B652674435528D0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				08C7928B4308ADBC3E47CCE14E0A16D9 /* PBXTargetDependency */,
 			);
 			name = "Pods-Lighthouse";
 			productName = "Pods-Lighthouse";
@@ -810,7 +818,7 @@
 			projectRoot = "";
 			targets = (
 				EBFD1DA8DB9C5E9C282BBCAD1778A64A /* Charts */,
-				3BE07D63E07F6BF82DB64E87A1C13393 /* Pods-Lighthouse */,
+				33238AD6D7CEE41423B3E457C82F4F03 /* Pods-Lighthouse */,
 				4299C05721FC31DB8A7828F0C7105B63 /* Pods-LighthouseTests */,
 				D31B5F5A09A341A9AF7B2696AAA3FB18 /* Pods-LighthouseUITests */,
 			);
@@ -818,6 +826,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		01D277106A6453D20B652674435528D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		074ADB43C9DB1D9F8675F3FA016C16F8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -826,13 +841,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5B94659D9B265B1984E24AF849F3A73A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		93C80C37FC7A76457901792332A7D300 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1009,27 +1017,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FE6C38AA31720E702C39BFB3399DEAC2 /* Sources */ = {
+		D48AF4E89F5B4632DBB90DAA3FF2A032 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71838FD7F23B8249086166BB8FCB8622 /* Pods-Lighthouse-dummy.m in Sources */,
+				DB4641A44896532B99E1B6211D1D93DE /* Pods-Lighthouse-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		08C7928B4308ADBC3E47CCE14E0A16D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			target = EBFD1DA8DB9C5E9C282BBCAD1778A64A /* Charts */;
+			targetProxy = C6667A9083EEF8D6F144BC7272EA00F4 /* PBXContainerItemProxy */;
+		};
 		52BE62572FDF5925C97F112FFBE7A09D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Lighthouse";
-			target = 3BE07D63E07F6BF82DB64E87A1C13393 /* Pods-Lighthouse */;
+			target = 33238AD6D7CEE41423B3E457C82F4F03 /* Pods-Lighthouse */;
 			targetProxy = E901C79CF1A6B143BCFCFA326023A20C /* PBXContainerItemProxy */;
 		};
 		E48FCA2C61EE550258016F951968CA41 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Lighthouse";
-			target = 3BE07D63E07F6BF82DB64E87A1C13393 /* Pods-Lighthouse */;
+			target = 33238AD6D7CEE41423B3E457C82F4F03 /* Pods-Lighthouse */;
 			targetProxy = DB18037367CE4DD7CABD794E7F0DD979 /* PBXContainerItemProxy */;
 		};
 		F1D115D35B448CB14F1D7C30146C4F1F /* PBXTargetDependency */ = {
@@ -1041,41 +1055,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		038F8635CAF3E50115ECF89BFA2F52B7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0423382A43741203D157F2ECDC8913A0 /* Pods-Lighthouse.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Lighthouse/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Lighthouse/Pods-Lighthouse.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		3E7A231C7D36EB502FA2EEBBF84B029A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1135,6 +1114,41 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		654ECDECE11FF1FA9CBA0BB4A21E0D6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0423382A43741203D157F2ECDC8913A0 /* Pods-Lighthouse.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Lighthouse/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Lighthouse/Pods-Lighthouse.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1304,7 +1318,7 @@
 			};
 			name = Debug;
 		};
-		B172556CCEF0A3F5134682E29DBCACCB /* Debug */ = {
+		CAF5946EE976575CE81D1159F00CEDAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BA9E349B573EE2A0A1D198A4AE243B3A /* Pods-Lighthouse.debug.xcconfig */;
 			buildSettings = {
@@ -1478,11 +1492,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		36EF1468FEDF2AC53ABCEFAC63973261 /* Build configuration list for PBXNativeTarget "Pods-Lighthouse" */ = {
+		B46BD35D0052AA23A131B9E60DD9B2B4 /* Build configuration list for PBXNativeTarget "Pods-Lighthouse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B172556CCEF0A3F5134682E29DBCACCB /* Debug */,
-				038F8635CAF3E50115ECF89BFA2F52B7 /* Release */,
+				CAF5946EE976575CE81D1159F00CEDAD /* Debug */,
+				654ECDECE11FF1FA9CBA0BB4A21E0D6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
