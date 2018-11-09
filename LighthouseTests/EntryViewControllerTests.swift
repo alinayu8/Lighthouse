@@ -51,12 +51,14 @@ class EntryViewControllerTests: XCTestCase {
   }
   
   func testDurationTime() {
-    
-    var diff = testVC.durationTime(startTime: endDate, endTime: date)
+    let diff = testVC.durationTime(startTime: endDate, endTime: date)
     print(diff)
     XCTAssertTrue(diff == "34 hours, 17 minutes, 36 seconds")
   }
 
+  func testUpdateEntry() {
+    //this links to an IBAction will not test for now
+  }
   
 
 }

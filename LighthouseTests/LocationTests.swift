@@ -1,5 +1,5 @@
 //
-//  LogViewControllerTests.swift
+//  LocationTests.swift
 //  LighthouseTests
 //
 //  Created by Shirley Zhou on 11/9/18.
@@ -8,23 +8,29 @@
 
 import XCTest
 @testable import Lighthouse
-class LogViewControllerTests: XCTestCase {
+
+class LocationTests: XCTestCase {
   
-  var testVC: LogViewController! = LogViewController()
-  
+    var location1:Location!
+
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-      super.setUp()
-      self.testVC = LogViewController()
+        super.setUp()
+        location1 = Location()
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
       super.tearDown()
+      location1 = nil
     }
 
-  
+    func testInitialization() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertEqual(location1.longitude,0.00 )
+        XCTAssertEqual(location1.latitude, 0.00)
+    }
 
-  
 
 }
