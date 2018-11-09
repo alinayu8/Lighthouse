@@ -6,7 +6,7 @@ target 'Lighthouse' do
   use_frameworks!
 
   # Pods for Lighthouse
-
+    pod 'Charts'
   target 'LighthouseTests' do
     inherit! :search_paths
     # Pods for testing
