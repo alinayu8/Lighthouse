@@ -79,7 +79,7 @@
             <objects>
                 <viewController id="IoX-O5-wWK" customClass="FocusSupportViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mdt-3Z-jyr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D8w-A3-i2B">
@@ -91,7 +91,7 @@
                                 <color key="tintColor" red="0.32549019610000002" green="0.4431372549" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </segmentedControl>
                             <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ND-At-R0g" userLabel="Support Container View">
-                                <rect key="frame" x="0.0" y="160" width="375" height="507"/>
+                                <rect key="frame" x="0.0" y="160" width="375" height="347"/>
                                 <connections>
                                     <segue destination="1l0-WZ-COH" kind="embed" id="6Cs-Mo-ExV"/>
                                 </connections>
@@ -181,11 +181,11 @@
             <objects>
                 <viewController id="WQ5-SY-wpR" customClass="AttackOverViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gDS-L3-e9s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFB-Uh-NVi">
-                                <rect key="frame" x="16" y="20" width="86" height="35"/>
+                                <rect key="frame" x="16" y="0.0" width="86" height="35"/>
                                 <state key="normal" title="Home" image="home_icon"/>
                                 <connections>
                                     <segue destination="Yrc-go-WfF" kind="show" id="Y4t-sa-haJ"/>
@@ -370,11 +370,8 @@
                                 <color key="textColor" red="0.32549019610000002" green="0.4431372549" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EqA-SW-JgS">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EqA-SW-JgS" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="40" y="326" width="240" height="128"/>
-                                <connections>
-                                    <segue destination="Yep-HW-3Yb" kind="embed" id="IgC-hp-ZaJ"/>
-                                </connections>
                             </containerView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5D1-JW-U5D">
                                 <rect key="frame" x="40" y="487" width="240" height="128"/>
@@ -408,7 +405,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdX-AT-9LH">
-                                <rect key="frame" x="124" y="620" width="73" height="30"/>
+                                <rect key="frame" x="123.5" y="620" width="73" height="30"/>
                                 <state key="normal" title="Save Entry"/>
                                 <connections>
                                     <action selector="saveEntryButton:" destination="LuV-CD-rwG" eventType="touchUpInside" id="I58-mW-0Lb"/>
@@ -455,6 +452,7 @@
                     <connections>
                         <outlet property="dateTimeLabel" destination="wnJ-jQ-TcE" id="t77-4B-6IB"/>
                         <outlet property="durationLabel" destination="ghR-pm-LDO" id="FIQ-hq-6f8"/>
+                        <outlet property="lineChart" destination="EqA-SW-JgS" id="AnF-cz-IK9"/>
                         <outlet property="locationLabel" destination="JOa-9S-iqa" id="A8Z-rc-59t"/>
                         <outlet property="notesField" destination="5D1-JW-U5D" id="pT8-LB-HvS"/>
                     </connections>
@@ -478,21 +476,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gG-cp-vci" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2783" y="-1527"/>
-        </scene>
-        <!--Entry Graph View Controller-->
-        <scene sceneID="h7b-dO-UJ3">
-            <objects>
-                <viewController id="Yep-HW-3Yb" customClass="EntryGraphViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="COJ-jG-2mF">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="xh9-Yh-yJC"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fhO-uX-zZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4669" y="-2126"/>
         </scene>
     </scenes>
     <resources>
