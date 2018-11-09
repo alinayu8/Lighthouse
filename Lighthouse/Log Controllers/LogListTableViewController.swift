@@ -19,6 +19,7 @@ class LogListTableViewController: UITableViewController {
         fetchEntries() // get entries from CoreData
         
         tableView.register(UINib(nibName: "LogListViewCell", bundle: nil), forCellReuseIdentifier: "LogListCell")
+        tableView.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -48,17 +49,44 @@ class LogListTableViewController: UITableViewController {
         // Add text to cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "LogListCell", for: indexPath) as! LogListViewCell
         let entry = entries[indexPath.row]
+        
         cell.entryDate?.text = formatEntryDate(date: entry.startTime!)
         if let notes = entry.notes {
             cell.entryNotes?.text = notes
-        } else {
-            cell.entryNotes?.text = "Write about how you felt~"
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "showEntry", sender: tableView)
+    }
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entries")
+            request.returnsObjectsAsFaults = false
+            do {
+                let result = try context.fetch(request)
+                for data in result as! [NSManagedObject] {
+                    if (entries[indexPath.row].startTime == (data.value(forKey: "start_time") as? Date) &&
+                        entries[indexPath.row].endTime == (data.value(forKey: "end_time") as? Date) &&
+                        entries[indexPath.row].latitude == (data.value(forKey: "latitude") as? Double) &&
+                        entries[indexPath.row].longitude == (data.value(forKey: "longitude") as? Double)) {
+                        context.delete(data)
+                        try context.save()
+                    }
+                }
+            } catch {
+                print("Failed")
+            }
+            entries.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            //} else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
     }
     
     // MARK: - Functions
@@ -71,12 +99,12 @@ class LogListTableViewController: UITableViewController {
     
     // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showEntry" {
-//            if let indexPath = self.tableView.indexPathForSelectedRow {
-//                let entry = entries[indexPath.row]
-//                (segue.destination as! EntryViewController).entryDetail = entry
-//            }
-//        }
+        if segue.identifier == "showEntry" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let entry = entries[indexPath.row]
+                (segue.destination as! EntryViewController).entryDetail = entry
+            }
+        }
     }
     
     // MARK: - Fetch CoreData
@@ -102,6 +130,9 @@ class LogListTableViewController: UITableViewController {
     func loadEntries(data: NSManagedObject){
         let newEntry = Entry()
         newEntry.startTime = data.value(forKey: "start_time") as? Date
+        newEntry.endTime = data.value(forKey: "end_time") as? Date
+        newEntry.latitude = data.value(forKey: "latitude") as? Double
+        newEntry.longitude = data.value(forKey: "longitude") as? Double
         newEntry.notes = (data.value(forKey: "notes") as? String)
         entries.append(newEntry)
     }
@@ -114,17 +145,7 @@ class LogListTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
+ 
 
     /*
     // Override to support rearranging the table view.

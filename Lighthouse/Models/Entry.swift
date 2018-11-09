@@ -14,7 +14,7 @@ class Entry: NSObject {
     var endTime: Date?
     var latitude: CLLocationDegrees?
     var longitude: CLLocationDegrees?
-    var notes: String?
+    var notes: String? = "Write about how you felt~"
     
     override init() {
         super.init()
