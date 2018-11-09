@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 import CoreData
-//import Charts
+import Charts
 
 class EntryViewController: UIViewController {
     
