@@ -69,6 +69,16 @@ class LogListTableViewController: UITableViewController {
         return dateFormatter.string(from: date)
     }
     
+    // MARK: - Segues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showEntry" {
+//            if let indexPath = self.tableView.indexPathForSelectedRow {
+//                let entry = entries[indexPath.row]
+//                (segue.destination as! EntryViewController).entryDetail = entry
+//            }
+//        }
+    }
+    
     // MARK: - Fetch CoreData
     
     // Connect to the context for the container stack
