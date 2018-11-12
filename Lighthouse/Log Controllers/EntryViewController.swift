@@ -33,14 +33,12 @@ class EntryViewController: UIViewController {
     var entryDetail: Entry? {
         didSet {
             // Update the view.
-            print("hallo1")
             self.configureView()
         }
     }
     
     func configureView() {
         // Update the user interface for the detail item.
-        print("hallo2")
         if let detail: Entry = self.entryDetail {
             if let location = self.locationLabel {
                 let currentLocation = CLLocation(latitude: detail.latitude!, longitude: detail.longitude!)
@@ -54,7 +52,6 @@ class EntryViewController: UIViewController {
                         let city = pm.locality!
                         let postalCode = pm.postalCode!
                         //let locationString3 = pm.country! // USA users?
-                        print("no?")
                         location.text = ("\(address) \(street), \(city) \(postalCode)")
                     }
                     else {
@@ -112,7 +109,7 @@ class EntryViewController: UIViewController {
                         detail.latitude == (data.value(forKey: "latitude") as! Double) &&
                         detail.longitude == (data.value(forKey: "longitude") as? Double) &&
                         detail.notes == (data.value(forKey: "notes") as? String)) {
-                        print(notes)
+                        print("resetting value" + notes)
                         data.setValue(notes, forKey: "notes")
                         try context.save()
                     }
@@ -144,9 +141,9 @@ class EntryViewController: UIViewController {
     }
   
     func lineChartUpdate() {
-      
+
       // Basic set up of chart
-      
+
       let entry1 = ChartDataEntry(x: 1.0, y: Double(3))
       let entry2 = ChartDataEntry(x: 2.0, y: Double(5))
       let entry3 = ChartDataEntry(x: 3.0, y: Double(2))
@@ -154,10 +151,10 @@ class EntryViewController: UIViewController {
       let data = LineChartData(dataSets: [dataSet])
       lineChart.data = data
       lineChart.chartDescription?.text = "Number of Widgets by Type"
-      
+
       // Color
       dataSet.colors = ChartColorTemplates.vordiplom()
-      
+
       // Refresh chart with new data
       lineChart.notifyDataSetChanged()
     }

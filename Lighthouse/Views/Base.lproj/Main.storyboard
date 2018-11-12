@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="Yrc-go-WfF" customClass="HomeViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LlX-wo-Req" customClass="HomeViewController">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="panic_button" translatesAutoresizingMaskIntoConstraints="NO" id="wMO-3q-hbv">
-                                <rect key="frame" x="84.5" y="239" width="206" height="209"/>
+                                <rect key="frame" x="84.5" y="159" width="206" height="209"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZG-sG-OVA">
                                 <rect key="frame" x="323" y="20" width="36" height="39"/>
@@ -33,11 +33,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEw-MV-m5e">
-                                <rect key="frame" x="323" y="611" width="36" height="36"/>
+                                <rect key="frame" x="323" y="451" width="36" height="36"/>
                                 <state key="normal" image="question_icon"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2o-dp-kJ3">
-                                <rect key="frame" x="16" y="610" width="26" height="37"/>
+                                <rect key="frame" x="16" y="450" width="26" height="37"/>
                                 <state key="normal" image="speaker_icon"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4W-92-Ua2">
@@ -79,7 +79,7 @@
             <objects>
                 <viewController id="IoX-O5-wWK" customClass="FocusSupportViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mdt-3Z-jyr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D8w-A3-i2B">
@@ -91,7 +91,7 @@
                                 <color key="tintColor" red="0.32549019610000002" green="0.4431372549" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </segmentedControl>
                             <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ND-At-R0g" userLabel="Support Container View">
-                                <rect key="frame" x="0.0" y="160" width="375" height="507"/>
+                                <rect key="frame" x="0.0" y="160" width="375" height="347"/>
                                 <connections>
                                     <segue destination="1l0-WZ-COH" kind="embed" id="6Cs-Mo-ExV"/>
                                 </connections>
@@ -181,11 +181,11 @@
             <objects>
                 <viewController id="WQ5-SY-wpR" customClass="AttackOverViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gDS-L3-e9s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFB-Uh-NVi">
-                                <rect key="frame" x="16" y="20" width="86" height="35"/>
+                                <rect key="frame" x="16" y="0.0" width="86" height="35"/>
                                 <state key="normal" title="Home" image="home_icon"/>
                                 <connections>
                                     <segue destination="Yrc-go-WfF" kind="show" id="Y4t-sa-haJ"/>
@@ -251,7 +251,7 @@
                                     <segue destination="Ex6-da-Bi6" kind="embed" id="iMF-bs-4wZ"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LOG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lg-0B-SSW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LOG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lg-0B-SSW">
                                 <rect key="frame" x="155" y="41" width="64" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <color key="textColor" red="0.32549019610000002" green="0.4431372549" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -398,8 +398,7 @@
                                 <rect key="frame" x="123.5" y="620" width="73" height="30"/>
                                 <state key="normal" title="Save Entry"/>
                                 <connections>
-                                    <action selector="saveEntryButton:" destination="LuV-CD-rwG" eventType="touchUpInside" id="I58-mW-0Lb"/>
-                                    <segue destination="cy1-BI-lxS" kind="show" id="haV-L9-z8U"/>
+                                    <action selector="saveEntryButton:" destination="LuV-CD-rwG" eventType="touchUpInside" id="kpQ-fp-kpw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0O-C5-2aT">
@@ -445,7 +444,7 @@
                     <connections>
                         <outlet property="dateTimeLabel" destination="wnJ-jQ-TcE" id="t77-4B-6IB"/>
                         <outlet property="durationLabel" destination="ghR-pm-LDO" id="FIQ-hq-6f8"/>
-                        <outlet property="lineChart" destination="EqA-SW-JgS" id="AnF-cz-IK9"/>
+                        <outlet property="lineChart" destination="EqA-SW-JgS" id="lXj-bH-18B"/>
                         <outlet property="locationLabel" destination="JOa-9S-iqa" id="A8Z-rc-59t"/>
                         <outlet property="notesField" destination="5D1-JW-U5D" id="pT8-LB-HvS"/>
                     </connections>
@@ -481,7 +480,6 @@
         <image name="speaker_icon" width="26" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="haV-L9-z8U"/>
         <segue reference="cdx-0q-QYe"/>
     </inferredMetricsTieBreakers>
 </document>

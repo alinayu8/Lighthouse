@@ -13,13 +13,16 @@ class LogListTableViewController: UITableViewController {
     var entries = [Entry]()
     
     // MARK: - General
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // clear entries if already populated
+//        if (entries.count >= 0) {
+//            entries.removeAll()
+//        }
         fetchEntries() // get entries from CoreData
         
         tableView.register(UINib(nibName: "LogListViewCell", bundle: nil), forCellReuseIdentifier: "LogListCell")
-        tableView.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -105,6 +108,7 @@ class LogListTableViewController: UITableViewController {
                 (segue.destination as! EntryViewController).entryDetail = entry
             }
         }
+        
     }
     
     // MARK: - Fetch CoreData

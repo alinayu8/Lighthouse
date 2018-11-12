@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
         newEntity.setValue(nil, forKey: "end_time")
         newEntity.setValue(entry.latitude, forKey: "latitude")
         newEntity.setValue(entry.longitude, forKey: "longitude")
-        newEntity.setValue(nil, forKey: "notes")
+        newEntity.setValue(entry.notes, forKey: "notes")
         do {
             try context.save()
         } catch {
