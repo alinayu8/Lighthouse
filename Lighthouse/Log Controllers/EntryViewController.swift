@@ -9,21 +9,23 @@
 import UIKit
 import CoreLocation
 import CoreData
-//import Charts
+import Charts
 
-class EntryViewController: UIViewController {
+class EntryViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Buttons and Labels
     
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var dateTimeLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var notesField: UITextView!
-    //@IBOutlet weak var lineChart: LineChartView!
+    @IBOutlet weak var lineChart: LineChartView!
   
-    //@IBAction func renderCharts() {
+//    @IBAction func renderCharts() {
 //      lineChartUpdate()
 //    }
+   
     @IBAction func saveEntryButton(_ sender: Any) {
         updateEntry(notes: notesField.text)
     }
@@ -59,8 +61,11 @@ class EntryViewController: UIViewController {
                     }
                 })
             }
-            if let dateTime = self.dateTimeLabel {
-                dateTime.text = dateTimeFormat(startTime: detail.startTime!)
+            if let date = self.dateLabel {
+                date.text = dateFormat(startTime: detail.startTime!)
+            }
+            if let time = self.timeLabel {
+                time.text = timeFormat(startTime: detail.startTime!)
             }
             if let duration = self.durationLabel {
                 duration.text = durationTime(startTime: detail.startTime!, endTime: detail.endTime!)
@@ -73,12 +78,19 @@ class EntryViewController: UIViewController {
     
     // MARK: - Functions
  
-    func dateTimeFormat(startTime: Date) -> String {
+    func dateFormat(startTime: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm a MMMM dd, yyyy"
+        //dateFormatter.dateFormat = "h:mm a MMMM dd, yyyy"
+        dateFormatter.dateFormat = "MMMM dd, yyyy"
         return dateFormatter.string(from: startTime)
     }
 
+    func timeFormat(startTime: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        return dateFormatter.string(from: startTime)
+    }
+    
     func durationTime(startTime: Date, endTime: Date) -> String {
         let duration = endTime.timeIntervalSince(startTime)
         let formatter = DateComponentsFormatter()
@@ -120,19 +132,35 @@ class EntryViewController: UIViewController {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        notesField.resignFirstResponder()
+        return true
+    }
+    
+//    @objc func keyboardWillShow(notification: NSNotification) {
+//
+//    }
+//    @objc func keyboardWillHide(notification: NSNotification) {
+//
+//    }
+    
     // MARK: - General
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+        self.notesField.delegate = self as? UITextViewDelegate
         
         // Style text view
         let myColor = UIColor.gray
         notesField.layer.borderColor = myColor.cgColor
         notesField.layer.borderWidth = 1.0
         notesField.layer.cornerRadius = 10.0
-        //lineChartUpdate()
+        lineChartUpdate()
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -140,23 +168,23 @@ class EntryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
   
-//    func lineChartUpdate() {
-//
-//      // Basic set up of chart
-//
-//      let entry1 = ChartDataEntry(x: 1.0, y: Double(3))
-//      let entry2 = ChartDataEntry(x: 2.0, y: Double(5))
-//      let entry3 = ChartDataEntry(x: 3.0, y: Double(2))
-//      let dataSet = LineChartDataSet(values: [entry1, entry2, entry3], label: "Widgets Type")
-//      let data = LineChartData(dataSets: [dataSet])
-//      lineChart.data = data
-//      lineChart.chartDescription?.text = "Number of Widgets by Type"
-//
-//      // Color
-//      dataSet.colors = ChartColorTemplates.vordiplom()
-//
-//      // Refresh chart with new data
-//      lineChart.notifyDataSetChanged()
-//    }
+    func lineChartUpdate() {
+
+      // Basic set up of chart
+
+      let entry1 = ChartDataEntry(x: 1.0, y: Double(3))
+      let entry2 = ChartDataEntry(x: 2.0, y: Double(5))
+      let entry3 = ChartDataEntry(x: 3.0, y: Double(2))
+      let dataSet = LineChartDataSet(values: [entry1, entry2, entry3], label: "Widgets Type")
+      let data = LineChartData(dataSets: [dataSet])
+      lineChart.data = data
+      lineChart.chartDescription?.text = "Number of Widgets by Type"
+
+      // Color
+      dataSet.colors = ChartColorTemplates.vordiplom()
+
+      // Refresh chart with new data
+      lineChart.notifyDataSetChanged()
+    }
     
 }
