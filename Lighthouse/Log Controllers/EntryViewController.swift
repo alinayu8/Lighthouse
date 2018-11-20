@@ -26,10 +26,6 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
 //      lineChartUpdate()
 //    }
    
-    @IBAction func saveEntryButton(_ sender: Any) {
-        updateEntry(notes: notesField.text)
-    }
-    
     // MARK: - Configure Entry details
     
     var entryDetail: Entry? {
@@ -137,12 +133,29 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-//    @objc func keyboardWillShow(notification: NSNotification) {
-//
-//    }
-//    @objc func keyboardWillHide(notification: NSNotification) {
-//
-//    }
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else {return}
+        guard let keyboardSize = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue else {return}
+        let keyboardFrame = keyboardSize.cgRectValue
+        if self.view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= keyboardFrame.height
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0{
+            self.view.frame.origin.y = 0
+        }
+
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+        updateEntry(notes: notesField.text)
+    }
+
     
     // MARK: - General
     
@@ -159,9 +172,16 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         notesField.layer.cornerRadius = 10.0
         lineChartUpdate()
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(EntryViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(EntryViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        //tap in view to exit keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EntryViewController.dismissKeyboard))
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
