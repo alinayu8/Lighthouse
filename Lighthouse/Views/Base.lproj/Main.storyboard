@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="Yrc-go-WfF" customClass="HomeViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LlX-wo-Req" customClass="HomeViewController">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZG-sG-OVA">
@@ -30,11 +30,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEw-MV-m5e">
-                                <rect key="frame" x="323" y="611" width="36" height="36"/>
+                                <rect key="frame" x="323" y="451" width="36" height="36"/>
                                 <state key="normal" image="question_icon"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2o-dp-kJ3">
-                                <rect key="frame" x="16" y="610" width="26" height="37"/>
+                                <rect key="frame" x="16" y="450" width="26" height="37"/>
                                 <state key="normal" image="speaker_icon"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xT-Uf-P46">
@@ -149,6 +149,10 @@
                                 <state key="normal" title="I'm okay now" image="ok_button">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="stopEntryButton:" destination="1l0-WZ-COH" eventType="touchUpInside" id="kRo-hj-xOD"/>
+                                    <segue destination="WQ5-SY-wpR" kind="show" id="GI2-O0-KD5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- John Lennon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsp-99-h1Y">
                                 <rect key="frame" x="132" y="237" width="111" height="21"/>
@@ -179,7 +183,7 @@
             <objects>
                 <viewController id="WQ5-SY-wpR" customClass="AttackOverViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gDS-L3-e9s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="completion" translatesAutoresizingMaskIntoConstraints="NO" id="a2l-hr-v8C">
