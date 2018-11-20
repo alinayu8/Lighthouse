@@ -192,16 +192,16 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
 
       // Basic set up of chart
 
-      let entry1 = ChartDataEntry(x: 1.0, y: Double(3))
-      let entry2 = ChartDataEntry(x: 2.0, y: Double(5))
-      let entry3 = ChartDataEntry(x: 3.0, y: Double(2))
-      let dataSet = LineChartDataSet(values: [entry1, entry2, entry3], label: "Widgets Type")
+      let entry1 = ChartDataEntry(x: 7, y: -2)
+      let entry2 = ChartDataEntry(x: 7.25, y: 1)
+      let entry3 = ChartDataEntry(x: 7.5, y: 3)
+      let dataSet = LineChartDataSet(values: [entry1, entry2, entry3], label: "sum of button presses at given time")
       let data = LineChartData(dataSets: [dataSet])
       lineChart.data = data
-      lineChart.chartDescription?.text = "Number of Widgets by Type"
+      //lineChart.chartDescription?.text = "Number of Widgets by Type"
 
       // Color
-      dataSet.colors = ChartColorTemplates.vordiplom()
+      //dataSet.colors = ChartColorTemplates.vordiplom()
 
       // Refresh chart with new data
       lineChart.notifyDataSetChanged()

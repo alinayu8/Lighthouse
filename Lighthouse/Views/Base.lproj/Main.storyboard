@@ -37,17 +37,19 @@
                                 <rect key="frame" x="16" y="450" width="26" height="37"/>
                                 <state key="normal" image="speaker_icon"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hL8-zV-Hif">
-                                <rect key="frame" x="84" y="149" width="206" height="209"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xT-Uf-P46">
+                                <rect key="frame" x="84" y="205" width="206" height="209"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="panic_button"/>
                                 <connections>
-                                    <action selector="bigButton:" destination="Yrc-go-WfF" eventType="touchUpInside" id="1Qy-GA-0On"/>
-                                    <segue destination="IoX-O5-wWK" kind="show" id="Elf-Io-Vkp"/>
+                                    <action selector="beginEntry:" destination="Yrc-go-WfF" eventType="touchUpInside" id="ppP-sT-1pK"/>
+                                    <segue destination="IoX-O5-wWK" kind="show" id="6BX-L2-PCZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am not okay." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cad-Vy-HwN">
-                                <rect key="frame" x="131" y="253" width="113" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I am not okay." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HA7-2a-vd5">
+                                <rect key="frame" x="135" y="299" width="105" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -57,15 +59,11 @@
                             <constraint firstItem="F9u-wx-JxJ" firstAttribute="trailing" secondItem="mEw-MV-m5e" secondAttribute="trailing" constant="16" id="3fL-t0-wPq"/>
                             <constraint firstItem="BIz-fd-QpP" firstAttribute="top" secondItem="F9u-wx-JxJ" secondAttribute="top" id="5gx-aN-H2a"/>
                             <constraint firstItem="F9u-wx-JxJ" firstAttribute="bottom" secondItem="Y2o-dp-kJ3" secondAttribute="bottom" constant="20" id="7bQ-7i-6XR"/>
-                            <constraint firstItem="hL8-zV-Hif" firstAttribute="centerY" secondItem="F9u-wx-JxJ" secondAttribute="centerY" id="8zy-GJ-TOc"/>
+                            <constraint firstItem="BIz-fd-QpP" firstAttribute="leading" secondItem="F9u-wx-JxJ" secondAttribute="leading" constant="16" id="B5k-q0-usD"/>
                             <constraint firstItem="F9u-wx-JxJ" firstAttribute="bottom" secondItem="mEw-MV-m5e" secondAttribute="bottom" constant="20" id="BOc-tM-2Lc"/>
                             <constraint firstItem="cad-Vy-HwN" firstAttribute="centerY" secondItem="F9u-wx-JxJ" secondAttribute="centerY" id="HPH-t1-sdx"/>
                             <constraint firstItem="F9u-wx-JxJ" firstAttribute="trailing" secondItem="zZG-sG-OVA" secondAttribute="trailing" constant="16" id="WJ9-Nk-a84"/>
-                            <constraint firstItem="Y2o-dp-kJ3" firstAttribute="leading" secondItem="F9u-wx-JxJ" secondAttribute="leading" constant="16" id="d4b-Eb-vyo"/>
-                            <constraint firstItem="BIz-fd-QpP" firstAttribute="leading" secondItem="F9u-wx-JxJ" secondAttribute="leading" constant="16" id="h14-5R-VaQ"/>
-                            <constraint firstItem="hL8-zV-Hif" firstAttribute="centerX" secondItem="F9u-wx-JxJ" secondAttribute="centerX" id="kQj-aW-8Jg"/>
-                            <constraint firstItem="zZG-sG-OVA" firstAttribute="top" secondItem="F9u-wx-JxJ" secondAttribute="top" id="rDa-JO-UV0"/>
-                            <constraint firstItem="cad-Vy-HwN" firstAttribute="centerX" secondItem="F9u-wx-JxJ" secondAttribute="centerX" id="we3-iX-gKF"/>
+                            <constraint firstItem="Y2o-dp-kJ3" firstAttribute="leading" secondItem="F9u-wx-JxJ" secondAttribute="leading" constant="16" id="dee-9I-VrQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F9u-wx-JxJ"/>
                     </view>
@@ -129,43 +127,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2D-yE-q56">
-                                <rect key="frame" x="143" y="364" width="89" height="30"/>
-                                <state key="normal" title="I'm okay now"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thx-wr-gwU">
+                                <rect key="frame" x="202" y="347" width="150" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <inset key="titleEdgeInsets" minX="-149" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="I'm feeling worse" image="better_worse_button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4v-Jm-bja">
+                                <rect key="frame" x="16" y="347" width="150" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <inset key="titleEdgeInsets" minX="-149" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="I'm feeling better" image="better_worse_button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvG-WF-lZV">
+                                <rect key="frame" x="126" y="426" width="139" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="titleEdgeInsets" minX="-132" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="I'm okay now" image="ok_button">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="endEntry:" destination="605-Db-Ynz" eventType="touchUpInside" id="vAt-9k-f4j"/>
-                                    <action selector="stopEntryButton:" destination="1l0-WZ-COH" eventType="touchUpInside" id="4EI-OG-el1"/>
-                                    <segue destination="WQ5-SY-wpR" kind="show" identifier="trackVC" id="A8Q-6R-dXe"/>
+                                    <action selector="stopEntryButton:" destination="1l0-WZ-COH" eventType="touchUpInside" id="kRo-hj-xOD"/>
+                                    <segue destination="WQ5-SY-wpR" kind="show" id="GI2-O0-KD5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfk-Nw-49v">
-                                <rect key="frame" x="57" y="238" width="116" height="30"/>
-                                <state key="normal" title="I'm feeling better"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMy-zn-6hu">
-                                <rect key="frame" x="202" y="238" width="116" height="30"/>
-                                <state key="normal" title="I'm feeling worse"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- John Lennon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsp-99-h1Y">
+                                <rect key="frame" x="132" y="237" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;Everything will be okay in the end. If it's not okay it's not the end." textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rz-jg-HDZ">
+                                <rect key="frame" x="49" y="78" width="293" height="151"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.65490196079999996" green="0.76470588240000004" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="YMy-zn-6hu" firstAttribute="centerY" secondItem="2ME-id-Udq" secondAttribute="centerY" id="5nK-WQ-19k"/>
-                            <constraint firstItem="2ME-id-Udq" firstAttribute="trailing" secondItem="YMy-zn-6hu" secondAttribute="trailing" constant="29" id="IS0-8s-y3l"/>
-                            <constraint firstItem="s2D-yE-q56" firstAttribute="centerX" secondItem="2ME-id-Udq" secondAttribute="centerX" id="V6U-vk-NJk"/>
-                            <constraint firstItem="2ME-id-Udq" firstAttribute="bottom" secondItem="s2D-yE-q56" secondAttribute="bottom" constant="113" id="ZUs-cI-gly"/>
-                            <constraint firstItem="Wfk-Nw-49v" firstAttribute="centerY" secondItem="2ME-id-Udq" secondAttribute="centerY" id="ddB-bD-XG4"/>
-                            <constraint firstItem="2ME-id-Udq" firstAttribute="bottom" secondItem="YMy-zn-6hu" secondAttribute="bottom" constant="239" id="ekj-bE-KqM"/>
-                            <constraint firstItem="Wfk-Nw-49v" firstAttribute="leading" secondItem="2ME-id-Udq" secondAttribute="leading" constant="30" id="gaV-sT-stv"/>
-                            <constraint firstItem="2ME-id-Udq" firstAttribute="bottom" secondItem="Wfk-Nw-49v" secondAttribute="bottom" constant="239" id="rSu-fZ-K3K"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2ME-id-Udq"/>
                     </view>
                     <size key="freeformSize" width="375" height="507"/>
                 </viewController>
-                <exit id="605-Db-Ynz" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="how-Bq-oOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3891" y="-886"/>
+            <point key="canvasLocation" x="3890.4000000000001" y="-886.50674662668678"/>
         </scene>
         <!--Attack Over View Controller-->
         <scene sceneID="y2e-5A-eLY">
@@ -175,15 +186,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="completion" translatesAutoresizingMaskIntoConstraints="NO" id="a2l-hr-v8C">
+                                <rect key="frame" x="37" y="0.0" width="302" height="507"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFB-Uh-NVi">
-                                <rect key="frame" x="16" y="20" width="86" height="35"/>
-                                <state key="normal" title="Home" image="home_icon"/>
+                                <rect key="frame" x="16" y="20" width="37" height="35"/>
+                                <state key="normal" image="home_icon"/>
                                 <connections>
                                     <segue destination="Yrc-go-WfF" kind="show" id="Y4t-sa-haJ"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.65490196079999996" green="0.76470588240000004" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="JFB-Uh-NVi" firstAttribute="top" secondItem="HSi-HB-Ile" secondAttribute="top" id="AkC-Tq-to8"/>
                             <constraint firstItem="JFB-Uh-NVi" firstAttribute="leading" secondItem="HSi-HB-Ile" secondAttribute="leading" constant="16" id="Jvm-yg-jQw"/>
@@ -346,8 +361,8 @@
                                 <color key="textColor" red="0.32549019610000002" green="0.4431372549" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EqA-SW-JgS" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="40" y="248" width="240" height="128"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EqA-SW-JgS" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="40" y="248" width="240" height="153"/>
                             </containerView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write how you felt here~" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5D1-JW-U5D">
                                 <rect key="frame" x="40" y="409" width="240" height="128"/>
@@ -395,6 +410,13 @@
                                     <segue destination="cy1-BI-lxS" kind="show" id="aOw-2z-4bL"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrx-B8-xSw">
+                                <rect key="frame" x="41" y="231" width="25" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -466,9 +488,12 @@
     </scenes>
     <resources>
         <image name="back_button" width="128" height="128"/>
+        <image name="better_worse_button" width="149" height="42"/>
+        <image name="completion" width="375" height="667"/>
         <image name="contacts_icon" width="36" height="39"/>
         <image name="home_icon" width="37" height="35"/>
         <image name="log_icon" width="42" height="31"/>
+        <image name="ok_button" width="137" height="42"/>
         <image name="panic_button" width="206" height="209"/>
         <image name="question_icon" width="36" height="36"/>
         <image name="speaker_icon" width="26" height="37"/>
