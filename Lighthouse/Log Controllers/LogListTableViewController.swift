@@ -139,7 +139,7 @@ class LogListTableViewController: UITableViewController {
         newEntry.longitude = data.value(forKey: "longitude") as? Double
         newEntry.notes = (data.value(forKey: "notes") as? String)
         entries.append(newEntry)
-        print("re-appending" + newEntry.notes!)
+        //print("re-appending" + newEntry.notes!)
     }
 
     /*
