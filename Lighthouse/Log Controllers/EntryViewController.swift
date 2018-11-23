@@ -39,23 +39,31 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         // Update the user interface for the detail item.
         if let detail: Entry = self.entryDetail {
             if let location = self.locationLabel {
-                let currentLocation = CLLocation(latitude: detail.latitude!, longitude: detail.longitude!)
-                // convert lat and long to readable address
-                CLGeocoder().reverseGeocodeLocation(currentLocation, completionHandler: {(placemarks, error) -> Void in
-                    
-                    if placemarks!.count > 0 {
-                        let pm = placemarks![0]
-                        let address = pm.subThoroughfare!
-                        let street = pm.thoroughfare!
-                        let city = pm.locality!
-                        let postalCode = pm.postalCode!
-                        //let locationString3 = pm.country! // USA users?
-                        location.text = ("\(address) \(street), \(city) \(postalCode)")
-                    }
-                    else {
-                        print("Problem with the data received from geocoder")
-                    }
-                })
+                if (detail.latitude != 0) && (detail.longitude != 0) { // make sure location exists
+                    let currentLocation = CLLocation(latitude: detail.latitude!, longitude: detail.longitude!)
+                    // convert lat and long to readable address
+                    CLGeocoder().reverseGeocodeLocation(currentLocation, completionHandler: {(placemarks, error) -> Void in
+                        
+                        if let places = placemarks {
+                            if places.count > 0 {
+                                let pm = places[0]
+                                let address = pm.subThoroughfare!
+                                let street = pm.thoroughfare!
+                                let city = pm.locality!
+                                let postalCode = pm.postalCode!
+                                //let locationString3 = pm.country! // USA users?
+                                location.text = ("\(address) \(street), \(city) \(postalCode)")
+                            }
+                            else {
+                                print("Problem with the data received from geocoder")
+                            }
+                        } else {
+                            location.text = ("\(detail.latitude!), \(String(describing: detail.longitude))")
+                        }
+                    })
+                } else {
+                    location.text = "Location could not be recorded."
+                }
             }
             if let date = self.dateLabel {
                 date.text = dateFormat(startTime: detail.startTime!)
@@ -105,8 +113,8 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
     func updateEntry(notes: String) {
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entries")
-        request.sortDescriptors = [NSSortDescriptor(key: "start_time", ascending: false)]
-        request.fetchLimit = 1
+//        request.sortDescriptors = [NSSortDescriptor(key: "start_time", ascending: false)]
+//        request.fetchLimit = 1
         request.returnsObjectsAsFaults = false
         do {
             let result = try context.fetch(request)

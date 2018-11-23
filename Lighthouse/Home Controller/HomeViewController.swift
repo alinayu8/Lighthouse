@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     let location = Location() // set lats and longs of place
 
     // MARK: - Buttons
-    @IBAction func bigButton(_ sender: Any) {
+    @IBAction func beginEntry(_ sender: Any) {
         let entry = Entry()
         entry.startTime = Date() //set start time of attack, time zone
         entry.latitude = Double(location.latitude)
