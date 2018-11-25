@@ -16,14 +16,13 @@ class HomeViewController: UIViewController {
     let location = Location() // set lats and longs of place
 
     // MARK: - Buttons
-    @IBAction func beginEntry(_ sender: UIButton) {
+    @IBAction func beginEntry(_ sender: Any) {
         let entry = Entry()
         entry.startTime = Date() //set start time of attack, time zone
         entry.latitude = Double(location.latitude)
         entry.longitude = Double(location.longitude)
         saveEntry(entry: entry)
     }
-    
     // MARK: - CoreData functions for HomeView
     
     // Connect to the context for the container stack

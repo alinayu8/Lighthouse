@@ -26,10 +26,6 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
 //      lineChartUpdate()
 //    }
    
-    @IBAction func saveEntryButton(_ sender: Any) {
-        updateEntry(notes: notesField.text)
-    }
-    
     // MARK: - Configure Entry details
     
     var entryDetail: Entry? {
@@ -43,23 +39,31 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         // Update the user interface for the detail item.
         if let detail: Entry = self.entryDetail {
             if let location = self.locationLabel {
-                let currentLocation = CLLocation(latitude: detail.latitude!, longitude: detail.longitude!)
-                // convert lat and long to readable address
-                CLGeocoder().reverseGeocodeLocation(currentLocation, completionHandler: {(placemarks, error) -> Void in
-                    
-                    if placemarks!.count > 0 {
-                        let pm = placemarks![0]
-                        let address = pm.subThoroughfare!
-                        let street = pm.thoroughfare!
-                        let city = pm.locality!
-                        let postalCode = pm.postalCode!
-                        //let locationString3 = pm.country! // USA users?
-                        location.text = ("\(address) \(street), \(city) \(postalCode)")
-                    }
-                    else {
-                        print("Problem with the data received from geocoder")
-                    }
-                })
+                if (detail.latitude != 0) && (detail.longitude != 0) { // make sure location exists
+                    let currentLocation = CLLocation(latitude: detail.latitude!, longitude: detail.longitude!)
+                    // convert lat and long to readable address
+                    CLGeocoder().reverseGeocodeLocation(currentLocation, completionHandler: {(placemarks, error) -> Void in
+                        
+                        if let places = placemarks {
+                            if places.count > 0 {
+                                let pm = places[0]
+                                let address = pm.subThoroughfare!
+                                let street = pm.thoroughfare!
+                                let city = pm.locality!
+                                let postalCode = pm.postalCode!
+                                //let locationString3 = pm.country! // USA users?
+                                location.text = ("\(address) \(street), \(city) \(postalCode)")
+                            }
+                            else {
+                                print("Problem with the data received from geocoder")
+                            }
+                        } else {
+                            location.text = ("\(detail.latitude!), \(String(describing: detail.longitude))")
+                        }
+                    })
+                } else {
+                    location.text = "Location could not be recorded."
+                }
             }
             if let date = self.dateLabel {
                 date.text = dateFormat(startTime: detail.startTime!)
@@ -109,8 +113,8 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
     func updateEntry(notes: String) {
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entries")
-        request.sortDescriptors = [NSSortDescriptor(key: "start_time", ascending: false)]
-        request.fetchLimit = 1
+//        request.sortDescriptors = [NSSortDescriptor(key: "start_time", ascending: false)]
+//        request.fetchLimit = 1
         request.returnsObjectsAsFaults = false
         do {
             let result = try context.fetch(request)
@@ -137,12 +141,29 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-//    @objc func keyboardWillShow(notification: NSNotification) {
-//
-//    }
-//    @objc func keyboardWillHide(notification: NSNotification) {
-//
-//    }
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else {return}
+        guard let keyboardSize = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue else {return}
+        let keyboardFrame = keyboardSize.cgRectValue
+        if self.view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= keyboardFrame.height
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0{
+            self.view.frame.origin.y = 0
+        }
+
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+        updateEntry(notes: notesField.text)
+    }
+
     
     // MARK: - General
     
@@ -159,9 +180,16 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         notesField.layer.cornerRadius = 10.0
         lineChartUpdate()
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(EntryViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(EntryViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        //tap in view to exit keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EntryViewController.dismissKeyboard))
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
