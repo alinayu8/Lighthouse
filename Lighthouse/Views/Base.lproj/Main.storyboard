@@ -231,7 +231,7 @@
             <objects>
                 <viewController id="cy1-BI-lxS" customClass="LogViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aig-uz-2o6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gMk-eA-pLg">
@@ -246,13 +246,13 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhT-3o-Wn6" userLabel="Stats Container View">
-                                <rect key="frame" x="0.0" y="160" width="375" height="507"/>
+                                <rect key="frame" x="0.0" y="160" width="375" height="347"/>
                                 <connections>
                                     <segue destination="yk8-2D-LX4" kind="embed" id="Rck-Bf-yc4"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1G-zd-Uoo" userLabel="List Container View">
-                                <rect key="frame" x="0.0" y="160" width="375" height="507"/>
+                                <rect key="frame" x="0.0" y="160" width="375" height="347"/>
                                 <connections>
                                     <segue destination="Ex6-da-Bi6" kind="embed" id="iMF-bs-4wZ"/>
                                 </connections>
