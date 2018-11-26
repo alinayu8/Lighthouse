@@ -80,7 +80,7 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // MARK: - Functions
+    // MARK: - General Functions
  
     func dateFormat(startTime: Date) -> String {
         let dateFormatter = DateFormatter()
@@ -125,7 +125,6 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
                         detail.latitude == (data.value(forKey: "latitude") as! Double) &&
                         detail.longitude == (data.value(forKey: "longitude") as? Double) &&
                         detail.notes == (data.value(forKey: "notes") as? String)) {
-                        print("resetting value" + notes)
                         data.setValue(notes, forKey: "notes")
                         try context.save()
                     }
@@ -136,6 +135,102 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // MARK: - Chart functions
+    
+    // Order datapoints by time because sets suck
+    func sortDatapoints(timeArray: Array<Double>, dpArray: Array<ChartDataEntry>) -> Array<ChartDataEntry> {
+        var sortedDPArray: [Any] = Array(repeating: "", count: dpArray.count)
+        let sortedTimeArray = timeArray.sorted(by: <)
+        for dp in dpArray {
+            let time = dp.x
+            let index = sortedTimeArray.index(of: time)
+            sortedDPArray[index!] = dp
+        }
+        return sortedDPArray as! Array<ChartDataEntry>
+    }
+    
+    // Sums up the array of values passed by listDatapoints
+    func sumDatapoints(array: Array<ChartDataEntry>) -> Array<ChartDataEntry> {
+        var datapointArray: [ChartDataEntry] = [];
+        var previousTime = 0.0
+        var total = 0.0
+        
+        for datapoint in array {
+            let currentTime = datapoint.x
+            let currentValue = datapoint.y
+            
+            // If entering new time datapoint
+            if (previousTime != currentTime) {
+                let x = previousTime
+                datapointArray.append(ChartDataEntry(x: x, y: total))
+            }
+            previousTime = datapoint.x
+            total += currentValue
+        }
+        
+        datapointArray.append(ChartDataEntry(x: previousTime, y: total))
+        
+        return datapointArray
+    }
+    
+    // Returns array of summed datapoints from CoreData (time, value)
+    func listDatapoints() -> Array<ChartDataEntry> {
+        var datapointArray: [ChartDataEntry] = []
+        var timesArray: [Double] = []
+        
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entries")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+                if let detail: Entry = self.entryDetail {
+                    if (detail.startTime == (data.value(forKey: "start_time") as! Date) &&
+                        detail.endTime == (data.value(forKey: "end_time") as! Date) &&
+                        detail.latitude == (data.value(forKey: "latitude") as! Double) &&
+                        detail.longitude == (data.value(forKey: "longitude") as? Double) &&
+                        detail.notes == (data.value(forKey: "notes") as? String)) {
+                    
+                        let datapoints = data.value(forKeyPath: "datapoints") as? Set<NSManagedObject>
+                        
+                        for point in datapoints! {
+                            let dpTime = point.value(forKey: "time") as? Date
+                            // force unwrapping a lot of things
+                            let time = Double(dpTime!.timeIntervalSince(detail.startTime!)) // converting to seconds since entry began
+                            let value = Double((point.value(forKey: "value") as? Int)!)
+                            datapointArray.append(ChartDataEntry(x: time, y: value))
+                            timesArray.append(time)
+                        }
+                    }
+                }
+            }
+        } catch {
+            print("Failed")
+        }
+        let sortedArray = sortDatapoints(timeArray: timesArray, dpArray: datapointArray)
+        let summedDatapointArray = sumDatapoints(array: sortedArray)
+        return summedDatapointArray
+    }
+    
+    func lineChartUpdate() {
+        // Basic set up of chart
+//        let entry1 = ChartDataEntry(x: 7, y: -2)
+//        let entry2 = ChartDataEntry(x: 7.25, y: 1)
+//        let entry3 = ChartDataEntry(x: 7.5, y: 3)
+        let dataArray = listDatapoints()
+        let dataSet = LineChartDataSet(values: dataArray, label: "sum of button presses at given time")
+        let data = LineChartData(dataSets: [dataSet])
+        lineChart.data = data
+        //lineChart.chartDescription?.text = "Number of Widgets by Type"
+        
+        // Color
+        //dataSet.colors = ChartColorTemplates.vordiplom()
+        
+        // Refresh chart with new data
+        lineChart.notifyDataSetChanged()
+    }
+    
+    // MARK: - Notes and Keyboard Functions
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         notesField.resignFirstResponder()
         return true
@@ -154,7 +249,7 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         if self.view.frame.origin.y != 0{
             self.view.frame.origin.y = 0
         }
-
+        
     }
     
     //Calls this function when the tap is recognized.
@@ -163,7 +258,6 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
         updateEntry(notes: notesField.text)
     }
-
     
     // MARK: - General
     
@@ -194,25 +288,6 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-  
-    func lineChartUpdate() {
-
-      // Basic set up of chart
-
-      let entry1 = ChartDataEntry(x: 7, y: -2)
-      let entry2 = ChartDataEntry(x: 7.25, y: 1)
-      let entry3 = ChartDataEntry(x: 7.5, y: 3)
-      let dataSet = LineChartDataSet(values: [entry1, entry2, entry3], label: "sum of button presses at given time")
-      let data = LineChartData(dataSets: [dataSet])
-      lineChart.data = data
-      //lineChart.chartDescription?.text = "Number of Widgets by Type"
-
-      // Color
-      //dataSet.colors = ChartColorTemplates.vordiplom()
-
-      // Refresh chart with new data
-      lineChart.notifyDataSetChanged()
     }
     
 }

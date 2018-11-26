@@ -37,6 +37,7 @@
 		F29DE7B3218CF39400F16F5A /* EntryGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7B2218CF39400F16F5A /* EntryGraphViewController.swift */; };
 		F29DE7B6218E502000F16F5A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7B5218E502000F16F5A /* Entry.swift */; };
 		F29DE7BA218E904400F16F5A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7B9218E904400F16F5A /* Location.swift */; };
+		F2BC848E21AC74C200F05B97 /* Datapoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BC848D21AC74C200F05B97 /* Datapoint.swift */; };
 		F68969AF0EB88C545A9A33E9 /* Pods_LighthouseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C222F6BD1C7A6D12CC9F3F4B /* Pods_LighthouseTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		F29DE7B2218CF39400F16F5A /* EntryGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryGraphViewController.swift; sourceTree = "<group>"; };
 		F29DE7B5218E502000F16F5A /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		F29DE7B9218E904400F16F5A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		F2BC848D21AC74C200F05B97 /* Datapoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datapoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +282,7 @@
 			children = (
 				F29DE7B5218E502000F16F5A /* Entry.swift */,
 				F29DE7B9218E904400F16F5A /* Location.swift */,
+				F2BC848D21AC74C200F05B97 /* Datapoint.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,7 +355,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Alina Yu";
 				TargetAttributes = {
 					F202CA712187DEAE00A2490F = {
@@ -544,6 +547,7 @@
 				F202CA782187DEAE00A2490F /* HomeViewController.swift in Sources */,
 				F29DE7BA218E904400F16F5A /* Location.swift in Sources */,
 				F29DE7A4218CF03800F16F5A /* FocusSupportViewController.swift in Sources */,
+				F2BC848E21AC74C200F05B97 /* Datapoint.swift in Sources */,
 				F29DE7AF218CF2DE00F16F5A /* EntryViewController.swift in Sources */,
 				F24086C02194EC80007991A1 /* LogListTableViewController.swift in Sources */,
 				F202CA762187DEAE00A2490F /* AppDelegate.swift in Sources */,
@@ -627,6 +631,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -634,6 +639,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -684,6 +690,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -691,6 +698,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
