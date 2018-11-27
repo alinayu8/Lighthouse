@@ -213,10 +213,6 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
     }
     
     func lineChartUpdate() {
-        // Basic set up of chart
-//        let entry1 = ChartDataEntry(x: 7, y: -2)
-//        let entry2 = ChartDataEntry(x: 7.25, y: 1)
-//        let entry3 = ChartDataEntry(x: 7.5, y: 3)
         let dataArray = listDatapoints()
         let dataSet = LineChartDataSet(values: dataArray, label: "sum of button presses at given time")
         let data = LineChartData(dataSets: [dataSet])
