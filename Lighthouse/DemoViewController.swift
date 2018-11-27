@@ -17,18 +17,18 @@ class DemoViewController: UIViewController {
   @IBOutlet var skipButton: UIButton!
   
   fileprivate let items = [
-    OnboardingItemInfo(informationImage: Asset.hotels.image,
-                       title: "Hi There! \n Welcome to Lighthouse.",
+    OnboardingItemInfo(informationImage: Asset.welcome.image,
+                       title: "hi there! welcome.",
                        description: "we try to not just mitigate your attacks but also help you learn more about them! \n let’s walk through it together.",
                        pageIcon: Asset.key.image,
-                       color: UIColor(red:0.95, green:0.73, blue:0.17, alpha:1.0),
+                       color: UIColor(red:0.65, green:0.76, blue:0.93, alpha:1.0),
                        titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
     
-    OnboardingItemInfo(informationImage: Asset.banks.image,
-                       title: "Lighthouse 2",
+    OnboardingItemInfo(informationImage: Asset.logicon.image,
+                       title: "log view",
                        description: "here, you can view a log of your episodes",
                        pageIcon: Asset.wallet.image,
-                       color: UIColor(red:0.65, green:0.76, blue:0.93, alpha:1.0),
+                        color: UIColor(red:0.95, green:0.73, blue:0.17, alpha:1.0),
                        titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
     
     OnboardingItemInfo(informationImage: Asset.stores.image,

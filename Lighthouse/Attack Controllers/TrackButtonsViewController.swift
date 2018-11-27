@@ -8,8 +8,13 @@
 
 import UIKit
 import CoreData
-
+let qodURL: NSURL = NSURL(string: "https://quotes.rest/qod?category=inspire")!
+let data = NSData(contentsOf: qodURL as URL)!
 class TrackButtonsViewController: UIViewController {
+  
+    // MARK: - Quote
+  @IBOutlet weak var quoteLabel: UILabel?
+  @IBOutlet weak var authorLabel: UILabel?
     // MARK: - Buttons
     
     @IBAction func stopEntryButton(_ sender: UIButton) {
@@ -93,6 +98,50 @@ class TrackButtonsViewController: UIViewController {
             print("Failed")
         }
     }
+  
+  
+  func pullQuote() {
+    
+    var results = [String]()
+    
+    do {
+      let json = try JSONSerialization.jsonObject(with: data as Data, options: .allowFragments) as! [String:AnyObject]
+      if let contents = json["contents"] as? NSDictionary {
+        
+        print(contents)
+        if let quoteDatas = contents["quotes"] as? [NSDictionary] {
+          for quoteData in quoteDatas{
+            print(quoteData)
+            for kvpair in quoteData {
+              if let left = kvpair.0 as? String {
+                if left == "quote" {
+                  if let right = kvpair.1 as? String {
+                    results.append (right)
+                  }
+                }
+                if left == "author" {
+                  if let right = kvpair.1 as? String {
+                    results.append (right)
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      
+    }catch {
+      print("error serializing JSON: \(error)")
+    }
+    let size = results.count
+    if size == 2 {
+      authorLabel?.text = results[0]
+      quoteLabel?.text = results[1]
+    }
+  }
+  
+  
+  
     
     //newPerson.setValue(NSSet(object: newAddress), forKey: "addresses")
 
@@ -102,6 +151,7 @@ class TrackButtonsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        pullQuote()
     }
     
     override func didReceiveMemoryWarning() {
