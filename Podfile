@@ -7,6 +7,7 @@ target 'Lighthouse' do
 
   # Pods for Lighthouse
     pod 'Charts'
+    pod 'paper-onboarding'
   target 'LighthouseTests' do
     inherit! :search_paths
     # Pods for testing
