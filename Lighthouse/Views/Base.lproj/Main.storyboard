@@ -591,8 +591,8 @@
                                 <color key="textColor" red="0.32549019610000002" green="0.4431372549" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EqA-SW-JgS" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="40" y="248" width="240" height="153"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EqA-SW-JgS" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="40" y="248" width="240" height="128"/>
                             </containerView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write how you felt here~" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5D1-JW-U5D">
                                 <rect key="frame" x="40" y="409" width="240" height="128"/>
@@ -640,13 +640,6 @@
                                     <segue destination="cy1-BI-lxS" kind="show" id="aOw-2z-4bL"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrx-B8-xSw">
-                                <rect key="frame" x="41" y="231" width="25" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -655,6 +648,9 @@
                             <constraint firstItem="9ES-tV-x0Y" firstAttribute="trailing" secondItem="wnJ-jQ-TcE" secondAttribute="trailing" constant="40" id="3lw-zc-CPT"/>
                             <constraint firstItem="3CC-j6-uV4" firstAttribute="top" secondItem="9ES-tV-x0Y" secondAttribute="top" constant="11" id="9Ax-uh-q8g"/>
                             <constraint firstItem="3CC-j6-uV4" firstAttribute="leading" secondItem="9ES-tV-x0Y" secondAttribute="leading" constant="71" id="9oR-r6-y7P"/>
+                            <constraint firstItem="JOa-9S-iqa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Ie-gj-ogQ" secondAttribute="trailing" constant="8" symbolic="YES" id="AVf-Ok-565"/>
+                            <constraint firstItem="ghR-pm-LDO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZVE-et-2Cj" secondAttribute="trailing" constant="8" symbolic="YES" id="CM8-UD-oax"/>
+                            <constraint firstItem="wnJ-jQ-TcE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="x4V-1A-uEm" secondAttribute="trailing" constant="8" symbolic="YES" id="DuO-lg-TpL"/>
                             <constraint firstItem="ghR-pm-LDO" firstAttribute="top" secondItem="9ES-tV-x0Y" secondAttribute="top" constant="176" id="F9j-Fi-ksH"/>
                             <constraint firstItem="uEZ-5t-Xqw" firstAttribute="top" secondItem="wnJ-jQ-TcE" secondAttribute="bottom" id="FBm-1M-UKI"/>
                             <constraint firstItem="9ES-tV-x0Y" firstAttribute="bottom" secondItem="5D1-JW-U5D" secondAttribute="bottom" constant="133" id="IdQ-Hb-7yW"/>
@@ -699,13 +695,73 @@
             </objects>
             <point key="canvasLocation" x="-2184" y="-813"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Stats Page View Controller-->
         <scene sceneID="6Kp-Z9-tJB">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="KHo-Oi-hmg" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="KHo-Oi-hmg" customClass="StatsPageViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSM-VH-x0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-967" y="-451"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Hvg-un-4Kn">
+            <objects>
+                <viewController storyboardIdentifier="MonthGraph" useStoryboardIdentifierAsRestorationIdentifier="YES" id="coa-hf-W6P" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="loM-hk-aob">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.65490196078431373" green="0.7686274509803922" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="G4a-jx-Syv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ei8-Oh-9Hw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2324" y="231"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="l4N-Vy-7H8">
+            <objects>
+                <viewController storyboardIdentifier="DurationGraph" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Qc-G7-OJr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9gP-L1-NiH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="X3t-mQ-8bX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YDJ-bt-BAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1513" y="231"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VDA-mg-mE1">
+            <objects>
+                <viewController storyboardIdentifier="StartTimeGraph" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BL7-iZ-Ugs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nNc-2J-YQf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.67450980392156867" green="0.7686274509803922" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="KDL-3a-j9h"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NTJ-Vh-bTq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-689" y="231"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hm4-q2-AMF">
+            <objects>
+                <viewController storyboardIdentifier="LocationMap" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aIw-SB-4HP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H4e-Lo-lYQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="IJ7-nV-IZQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jbf-Yd-8qY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125" y="237"/>
         </scene>
         <!--Demo View Controller-->
         <scene sceneID="AvH-6U-JsV">
@@ -763,7 +819,7 @@
         <image name="speaker_icon" width="26" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5eU-8v-uJd"/>
+        <segue reference="aOw-2z-4bL"/>
         <segue reference="tAG-s7-I6f"/>
     </inferredMetricsTieBreakers>
 </document>
