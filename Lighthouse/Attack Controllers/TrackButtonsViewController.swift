@@ -15,7 +15,7 @@ class TrackButtonsViewController: UIViewController {
     // MARK: - Quote
   @IBOutlet weak var quoteLabel: UILabel?
   @IBOutlet weak var authorLabel: UILabel?
-    // MARK: - Buttons
+    // MARK: - Buttons 
     
     @IBAction func stopEntryButton(_ sender: UIButton) {
         updateEntry()
