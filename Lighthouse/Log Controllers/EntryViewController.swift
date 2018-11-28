@@ -53,6 +53,23 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
                                 let postalCode = pm.postalCode!
                                 //let locationString3 = pm.country! // USA users?
                                 location.text = ("\(address) \(street), \(city) \(postalCode)")
+                                
+//                                let attributedString = NSMutableAttributedString(string: "Just click here to register")
+//                                let url = URL(string: "https://www.apple.com")!
+//
+//                                // Set the 'click here' substring to be the link
+//                                attributedString.setAttributes([.link: url], range: NSMakeRange(5, 10))
+//
+//                                self.textView.attributedText = attributedString
+//                                self.textView.isUserInteractionEnabled = true
+//                                self.textView.isEditable = false
+//
+//                                // Set how links should appear: blue and underlined
+//                                self.textView.linkTextAttributes = [
+//                                    .foregroundColor: UIColor.blue,
+//                                    .underlineStyle: NSUnderlineStyle.single.rawValue
+//                                ]
+                                
                             }
                             else {
                                 print("Problem with the data received from geocoder")
