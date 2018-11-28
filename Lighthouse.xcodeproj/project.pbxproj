@@ -31,6 +31,8 @@
 		F24086C02194EC80007991A1 /* LogListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24086BF2194EC80007991A1 /* LogListTableViewController.swift */; };
 		F24086C32194ED81007991A1 /* LogListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24086C12194ED81007991A1 /* LogListViewCell.swift */; };
 		F24086C42194ED81007991A1 /* LogListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F24086C22194ED81007991A1 /* LogListViewCell.xib */; };
+		F2741B6E21ADA5ED0022DB24 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2741B6D21ADA5ED0022DB24 /* SupportViewController.swift */; };
+		F2741B7121ADE4EA0022DB24 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2741B7021ADE4EA0022DB24 /* ContactViewController.swift */; };
 		F29DE7A4218CF03800F16F5A /* FocusSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7A3218CF03800F16F5A /* FocusSupportViewController.swift */; };
 		F29DE7A6218CF0C000F16F5A /* TrackButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7A5218CF0C000F16F5A /* TrackButtonsViewController.swift */; };
 		F29DE7A8218CF24E00F16F5A /* AttackOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7A7218CF24E00F16F5A /* AttackOverViewController.swift */; };
@@ -103,6 +105,8 @@
 		F24086BF2194EC80007991A1 /* LogListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListTableViewController.swift; sourceTree = "<group>"; };
 		F24086C12194ED81007991A1 /* LogListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListViewCell.swift; sourceTree = "<group>"; };
 		F24086C22194ED81007991A1 /* LogListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogListViewCell.xib; sourceTree = "<group>"; };
+		F2741B6D21ADA5ED0022DB24 /* SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
+		F2741B7021ADE4EA0022DB24 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		F29DE7A3218CF03800F16F5A /* FocusSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSupportViewController.swift; sourceTree = "<group>"; };
 		F29DE7A5218CF0C000F16F5A /* TrackButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackButtonsViewController.swift; sourceTree = "<group>"; };
 		F29DE7A7218CF24E00F16F5A /* AttackOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackOverViewController.swift; sourceTree = "<group>"; };
@@ -218,8 +222,9 @@
 				F24086BC2194E968007991A1 /* Home Controller */,
 				F24086BB2194E953007991A1 /* Views */,
 				F29DE7B4218E4FF100F16F5A /* Models */,
-				F29DE7A9218CF28100F16F5A /* Log Controllers */,
 				F29DE79F218CEF6D00F16F5A /* Attack Controllers */,
+				F2741B6F21ADE4B50022DB24 /* Contact Controllers */,
+				F29DE7A9218CF28100F16F5A /* Log Controllers */,
 				46D3D9C621AB9F300021528E /* DemoViewController.swift */,
 			);
 			path = Lighthouse;
@@ -288,12 +293,21 @@
 			path = "App Delegate";
 			sourceTree = "<group>";
 		};
+		F2741B6F21ADE4B50022DB24 /* Contact Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F2741B7021ADE4EA0022DB24 /* ContactViewController.swift */,
+			);
+			path = "Contact Controllers";
+			sourceTree = "<group>";
+		};
 		F29DE79F218CEF6D00F16F5A /* Attack Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				F29DE7A3218CF03800F16F5A /* FocusSupportViewController.swift */,
 				F29DE7A5218CF0C000F16F5A /* TrackButtonsViewController.swift */,
 				F29DE7A7218CF24E00F16F5A /* AttackOverViewController.swift */,
+				F2741B6D21ADA5ED0022DB24 /* SupportViewController.swift */,
 			);
 			path = "Attack Controllers";
 			sourceTree = "<group>";
@@ -584,6 +598,7 @@
 				F202CA782187DEAE00A2490F /* HomeViewController.swift in Sources */,
 				F29DE7BA218E904400F16F5A /* Location.swift in Sources */,
 				F29DE7A4218CF03800F16F5A /* FocusSupportViewController.swift in Sources */,
+				F2741B7121ADE4EA0022DB24 /* ContactViewController.swift in Sources */,
 				F2BC848E21AC74C200F05B97 /* Datapoint.swift in Sources */,
 				F29DE7AF218CF2DE00F16F5A /* EntryViewController.swift in Sources */,
 				F24086C02194EC80007991A1 /* LogListTableViewController.swift in Sources */,
@@ -592,6 +607,7 @@
 				F29DE7AB218CF2A000F16F5A /* LogViewController.swift in Sources */,
 				F29DE7B1218CF31300F16F5A /* StatsViewController.swift in Sources */,
 				F29DE7A8218CF24E00F16F5A /* AttackOverViewController.swift in Sources */,
+				F2741B6E21ADA5ED0022DB24 /* SupportViewController.swift in Sources */,
 				F24086C32194ED81007991A1 /* LogListViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
