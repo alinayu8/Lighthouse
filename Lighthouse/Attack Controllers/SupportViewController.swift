@@ -49,11 +49,15 @@ class SupportViewController: UIViewController, MFMessageComposeViewControllerDel
     }
     
     func displayMessageInterface(number: String, message: String) {
+        let currentEntry = getEntry()
+        let currentLat = currentEntry.latitude!
+        let currentLong = currentEntry.longitude!
+        
         let composeVC = MFMessageComposeViewController()
         composeVC.messageComposeDelegate = self
         // Configure the fields of the interface.
         composeVC.recipients = [number]
-        composeVC.body = message
+        composeVC.body = message + " " + "http://maps.apple.com/?daddr=\(currentLat),\(currentLong)"
         
         // Present the view controller modally.
         if MFMessageComposeViewController.canSendText() {
@@ -80,6 +84,26 @@ class SupportViewController: UIViewController, MFMessageComposeViewControllerDel
             print("Failed")
         }
         return "Failed"
+    }
+    
+    func getEntry() -> Entry {
+        let newEntry = Entry()
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entries")
+        request.sortDescriptors = [NSSortDescriptor(key: "start_time", ascending: false)]
+        request.fetchLimit = 1
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] { // Adding number to existing Contact
+                newEntry.latitude = data.value(forKey: "latitude") as? Double
+                newEntry.longitude = data.value(forKey: "longitude") as? Double
+                return newEntry
+            }
+        } catch {
+            print("Failed")
+        }
+        return newEntry
     }
     
     // MARK: - General Setup Functions

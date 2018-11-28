@@ -174,6 +174,20 @@ class ContactViewController: UIViewController, CNContactPickerDelegate, UITextFi
         }
     }
     
+    func loadMessage() {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Messages")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+                self.messageField.text = data.value(forKey: "message") as? String
+            }
+        } catch {
+            print("Failed")
+        }
+    }
+    
     // MARK: - Random View Functions and Reloading things
     
     override func viewDidLoad() {
@@ -182,6 +196,7 @@ class ContactViewController: UIViewController, CNContactPickerDelegate, UITextFi
         tableView.dataSource = self
         self.messageField.delegate = self as? UITextViewDelegate
         fetchContacts()
+        loadMessage()
         
         // Style text view
         let myColor = UIColor.gray
