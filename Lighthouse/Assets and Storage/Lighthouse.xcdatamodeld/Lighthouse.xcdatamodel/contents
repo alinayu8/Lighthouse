@@ -17,9 +17,13 @@
         <attribute name="start_time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="datapoints" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Datapoints" inverseName="entry" inverseEntity="Datapoints" syncable="YES"/>
     </entity>
+    <entity name="Messages" representedClassName="Messages" syncable="YES" codeGenerationType="class">
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
+        <element name="Contacts" positionX="251.3359375" positionY="-360.35546875" width="128" height="75"/>
         <element name="Datapoints" positionX="553.79296875" positionY="-261.35546875" width="128" height="90"/>
         <element name="Entries" positionX="180" positionY="-99" width="128" height="135"/>
-        <element name="Contacts" positionX="251.3359375" positionY="-360.35546875" width="128" height="75"/>
+        <element name="Messages" positionX="378" positionY="-198" width="128" height="60"/>
     </elements>
 </model>

@@ -33,6 +33,7 @@
 		F24086C42194ED81007991A1 /* LogListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F24086C22194ED81007991A1 /* LogListViewCell.xib */; };
 		F2741B6E21ADA5ED0022DB24 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2741B6D21ADA5ED0022DB24 /* SupportViewController.swift */; };
 		F2741B7121ADE4EA0022DB24 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2741B7021ADE4EA0022DB24 /* ContactViewController.swift */; };
+		F2741B7721AE628E0022DB24 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2741B7621AE628E0022DB24 /* Contact.swift */; };
 		F29DE7A4218CF03800F16F5A /* FocusSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7A3218CF03800F16F5A /* FocusSupportViewController.swift */; };
 		F29DE7A6218CF0C000F16F5A /* TrackButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7A5218CF0C000F16F5A /* TrackButtonsViewController.swift */; };
 		F29DE7A8218CF24E00F16F5A /* AttackOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DE7A7218CF24E00F16F5A /* AttackOverViewController.swift */; };
@@ -107,6 +108,7 @@
 		F24086C22194ED81007991A1 /* LogListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogListViewCell.xib; sourceTree = "<group>"; };
 		F2741B6D21ADA5ED0022DB24 /* SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 		F2741B7021ADE4EA0022DB24 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		F2741B7621AE628E0022DB24 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		F29DE7A3218CF03800F16F5A /* FocusSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSupportViewController.swift; sourceTree = "<group>"; };
 		F29DE7A5218CF0C000F16F5A /* TrackButtonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackButtonsViewController.swift; sourceTree = "<group>"; };
 		F29DE7A7218CF24E00F16F5A /* AttackOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackOverViewController.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				F29DE7B5218E502000F16F5A /* Entry.swift */,
 				F29DE7B9218E904400F16F5A /* Location.swift */,
 				F2BC848D21AC74C200F05B97 /* Datapoint.swift */,
+				F2741B7621AE628E0022DB24 /* Contact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				46D3D9CD21AC81D20021528E /* Images.swift in Sources */,
 				F202CA7E2187DEAE00A2490F /* Lighthouse.xcdatamodeld in Sources */,
 				46D3D9C921ABA4240021528E /* DemoViewClass.swift in Sources */,
+				F2741B7721AE628E0022DB24 /* Contact.swift in Sources */,
 				F202CA782187DEAE00A2490F /* HomeViewController.swift in Sources */,
 				F29DE7BA218E904400F16F5A /* Location.swift in Sources */,
 				F29DE7A4218CF03800F16F5A /* FocusSupportViewController.swift in Sources */,

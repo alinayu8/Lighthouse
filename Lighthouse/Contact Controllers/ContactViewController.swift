@@ -8,21 +8,98 @@
 
 import UIKit
 import CoreData
+import ContactsUI
+import Contacts
 
-class ContactViewController: UIViewController, UITextFieldDelegate {
+class ContactViewController: UIViewController, CNContactPickerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+    var listContacts = [Contact]()
+    
+    // MARK: - Buttons
+        
+    @IBAction func addContactButton(_ sender: Any) {
+        let pickerViewController = CNContactPickerViewController()
+        pickerViewController.delegate = self
+        pickerViewController.predicateForEnablingContact = NSPredicate(format: "phoneNumbers.@count > 0")
+        
+        // Display only a person's phone, email, and postal address
+        let displayedItems = [CNContactGivenNameKey, CNContactPhoneNumbersKey]
+        pickerViewController.displayedPropertyKeys = displayedItems
+        
+        // Show the picker
+        self.present(pickerViewController, animated: true, completion: nil)
+    }
+
+    // MARK: - Table View Controller
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listContacts.count
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.updateViewConstraints()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Add text to cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell")!
+        let contact = listContacts[indexPath.row]
+        print(contact)
+        cell.textLabel?.text = contact.name
+        cell.detailTextLabel?.text = contact.number
+        
+        return cell
+    }
+    
+    // Override to support editing the table view.
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Contacts")
+            request.returnsObjectsAsFaults = false
+            do {
+                let result = try context.fetch(request)
+                for data in result as! [NSManagedObject] {
+                    if (listContacts[indexPath.row].name == (data.value(forKey: "name") as? String) &&
+                        listContacts[indexPath.row].number == (data.value(forKey: "number") as? String)) {
+                        context.delete(data)
+                        try context.save()
+                    }
+                }
+            } catch {
+                print("Failed")
+            }
+            listContacts.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            //} else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
+    // MARK: - CNContactPickerDelegate Method
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
+        contacts.forEach { contact in
+            let contactName = CNContactFormatter.string(from: contact, style: .fullName) ?? ""
+            let contactNumber = (contact.phoneNumbers[0].value).value(forKey: "digits") as! String
+            print(contactName + " " + contactNumber)
+
+            saveContact(contactName: contactName, contactNumber: contactNumber)
+            self.tableView.reloadData()
+        }
+    }
+
+    // Called when the user taps Cancel.
+    func contactPickerDidCancel(picker: CNContactPickerViewController) {
+        print("cancelled")
+    }
     
     // MARK: - Text input
-    @IBOutlet weak var firstContactName: UITextField!
-    @IBOutlet weak var secondContactName: UITextField!
-    @IBOutlet weak var thirdContactName: UITextField!
-    @IBOutlet weak var fourthContactName: UITextField!
-    
-    @IBOutlet weak var firstContactNumber: UITextField!
-    @IBOutlet weak var secondContactNumber: UITextField!
-    @IBOutlet weak var thirdContactNumber: UITextField!
-    @IBOutlet weak var fourthContactNumber: UITextField!
     
     @IBOutlet weak var messageField: UITextView!
+    
     // MARK: - CoreData Functions
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -32,33 +109,19 @@ class ContactViewController: UIViewController, UITextFieldDelegate {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Contacts")
         request.returnsObjectsAsFaults = false
         do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] { // Adding number to existing Contact
-                if contactName == (data.value(forKey: "name") as! String) {
-                    data.setValue(contactNumber, forKey: "number")
-                    try context.save()
-                    break
-                }
-            }
             // Creating new Contact
             let contact = NSEntityDescription.entity(forEntityName: "Contacts", in: context)
             let newContact = NSManagedObject(entity: contact!, insertInto: context)
             newContact.setValue(contactName, forKey: "name")
             newContact.setValue(contactNumber, forKey: "number")
-        } catch {
-            print("Failed")
-        }
-    }
-    
-    func deleteContacts() {
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Contacts")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                context.delete(data)
-            }
+            
+            // Save contacts to array
+            let newContactModel = Contact()
+            newContactModel.name = contactName
+            newContactModel.number = contactNumber
+            listContacts.append(newContactModel)
+            
+            try context.save()
         } catch {
             print("Failed")
         }
@@ -82,34 +145,43 @@ class ContactViewController: UIViewController, UITextFieldDelegate {
     
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        deleteContacts()
-        if (firstContactName.text != "") {
-            print("first contact")
-            saveContact(contactName: firstContactName.text!, contactNumber: firstContactNumber.text ?? "")
-        }
-        
-        if (secondContactName.text != "") {
-            print("second contact")
-            saveContact(contactName: secondContactName.text!, contactNumber: secondContactNumber.text ?? "")
-        }
-        
-        if (thirdContactName.text != "") {
-            print("third contact")
-            saveContact(contactName: thirdContactName.text!, contactNumber: thirdContactNumber.text ?? "")
-        }
-        
-        if (fourthContactName.text != "") {
-            print("fourth contact")
-            saveContact(contactName: fourthContactName.text!, contactNumber: fourthContactNumber.text ?? "")
-        }
-        
+        //deleteContacts()
         print("dismiss keyboard")
         view.endEditing(true)
+        updateMessage(message: messageField.text)
     }
+    
+    func updateMessage(message: String) {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Messages")
+        request.fetchLimit = 1
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            if (result.count > 0) {
+                for data in result as! [NSManagedObject] {
+                    data.setValue(message, forKey: "message")
+                    try context.save()
+                }
+            } else {
+                let entity = NSEntityDescription.entity(forEntityName: "Messages", in: context)
+                let newEntity = NSManagedObject(entity: entity!, insertInto: context)
+                newEntity.setValue(message, forKey: "message")
+                try context.save()
+            }
+        } catch {
+            print("Failed")
+        }
+    }
+    
+    // MARK: - Random View Functions and Reloading things
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         self.messageField.delegate = self as? UITextViewDelegate
+        fetchContacts()
         
         // Style text view
         let myColor = UIColor.gray
@@ -127,7 +199,28 @@ class ContactViewController: UIViewController, UITextFieldDelegate {
         self.view.addGestureRecognizer(tap)
     }
     
-
+    func fetchContacts() {
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Contacts")
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+                self.loadContacts(data: data)
+            }
+        } catch {
+            print("Failed")
+        }
+    }
+    
+    func loadContacts(data: NSManagedObject){
+        let newContact = Contact()
+        newContact.name = data.value(forKey: "name") as? String
+        newContact.number = data.value(forKey: "number") as? String
+        listContacts.append(newContact)
+    }
+    
     /*
     // MARK: - Navigation
 
