@@ -17,25 +17,25 @@ class DemoViewController: UIViewController {
   @IBOutlet var skipButton: UIButton!
   
   fileprivate let items = [
-    OnboardingItemInfo(informationImage: Asset.hotels.image,
-                       title: "Hotels",
-                       description: "All hotels and hostels are sorted by hospitality rating",
+    OnboardingItemInfo(informationImage: Asset.welcome.image,
+                       title: "hi there! welcome.",
+                       description: "we try to not just mitigate your attacks but also help you learn more about them! \n let’s walk through it together.",
                        pageIcon: Asset.key.image,
-                       color: UIColor(red: 0.40, green: 0.56, blue: 0.71, alpha: 1.00),
+                       color: UIColor(red:0.65, green:0.76, blue:0.93, alpha:1.0),
                        titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
     
-    OnboardingItemInfo(informationImage: Asset.banks.image,
-                       title: "Banks",
-                       description: "We carefully verify all banks before add them into the app",
+    OnboardingItemInfo(informationImage: Asset.logicon.image,
+                       title: "log view",
+                       description: "here, you can view a log of your episodes",
                        pageIcon: Asset.wallet.image,
-                       color: UIColor(red: 0.40, green: 0.69, blue: 0.71, alpha: 1.00),
+                        color: UIColor(red:0.95, green:0.73, blue:0.17, alpha:1.0),
                        titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
     
     OnboardingItemInfo(informationImage: Asset.stores.image,
-                       title: "Stores",
+                       title: "Lighthouse 3",
                        description: "All local stores are categorized for your convenience",
                        pageIcon: Asset.shoppingCart.image,
-                       color: UIColor(red: 0.61, green: 0.56, blue: 0.74, alpha: 1.00),
+                       color: UIColor(red:0.33, green:0.44, blue:0.62, alpha:1.0),
                        titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
     
     ]
