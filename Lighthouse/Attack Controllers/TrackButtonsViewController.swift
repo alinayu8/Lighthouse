@@ -8,9 +8,16 @@
 
 import UIKit
 import CoreData
+import Pastel
+//let qodURL: NSURL = NSURL(string: "https://quotes.rest/qod?category=inspire")!
+//let data = NSData(contentsOf: qodURL as URL)!
 
 class TrackButtonsViewController: UIViewController {
-    // MARK: - Buttons
+  
+    // MARK: - Quote outlet
+  @IBOutlet weak var quoteLabel: UILabel?
+  //@IBOutlet weak var pastelView: PastelView!
+    // MARK: - Buttons 
     
     @IBAction func stopEntryButton(_ sender: UIButton) {
         updateEntry()
@@ -21,6 +28,7 @@ class TrackButtonsViewController: UIViewController {
         datapoint.time = Date() //set start time of attack, time zone
         datapoint.value = 1
         addDatapoint(datapoint: datapoint)
+        randQuote()
     }
     
     @IBAction func worseButton(_ sender: UIButton) {
@@ -28,6 +36,7 @@ class TrackButtonsViewController: UIViewController {
         datapoint.time = Date() //set start time of attack, time zone
         datapoint.value = -1
         addDatapoint(datapoint: datapoint)
+        randQuote()
     }
     
     // MARK: - CoreData functions
@@ -93,15 +102,58 @@ class TrackButtonsViewController: UIViewController {
             print("Failed")
         }
     }
+  let quotes = ["It is during our darkest moments that we must focus to see the light. \n -Aristotle",
+                "I can't change the direction of the wind, but I can adjust my sails to always reach my destination. \n -Jimmy Dean",
+                "I will love the light for it shows me the way, yet I will endure the darkness because it shows me the stars. \n -Og Mandino",
+                "Our greatest glory is not in never falling, but in rising every time we fall. \n -Confucius",
+                "Promise me you'll always remember: You're braver than you believe, and stronger than you seem, and smarter than you think. \n -Christopher Robin"
+  ]
+  
+  //pick a random element from array of quotes
+  func randQuote() {
+    let random = quotes.randomElement()
+    quoteLabel?.text = random
+  }
+  
+  
+  func setupBG() {
+    //MARK: -  Custom Direction
+    let pastelView = PastelView(frame: view.bounds)
+    pastelView.startPastelPoint = .bottomLeft
+    pastelView.endPastelPoint = .topRight
+
+    //MARK: -  Custom Duration
+
+    pastelView.animationDuration = 3.0
+
+    //MARK: -  Custom Color
+
+    pastelView.setColors([UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
+                          UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
+                          UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0),
+                          UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1.0),
+                          UIColor(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),
+                          UIColor(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),
+                          UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0)])
+
+    pastelView.startAnimation()
+    view.insertSubview(pastelView, at: 0)
+  }
     
     //newPerson.setValue(NSSet(object: newAddress), forKey: "addresses")
 
-    
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    setupBG()
+  }
     // MARK: - General
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        randQuote()
+        //setupBG()
+      
     }
     
     override func didReceiveMemoryWarning() {

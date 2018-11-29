@@ -3,20 +3,24 @@ PODS:
     - Charts/Core (= 3.2.1)
   - Charts/Core (3.2.1)
   - paper-onboarding (5.0.0)
+  - Pastel (0.5.1)
 
 DEPENDENCIES:
   - Charts
   - paper-onboarding
+  - Pastel
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Charts
     - paper-onboarding
+    - Pastel
 
 SPEC CHECKSUMS:
   Charts: f122fb70b19847fa5817d018b77d6c5a2296ab25
   paper-onboarding: a2e3a710fd27ac0b5635ec5490660e7ec09289b5
+  Pastel: b3dd5b8d612dac06ae7c63c97c45c900829bc139
 
-PODFILE CHECKSUM: 6db8ac79d54df6b500033b61b6f749004661ed00
+PODFILE CHECKSUM: c1efb4d5c416a4fe0a6aae8a56f10cd614c532cf
 
 COCOAPODS: 1.5.3
