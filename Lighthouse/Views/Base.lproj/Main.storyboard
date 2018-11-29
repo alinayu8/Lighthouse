@@ -703,20 +703,35 @@
             </objects>
             <point key="canvasLocation" x="-967" y="-451"/>
         </scene>
-        <!--View Controller-->
+        <!--Month Graph View Controller-->
         <scene sceneID="Hvg-un-4Kn">
             <objects>
-                <viewController storyboardIdentifier="MonthGraph" useStoryboardIdentifierAsRestorationIdentifier="YES" id="coa-hf-W6P" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MonthGraph" useStoryboardIdentifierAsRestorationIdentifier="YES" id="coa-hf-W6P" customClass="MonthGraphViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="loM-hk-aob">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSx-7u-ssX" customClass="CombinedChartView" customModule="Charts">
+                                <rect key="frame" x="39" y="134" width="297" height="419"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.65490196078431373" green="0.7686274509803922" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JSx-7u-ssX" firstAttribute="leading" secondItem="G4a-jx-Syv" secondAttribute="leading" constant="39" id="DnJ-Cf-JnD"/>
+                            <constraint firstItem="JSx-7u-ssX" firstAttribute="centerX" secondItem="G4a-jx-Syv" secondAttribute="centerX" id="msC-u5-mfZ"/>
+                            <constraint firstItem="JSx-7u-ssX" firstAttribute="centerY" secondItem="G4a-jx-Syv" secondAttribute="centerY" id="rgg-xT-jev"/>
+                            <constraint firstItem="JSx-7u-ssX" firstAttribute="top" secondItem="G4a-jx-Syv" secondAttribute="top" constant="114" id="vWu-bB-sZk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="G4a-jx-Syv"/>
                     </view>
+                    <connections>
+                        <outlet property="combinedChartView" destination="JSx-7u-ssX" id="URr-PS-aqx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ei8-Oh-9Hw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2324" y="231"/>
+            <point key="canvasLocation" x="-2324" y="230.73463268365819"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="l4N-Vy-7H8">
