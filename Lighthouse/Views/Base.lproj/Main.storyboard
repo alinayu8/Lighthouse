@@ -300,15 +300,6 @@
                                     <action selector="betterButton:" destination="1l0-WZ-COH" eventType="touchUpInside" id="La7-tL-HJf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="quote text will go here" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rz-jg-HDZ">
-                                <rect key="frame" x="49" y="78" width="293" height="108"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="293" id="aF0-lf-SCq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvG-WF-lZV">
                                 <rect key="frame" x="118" y="426" width="139" height="42"/>
                                 <constraints>
@@ -324,16 +315,18 @@
                                     <segue destination="WQ5-SY-wpR" kind="show" id="GI2-O0-KD5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="author here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccm-dP-N4R">
-                                <rect key="frame" x="140" y="219" width="111" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="______" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtY-QL-euH">
+                                <rect key="frame" x="132" y="282" width="111" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="______" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtY-QL-euH">
-                                <rect key="frame" x="143" y="177" width="111" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="quote text will go here" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rz-jg-HDZ">
+                                <rect key="frame" x="41" y="107" width="293" height="167"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="293" id="aF0-lf-SCq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -354,7 +347,6 @@
                     </view>
                     <size key="freeformSize" width="375" height="507"/>
                     <connections>
-                        <outlet property="authorLabel" destination="ccm-dP-N4R" id="QDp-9g-bl8"/>
                         <outlet property="quoteLabel" destination="9rz-jg-HDZ" id="XvP-pM-3py"/>
                     </connections>
                 </viewController>
@@ -420,7 +412,7 @@
                                     <constraint firstAttribute="height" constant="301" id="QeD-3W-EN3"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" textLabel="t3H-87-iDM" style="IBUITableViewCellStyleDefault" id="m22-0V-3MO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" textLabel="t3H-87-iDM" style="IBUITableViewCellStyleDefault" id="m22-0V-3MO">
                                         <rect key="frame" x="0.0" y="28" width="266" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m22-0V-3MO" id="5Fz-mA-Q5y">
@@ -763,7 +755,7 @@
     <resources>
         <image name="back_button" width="128" height="128"/>
         <image name="better_worse_button" width="149" height="42"/>
-        <image name="completion" width="187" height="333"/>
+        <image name="completion" width="375" height="667"/>
         <image name="contacts_icon" width="36" height="39"/>
         <image name="home_icon" width="37" height="35"/>
         <image name="log_icon" width="42" height="31"/>
