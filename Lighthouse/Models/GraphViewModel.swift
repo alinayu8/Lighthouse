@@ -1,14 +1,14 @@
 //
-//  Contact.swift
+//  GraphViewModel.swift
 //  Lighthouse
 //
-//  Created by Alina Yu on 11/3/18.
+//  Created by Alina Yu on 11/28/18.
 //  Copyright © 2018 Alina Yu. All rights reserved.
 //
 
 import Foundation
 
-class Contact: NSObject {
+class GraphModel: NSObject {
     var name: String?
     var number: String?
     
@@ -22,5 +22,3 @@ class Contact: NSObject {
         super.init()
     }
 }
-
-

@@ -130,8 +130,6 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
     func updateEntry(notes: String) {
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entries")
-//        request.sortDescriptors = [NSSortDescriptor(key: "start_time", ascending: false)]
-//        request.fetchLimit = 1
         request.returnsObjectsAsFaults = false
         do {
             let result = try context.fetch(request)
