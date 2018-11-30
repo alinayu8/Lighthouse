@@ -16,12 +16,10 @@ class MonthGraphViewController: UIViewController {
     
     @IBOutlet weak var combinedChartView: CombinedChartView!
     
-    let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setChart(xValues: months, yValuesLineChart: avgPerMonth(), yValuesBarChart: totalPerMonth())
+        let months = getMonths()
+        setChart(xValues: months, yValuesLineChart: avgPerMonth(months: months), yValuesBarChart: totalPerMonth(months: months))
     }
     
     // MARK: - Graph Functions
@@ -45,7 +43,7 @@ class MonthGraphViewController: UIViewController {
         
         let data = CombinedChartData()
         data.barData = BarChartData(dataSets: [barChartSet])
-        //data.lineData = LineChartData(dataSets: [lineChartSet])
+        data.lineData = LineChartData(dataSets: [lineChartSet])
         
         combinedChartView.data = data
         
@@ -54,22 +52,48 @@ class MonthGraphViewController: UIViewController {
     // MARK: - CoreData Functions
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    func totalPerMonth() -> [Double] {
+    func getMonths() -> [String] {
+        var array = [String]()
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entries")
+        request.sortDescriptors = [NSSortDescriptor(key: "start_time", ascending: true)]
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            var currentYear = ""
+            var currentMonth = ""
+            for data in result as! [NSManagedObject] {
+                let date = data.value(forKey: "start_time") as! Date
+                let month = monthFormat(time: date)
+                let year = yearFormat(time: date)
+                if ((currentYear == "" && currentMonth == "") || (currentYear != year) || (currentMonth != month)) {
+                    array.append(month + " " + year)
+                    currentYear = year
+                    currentMonth = month
+                }
+            }
+            return array
+        } catch {
+            print("Failed")
+        }
+        return array
+    }
+    
+    func totalPerMonth(months: [String]) -> [Double] {
         var array: [Double] = Array(repeating: 0, count: months.count)
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entries")
+        request.sortDescriptors = [NSSortDescriptor(key: "start_time", ascending: true)]
         request.returnsObjectsAsFaults = false
         do {
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
                 let date = data.value(forKey: "start_time") as! Date
-                let toDate = Date()
-                let fromDate = Calendar.current.date(byAdding: .year, value: -1, to: toDate)
-                if (date >= fromDate!) {
-                    let month = monthFormat(time: date)
-                    let index = months.index(of: month)
-                    array[index!] += 1
-                }
+                let month = monthFormat(time: date)
+                let year = yearFormat(time: date)
+                let monthYear = month + " " + year
+                let index = months.index(of: monthYear)
+                array[index!] += 1
             }
             print(array)
             return array
@@ -79,7 +103,7 @@ class MonthGraphViewController: UIViewController {
         return array
     }
     
-    func avgPerMonth() -> [Double] {
+    func avgPerMonth(months: [String]) -> [Double] {
         var array: [Double] = Array(repeating: 0, count: months.count)
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entries")
@@ -88,19 +112,23 @@ class MonthGraphViewController: UIViewController {
         do {
             let result = try context.fetch(request)
             var total = 0
-            for i in 0..<array.count {
-            //for data in result as! [NSManagedObject] {
-                let data = result[i] as! NSManagedObject
+            var currentMonthYear = months[0]
+            for data in result as! [NSManagedObject] {
                 let date = data.value(forKey: "start_time") as! Date
-                let toDate = Date()
-                let fromDate = Calendar.current.date(byAdding: .year, value: -1, to: toDate)
-                if (date >= fromDate!) {
-                    total += 1
-                    let month = monthFormat(time: date)
-                    let index = months.index(of: month)
-                    array[index!] += 1
+                let month = monthFormat(time: date)
+                let year = yearFormat(time: date)
+                let monthYear = month + " " + year
+                if (currentMonthYear != monthYear) {
+                    let index = months.index(of: monthYear)
+                    array[index!] = Double(total / (index! + 1))
+                    currentMonthYear = monthYear
                 }
+                total += 1
             }
+            
+            // last one
+            array[months.count-1] = Double(total / months.count)
+    
             print(array)
             return array
         } catch {
@@ -113,6 +141,13 @@ class MonthGraphViewController: UIViewController {
         let dateFormatter = DateFormatter()
         //dateFormatter.dateFormat = "h:mm a MMMM dd, yyyy"
         dateFormatter.dateFormat = "MMM"
+        return dateFormatter.string(from: time)
+    }
+    
+    func yearFormat(time: Date) -> String {
+        let dateFormatter = DateFormatter()
+        //dateFormatter.dateFormat = "h:mm a MMMM dd, yyyy"
+        dateFormatter.dateFormat = "yyyy"
         return dateFormatter.string(from: time)
     }
 

@@ -7,24 +7,66 @@
 //
 
 import UIKit
+import Charts
+import CoreData
 
 class StartTimeGraphViewController: UIViewController {
 
+    // MARK: - Storyboard Interface
+    
+    let startTimes = [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0]
+    
+    @IBOutlet weak var barChartView: BarChartView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setChart(xValues: startTimes, yValuesBarChart: numPerStartTime(startTimes: startTimes))
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Graph Functions
+    func setChart(xValues: [Double], yValuesBarChart: [Double]) {
+        barChartView.noDataText = "Please provide data for the chart."
+        
+        var yVals : [BarChartDataEntry] = [BarChartDataEntry]()
+        
+        for i in 0..<xValues.count {
+            yVals.append(BarChartDataEntry(x: Double(i), y: yValuesBarChart[i])) // are these x and y right
+        }
+        
+        let barChartSet = BarChartDataSet(values: yVals, label: "Bar Data")
+        let data = BarChartData(dataSets: [barChartSet])
+        barChartView.data = data
     }
-    */
+    
+    // MARK: - CoreData Functions
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    func numPerStartTime(startTimes: [Double]) -> [Double] {
+        var array: [Double] = Array(repeating: 0, count: startTimes.count)
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entries")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+                let startTime = data.value(forKey: "start_time") as! Date
+                let time = dateFormat(startTime: startTime)
+                let index = startTimes.index(of: Double(time))
+                array[index!] += 1
+            }
+            print(array)
+            return array
+        } catch {
+            print("Failed")
+        }
+        return array
+    }
+    
+    func dateFormat(startTime: Date) -> Int {
+        let dateFormatter = DateFormatter()
+        //dateFormatter.dateFormat = "h:mm a MMMM dd, yyyy"
+        dateFormatter.dateFormat = "HH"
+        return Int(dateFormatter.string(from: startTime))!
+    }
 
 }
