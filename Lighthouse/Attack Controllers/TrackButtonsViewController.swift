@@ -133,7 +133,12 @@ class TrackButtonsViewController: UIViewController {
                 "I can't change the direction of the wind, but I can adjust my sails to always reach my destination. \n -Jimmy Dean",
                 "I will love the light for it shows me the way, yet I will endure the darkness because it shows me the stars. \n -Og Mandino",
                 "Our greatest glory is not in never falling, but in rising every time we fall. \n -Confucius",
-                "Promise me you'll always remember: You're braver than you believe, and stronger than you seem, and smarter than you think. \n -Christopher Robin"
+                "Promise me you'll always remember: You're braver than you believe, and stronger than you seem, and smarter than you think. \n -Christopher Robin",
+                "Keep your face to the sunshine and you cannot see a shadow. \n -Helen Keller",
+                "We must accept finite disappointment, but we must never lose infinite hope. \n -Martin Luther King",
+                "When everything seems to be going against you, remember that the airplane takes off against the wind, not with it. \n -Henry Ford",
+                "It is only in our darkest hours that we may discover the true strength of the brilliant light within ourselves that can never, ever, be dimmed. \n -Doe Zantamata",
+                "Courage doesn’t always roar. Sometimes courage is the quiet voice at the end of the day, saying, “I will try again tomorrow. \n -Mary Anne Radmacher"
   ]
   
   //pick a random element from array of quotes
