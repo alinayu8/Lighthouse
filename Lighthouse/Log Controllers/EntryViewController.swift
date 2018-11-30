@@ -235,7 +235,7 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         let data = LineChartData(dataSets: [dataSet])
         lineChart.data = data
         //lineChart.chartDescription?.text = "Number of Widgets by Type"
-        
+        data.setDrawValues(false)
         // Color
         //dataSet.colors = ChartColorTemplates.vordiplom()
         
