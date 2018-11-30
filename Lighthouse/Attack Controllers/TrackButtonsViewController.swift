@@ -11,12 +11,12 @@ import CoreData
 import Pastel
 //let qodURL: NSURL = NSURL(string: "https://quotes.rest/qod?category=inspire")!
 //let data = NSData(contentsOf: qodURL as URL)!
-
+var colorArray = [UIColor]()
 class TrackButtonsViewController: UIViewController {
   
     // MARK: - Quote outlet
   @IBOutlet weak var quoteLabel: UILabel?
-  //@IBOutlet weak var pastelView: PastelView!
+  @IBOutlet weak var pastelView: PastelView!
     // MARK: - Buttons 
     
     @IBAction func stopEntryButton(_ sender: UIButton) {
@@ -29,6 +29,19 @@ class TrackButtonsViewController: UIViewController {
         datapoint.value = 1
         addDatapoint(datapoint: datapoint)
         randQuote()
+//        colorArray = [#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1),
+//                    #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1),
+//                    #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1),
+//                    #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1),
+//                    #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1),
+//                    #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)]
+        pastelView.setColors([#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1),
+                            #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1),
+                            #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1),
+                            #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1),
+                            #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1),
+                            #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)])
+      
     }
     
     @IBAction func worseButton(_ sender: UIButton) {
@@ -37,6 +50,20 @@ class TrackButtonsViewController: UIViewController {
         datapoint.value = -1
         addDatapoint(datapoint: datapoint)
         randQuote()
+//        colorArray = [UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
+//                                 UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
+//                                UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0),
+//                                UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1.0),
+//                                UIColor(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),
+//                                UIColor(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),
+//                                UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0)]
+        pastelView.setColors([UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
+                            UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
+                            UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0),
+                            UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1.0),
+                            UIColor(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),
+                            UIColor(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),
+                            UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0)])
     }
     
     // MARK: - CoreData functions
@@ -128,15 +155,18 @@ class TrackButtonsViewController: UIViewController {
 
     //MARK: -  Custom Color
 
-    pastelView.setColors([UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
-                          UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
-                          UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0),
-                          UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1.0),
-                          UIColor(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),
-                          UIColor(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),
-                          UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0)])
-
+//    pastelView.setColors([UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
+//                          UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
+//                          UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0),
+//                          UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1.0),
+//                          UIColor(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),
+//                          UIColor(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),
+//                          UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0)])
+    
+    pastelView.setColors( [#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1), #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1), #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)])
+    //pastelView.setPastelGradient(winterNeva)
     pastelView.startAnimation()
+    
     view.insertSubview(pastelView, at: 0)
   }
     
