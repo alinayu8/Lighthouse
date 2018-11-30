@@ -47,7 +47,7 @@
                                                 <rect key="frame" x="0.0" y="37" width="245" height="187"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mgp-EP-a5L">
-                                                        <rect key="frame" x="0.0" y="0.0" width="245" height="157"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="245" height="82"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" textLabel="4fG-Y6-DGE" detailTextLabel="vei-iS-2r2" style="IBUITableViewCellStyleSubtitle" id="AXm-sW-ihn">
@@ -81,7 +81,7 @@
                                                         </connections>
                                                     </tableView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTU-Xb-Qwj">
-                                                        <rect key="frame" x="0.0" y="157" width="245" height="30"/>
+                                                        <rect key="frame" x="0.0" y="82" width="245" height="105"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                         <state key="normal" title="Add Contact">
                                                             <color key="titleColor" red="0.96530240774154663" green="0.80059558153152466" blue="0.39883065223693848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -605,8 +605,8 @@
                                 <color key="textColor" red="0.32549019610000002" green="0.4431372549" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EqA-SW-JgS" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="40" y="248" width="240" height="153"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EqA-SW-JgS" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="40" y="249.5" width="240" height="126.5"/>
                             </containerView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write how you felt here~" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5D1-JW-U5D">
                                 <rect key="frame" x="40" y="409" width="240" height="128"/>
@@ -669,6 +669,9 @@
                             <constraint firstItem="9ES-tV-x0Y" firstAttribute="trailing" secondItem="wnJ-jQ-TcE" secondAttribute="trailing" constant="40" id="3lw-zc-CPT"/>
                             <constraint firstItem="3CC-j6-uV4" firstAttribute="top" secondItem="9ES-tV-x0Y" secondAttribute="top" constant="11" id="9Ax-uh-q8g"/>
                             <constraint firstItem="3CC-j6-uV4" firstAttribute="leading" secondItem="9ES-tV-x0Y" secondAttribute="leading" constant="71" id="9oR-r6-y7P"/>
+                            <constraint firstItem="JOa-9S-iqa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Ie-gj-ogQ" secondAttribute="trailing" constant="8" symbolic="YES" id="AVf-Ok-565"/>
+                            <constraint firstItem="ghR-pm-LDO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZVE-et-2Cj" secondAttribute="trailing" constant="8" symbolic="YES" id="CM8-UD-oax"/>
+                            <constraint firstItem="wnJ-jQ-TcE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="x4V-1A-uEm" secondAttribute="trailing" constant="8" symbolic="YES" id="DuO-lg-TpL"/>
                             <constraint firstItem="ghR-pm-LDO" firstAttribute="top" secondItem="9ES-tV-x0Y" secondAttribute="top" constant="176" id="F9j-Fi-ksH"/>
                             <constraint firstItem="uEZ-5t-Xqw" firstAttribute="top" secondItem="wnJ-jQ-TcE" secondAttribute="bottom" id="FBm-1M-UKI"/>
                             <constraint firstItem="9ES-tV-x0Y" firstAttribute="bottom" secondItem="5D1-JW-U5D" secondAttribute="bottom" constant="133" id="IdQ-Hb-7yW"/>
@@ -713,13 +716,164 @@
             </objects>
             <point key="canvasLocation" x="-2184" y="-813"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Stats Page View Controller-->
         <scene sceneID="6Kp-Z9-tJB">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="KHo-Oi-hmg" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="KHo-Oi-hmg" customClass="StatsPageViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSM-VH-x0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-967" y="-451"/>
+        </scene>
+        <!--Month Graph View Controller-->
+        <scene sceneID="Hvg-un-4Kn">
+            <objects>
+                <viewController storyboardIdentifier="MonthGraph" useStoryboardIdentifierAsRestorationIdentifier="YES" id="coa-hf-W6P" customClass="MonthGraphViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="loM-hk-aob">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSx-7u-ssX" customClass="CombinedChartView" customModule="Charts">
+                                <rect key="frame" x="39" y="134" width="297" height="419"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attacks Per Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ex-Zm-qVo">
+                                <rect key="frame" x="113.5" y="63" width="148" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.65490196078431373" green="0.7686274509803922" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JSx-7u-ssX" firstAttribute="leading" secondItem="G4a-jx-Syv" secondAttribute="leading" constant="39" id="DnJ-Cf-JnD"/>
+                            <constraint firstItem="3ex-Zm-qVo" firstAttribute="top" secondItem="G4a-jx-Syv" secondAttribute="top" constant="43" id="RKO-x7-yhX"/>
+                            <constraint firstItem="JSx-7u-ssX" firstAttribute="centerX" secondItem="G4a-jx-Syv" secondAttribute="centerX" id="msC-u5-mfZ"/>
+                            <constraint firstItem="JSx-7u-ssX" firstAttribute="centerY" secondItem="G4a-jx-Syv" secondAttribute="centerY" id="rgg-xT-jev"/>
+                            <constraint firstItem="3ex-Zm-qVo" firstAttribute="centerX" secondItem="G4a-jx-Syv" secondAttribute="centerX" id="vUM-nQ-t40"/>
+                            <constraint firstItem="JSx-7u-ssX" firstAttribute="top" secondItem="G4a-jx-Syv" secondAttribute="top" constant="114" id="vWu-bB-sZk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G4a-jx-Syv"/>
+                    </view>
+                    <connections>
+                        <outlet property="combinedChartView" destination="JSx-7u-ssX" id="URr-PS-aqx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ei8-Oh-9Hw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2324" y="230.73463268365819"/>
+        </scene>
+        <!--Duration Graph View Controller-->
+        <scene sceneID="l4N-Vy-7H8">
+            <objects>
+                <viewController storyboardIdentifier="DurationGraph" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Qc-G7-OJr" customClass="DurationGraphViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9gP-L1-NiH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdj-ad-gN8" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="39" y="124" width="297" height="439"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZ9-xx-qDU">
+                                <rect key="frame" x="148.5" y="59" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BZ9-xx-qDU" firstAttribute="top" secondItem="X3t-mQ-8bX" secondAttribute="top" constant="39" id="Aom-IY-ng8"/>
+                            <constraint firstItem="BZ9-xx-qDU" firstAttribute="centerX" secondItem="X3t-mQ-8bX" secondAttribute="centerX" id="Hg6-5s-yLy"/>
+                            <constraint firstItem="zdj-ad-gN8" firstAttribute="leading" secondItem="X3t-mQ-8bX" secondAttribute="leading" constant="39" id="PZx-Gt-n6X"/>
+                            <constraint firstItem="zdj-ad-gN8" firstAttribute="top" secondItem="X3t-mQ-8bX" secondAttribute="top" constant="104" id="eGl-tW-Vqb"/>
+                            <constraint firstItem="zdj-ad-gN8" firstAttribute="centerY" secondItem="X3t-mQ-8bX" secondAttribute="centerY" id="eYd-9a-0Vp"/>
+                            <constraint firstItem="zdj-ad-gN8" firstAttribute="centerX" secondItem="X3t-mQ-8bX" secondAttribute="centerX" id="tdB-L8-r91"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X3t-mQ-8bX"/>
+                    </view>
+                    <connections>
+                        <outlet property="barChartView" destination="zdj-ad-gN8" id="Lic-4i-XqU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YDJ-bt-BAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1513" y="231"/>
+        </scene>
+        <!--Start Time Graph View Controller-->
+        <scene sceneID="VDA-mg-mE1">
+            <objects>
+                <viewController storyboardIdentifier="StartTimeGraph" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BL7-iZ-Ugs" customClass="StartTimeGraphViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nNc-2J-YQf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOT-KX-7ah" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="39" y="124" width="297" height="439"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Times of the Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olf-K7-aU5">
+                                <rect key="frame" x="120.5" y="57" width="134" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.67450980392156867" green="0.7686274509803922" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Olf-K7-aU5" firstAttribute="centerX" secondItem="KDL-3a-j9h" secondAttribute="centerX" id="6ej-iS-nN4"/>
+                            <constraint firstItem="kOT-KX-7ah" firstAttribute="leading" secondItem="KDL-3a-j9h" secondAttribute="leading" constant="39" id="KON-Ps-a5X"/>
+                            <constraint firstItem="kOT-KX-7ah" firstAttribute="centerX" secondItem="KDL-3a-j9h" secondAttribute="centerX" id="b6J-F9-vXH"/>
+                            <constraint firstItem="Olf-K7-aU5" firstAttribute="top" secondItem="KDL-3a-j9h" secondAttribute="top" constant="37" id="r2Z-Bu-8Tt"/>
+                            <constraint firstItem="kOT-KX-7ah" firstAttribute="top" secondItem="KDL-3a-j9h" secondAttribute="top" constant="104" id="vWk-jh-5sH"/>
+                            <constraint firstItem="kOT-KX-7ah" firstAttribute="centerY" secondItem="KDL-3a-j9h" secondAttribute="centerY" id="ycu-Sy-4Dk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KDL-3a-j9h"/>
+                    </view>
+                    <connections>
+                        <outlet property="barChartView" destination="kOT-KX-7ah" id="kem-By-QPg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NTJ-Vh-bTq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-689" y="231"/>
+        </scene>
+        <!--Location Map View Controller-->
+        <scene sceneID="hm4-q2-AMF">
+            <objects>
+                <viewController storyboardIdentifier="LocationMap" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aIw-SB-4HP" customClass="LocationMapViewController" customModule="Lighthouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H4e-Lo-lYQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DOI-Bi-Lnh">
+                                <rect key="frame" x="67" y="119" width="241" height="449"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBT-Ol-URV">
+                                <rect key="frame" x="148.5" y="55" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DOI-Bi-Lnh" firstAttribute="centerX" secondItem="IJ7-nV-IZQ" secondAttribute="centerX" id="F1g-Mb-o4b"/>
+                            <constraint firstItem="DOI-Bi-Lnh" firstAttribute="centerY" secondItem="IJ7-nV-IZQ" secondAttribute="centerY" id="lJe-4e-hq8"/>
+                            <constraint firstItem="TBT-Ol-URV" firstAttribute="top" secondItem="IJ7-nV-IZQ" secondAttribute="top" constant="35" id="sk5-p2-2By"/>
+                            <constraint firstItem="TBT-Ol-URV" firstAttribute="centerX" secondItem="IJ7-nV-IZQ" secondAttribute="centerX" id="vI4-Pq-ntC"/>
+                            <constraint firstItem="DOI-Bi-Lnh" firstAttribute="top" secondItem="IJ7-nV-IZQ" secondAttribute="top" constant="99" id="w7L-zN-EbI"/>
+                            <constraint firstItem="DOI-Bi-Lnh" firstAttribute="leading" secondItem="IJ7-nV-IZQ" secondAttribute="leading" constant="67" id="wKa-op-tQR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IJ7-nV-IZQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="DOI-Bi-Lnh" id="eph-BZ-IMd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jbf-Yd-8qY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124" y="236.13193403298354"/>
         </scene>
         <!--Demo View Controller-->
         <scene sceneID="AvH-6U-JsV">
@@ -778,7 +932,7 @@
         <image name="speaker_icon" width="26" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5eU-8v-uJd"/>
-        <segue reference="tAG-s7-I6f"/>
+        <segue reference="aOw-2z-4bL"/>
+        <segue reference="svo-cF-2UL"/>
     </inferredMetricsTieBreakers>
 </document>

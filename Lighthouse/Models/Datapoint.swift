@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CoreLocation
 
 class Datapoint: NSObject {
     var value: Int?
