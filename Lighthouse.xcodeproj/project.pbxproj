@@ -10,10 +10,8 @@
 		464B8DBC2195B5EB0024ECB2 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DBB2195B5EB0024ECB2 /* HomeViewControllerTests.swift */; };
 		464B8DBE2195BEA00024ECB2 /* EntryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DBD2195BEA00024ECB2 /* EntryViewControllerTests.swift */; };
 		464B8DC02195C1C60024ECB2 /* LogViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DBF2195C1C60024ECB2 /* LogViewControllerTests.swift */; };
-		464B8DC22195C27B0024ECB2 /* StatsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DC12195C27B0024ECB2 /* StatsViewControllerTests.swift */; };
 		464B8DC42195C2FB0024ECB2 /* FocusSupportViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DC32195C2FB0024ECB2 /* FocusSupportViewControllerTests.swift */; };
 		464B8DC62195C3780024ECB2 /* TrackButtonsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DC52195C3780024ECB2 /* TrackButtonsViewControllerTests.swift */; };
-		464B8DC82195C3A60024ECB2 /* AttackOverViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DC72195C3A60024ECB2 /* AttackOverViewControllerTests.swift */; };
 		464B8DCA2195E9DB0024ECB2 /* EntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B8DC92195E9DB0024ECB2 /* EntryTests.swift */; };
 		46D3D9C721AB9F300021528E /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D3D9C621AB9F300021528E /* DemoViewController.swift */; };
 		46D3D9C921ABA4240021528E /* DemoViewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D3D9C821ABA4240021528E /* DemoViewClass.swift */; };
@@ -73,10 +71,8 @@
 		464B8DBB2195B5EB0024ECB2 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		464B8DBD2195BEA00024ECB2 /* EntryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewControllerTests.swift; sourceTree = "<group>"; };
 		464B8DBF2195C1C60024ECB2 /* LogViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewControllerTests.swift; sourceTree = "<group>"; };
-		464B8DC12195C27B0024ECB2 /* StatsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewControllerTests.swift; sourceTree = "<group>"; };
 		464B8DC32195C2FB0024ECB2 /* FocusSupportViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSupportViewControllerTests.swift; sourceTree = "<group>"; };
 		464B8DC52195C3780024ECB2 /* TrackButtonsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackButtonsViewControllerTests.swift; sourceTree = "<group>"; };
-		464B8DC72195C3A60024ECB2 /* AttackOverViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackOverViewControllerTests.swift; sourceTree = "<group>"; };
 		464B8DC92195E9DB0024ECB2 /* EntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTests.swift; sourceTree = "<group>"; };
 		46D3D9C621AB9F300021528E /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		46D3D9C821ABA4240021528E /* DemoViewClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewClass.swift; sourceTree = "<group>"; };
@@ -241,11 +237,9 @@
 			children = (
 				F202CA8D2187DEAE00A2490F /* LighthouseTests.swift */,
 				464B8DBB2195B5EB0024ECB2 /* HomeViewControllerTests.swift */,
-				464B8DC12195C27B0024ECB2 /* StatsViewControllerTests.swift */,
 				464B8DC32195C2FB0024ECB2 /* FocusSupportViewControllerTests.swift */,
 				464B8DC92195E9DB0024ECB2 /* EntryTests.swift */,
 				464B8DC52195C3780024ECB2 /* TrackButtonsViewControllerTests.swift */,
-				464B8DC72195C3A60024ECB2 /* AttackOverViewControllerTests.swift */,
 				464B8DBF2195C1C60024ECB2 /* LogViewControllerTests.swift */,
 				464B8DBD2195BEA00024ECB2 /* EntryViewControllerTests.swift */,
 				F202CA8F2187DEAE00A2490F /* Info.plist */,
@@ -642,8 +636,6 @@
 				464B8DC42195C2FB0024ECB2 /* FocusSupportViewControllerTests.swift in Sources */,
 				464B8DBC2195B5EB0024ECB2 /* HomeViewControllerTests.swift in Sources */,
 				464B8DC62195C3780024ECB2 /* TrackButtonsViewControllerTests.swift in Sources */,
-				464B8DC82195C3A60024ECB2 /* AttackOverViewControllerTests.swift in Sources */,
-				464B8DC22195C27B0024ECB2 /* StatsViewControllerTests.swift in Sources */,
 				464B8DCA2195E9DB0024ECB2 /* EntryTests.swift in Sources */,
 				464B8DBE2195BEA00024ECB2 /* EntryViewControllerTests.swift in Sources */,
 				464B8DC02195C1C60024ECB2 /* LogViewControllerTests.swift in Sources */,
