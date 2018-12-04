@@ -216,6 +216,8 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
                             datapointArray.append(ChartDataEntry(x: time, y: value))
                             timesArray.append(time)
                         }
+                      
+                      
                     }
                 }
             }
@@ -235,8 +237,9 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         //lineChart.chartDescription?.text = "Number of Widgets by Type"
         data.setDrawValues(false)
         // Color
-        //dataSet.colors = ChartColorTemplates.vordiplom()
-        
+      
+      dataSet.colors = [NSUIColor(red:0.96, green:0.80, blue:0.40, alpha:1.0)]
+      dataSet.setCircleColor(UIColor(red:0.96, green:0.80, blue:0.40, alpha:1.0))
         // Refresh chart with new data
         lineChart.notifyDataSetChanged()
     }
