@@ -18,8 +18,12 @@ class StartTimeGraphViewController: UIViewController {
     
     @IBOutlet weak var barChartView: BarChartView!
     
+    @IBOutlet weak var rotateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.rotateLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+
         setChart(xValues: startTimes, yValuesBarChart: numPerStartTime(startTimes: startTimes))
     }
     
@@ -35,7 +39,19 @@ class StartTimeGraphViewController: UIViewController {
         
         let barChartSet = BarChartDataSet(values: yVals, label: "Bar Data")
         let data = BarChartData(dataSets: [barChartSet])
+        data.setDrawValues(false)
         barChartView.data = data
+        
+        // formatting
+        barChartView.leftAxis.axisMinimum = 0.0
+        barChartView.xAxis.labelPosition = .bottom
+        //barChartView.xAxis.setLabelsToSkip(0)
+        barChartView.legend.enabled = false
+        barChartView.rightAxis.enabled = false
+        barChartView.xAxis.drawGridLinesEnabled = false
+        //barChartView?.animate(yAxisDuration: 1.5, easingOption: .EaseInOutQuart)
+        barChartView.leftAxis.granularityEnabled = true
+        barChartView.leftAxis.granularity = 1.0
     }
     
     // MARK: - CoreData Functions
