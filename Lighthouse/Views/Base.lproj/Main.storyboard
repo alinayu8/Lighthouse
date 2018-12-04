@@ -806,11 +806,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOT-KX-7ah" customClass="BarChartView" customModule="Charts">
-<<<<<<< HEAD
-                                <rect key="frame" x="53" y="157" width="214" height="274"/>
-=======
                                 <rect key="frame" x="53" y="157" width="269" height="373"/>
->>>>>>> 2b233114657bcddc91625acfc3ffde981021773a
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Attacks at Different Times throughout the Day" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olf-K7-aU5">
@@ -832,11 +828,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Attacks" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPg-eC-06G">
-<<<<<<< HEAD
-                                <rect key="frame" x="-120" y="284" width="204" height="21"/>
-=======
                                 <rect key="frame" x="-71" y="326" width="204" height="21"/>
->>>>>>> 2b233114657bcddc91625acfc3ffde981021773a
                                 <constraints>
                                     <constraint firstAttribute="width" constant="204" id="DmS-n3-pce"/>
                                     <constraint firstAttribute="height" constant="21" id="ra9-yY-Say"/>
@@ -922,19 +914,11 @@
                         <viewControllerLayoutGuide type="bottom" id="tut-DA-3jG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZjG-OC-zKg">
-<<<<<<< HEAD
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="408"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdn-2x-y45">
-                                <rect key="frame" x="269" y="8" width="35" height="30"/>
-=======
                         <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdn-2x-y45">
                                 <rect key="frame" x="324" y="28" width="35" height="30"/>
->>>>>>> 2b233114657bcddc91625acfc3ffde981021773a
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="8yt-kb-3EF"/>
                                 </constraints>
