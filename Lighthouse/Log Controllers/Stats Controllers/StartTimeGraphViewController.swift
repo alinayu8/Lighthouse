@@ -41,7 +41,9 @@ class StartTimeGraphViewController: UIViewController {
         let data = BarChartData(dataSets: [barChartSet])
         data.setDrawValues(false)
         barChartView.data = data
-        
+        //color
+        barChartSet.colors = [NSUIColor(red:0.96, green:0.80, blue:0.40, alpha:1.0)]
+      
         // formatting
         barChartView.leftAxis.axisMinimum = 0.0
         barChartView.xAxis.labelPosition = .bottom
