@@ -51,7 +51,7 @@ class StartTimeGraphViewController: UIViewController {
         barChartView.legend.enabled = false
         barChartView.rightAxis.enabled = false
         barChartView.xAxis.drawGridLinesEnabled = false
-        //barChartView?.animate(yAxisDuration: 1.5, easingOption: .EaseInOutQuart)
+        barChartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: .easeInOutQuart)
         barChartView.leftAxis.granularityEnabled = true
         barChartView.leftAxis.granularity = 1.0
     }

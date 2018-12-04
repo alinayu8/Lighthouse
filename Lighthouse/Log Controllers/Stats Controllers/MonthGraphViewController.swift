@@ -112,24 +112,26 @@ class MonthGraphViewController: UIViewController {
         do {
             let result = try context.fetch(request)
             var total = 0
-            var currentMonthYear = months[0]
-            for data in result as! [NSManagedObject] {
-                let date = data.value(forKey: "start_time") as! Date
-                let month = monthFormat(time: date)
-                let year = yearFormat(time: date)
-                let monthYear = month + " " + year
-                if (currentMonthYear != monthYear) {
-                    let index = months.index(of: monthYear)
-                    array[index!] = Double(total / (index! + 1))
-                    currentMonthYear = monthYear
+            if months.count != 0 {
+                var currentMonthYear = months[0]
+                for data in result as! [NSManagedObject] {
+                    let date = data.value(forKey: "start_time") as! Date
+                    let month = monthFormat(time: date)
+                    let year = yearFormat(time: date)
+                    let monthYear = month + " " + year
+                    if (currentMonthYear != monthYear) {
+                        let index = months.index(of: monthYear)
+                        array[index!] = Double(total / (index! + 1))
+                        currentMonthYear = monthYear
+                    }
+                    total += 1
                 }
-                total += 1
+                
+                // last one
+                array[months.count-1] = Double(total / months.count)
+        
+                print(array)
             }
-            
-            // last one
-            array[months.count-1] = Double(total / months.count)
-    
-            print(array)
             return array
         } catch {
             print("Failed")
