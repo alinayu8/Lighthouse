@@ -119,7 +119,7 @@ class LogListTableViewController: UITableViewController {
     func fetchEntries() {
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entries")
-        request.sortDescriptors = [NSSortDescriptor(key: "start_time", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "start_time", ascending: false)]
         request.returnsObjectsAsFaults = false
         do {
             let result = try context.fetch(request)
