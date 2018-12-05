@@ -25,25 +25,81 @@ class DemoViewController: UIViewController {
                        titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
     
     OnboardingItemInfo(informationImage: Asset.logicon.image,
-                       title: "log view",
+                       title: "log",
                        description: "here, you can view a log of your episodes",
-                       pageIcon: Asset.wallet.image,
+                       pageIcon: Asset.key.image,
                         color: UIColor(red:0.95, green:0.73, blue:0.17, alpha:1.0),
                        titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
     
-    OnboardingItemInfo(informationImage: Asset.stores.image,
-                       title: "Lighthouse 3",
-                       description: "All local stores are categorized for your convenience",
-                       pageIcon: Asset.shoppingCart.image,
+    OnboardingItemInfo(informationImage: Asset.demo1.image,
+                       title: "contacts",
+                       description: "here you can customize your trusted contacts and messages to send them",
+                       pageIcon: Asset.key.image,
+                       color: UIColor(red:0.95, green:0.73, blue:0.17, alpha:1.0),
+                       titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
+    
+    OnboardingItemInfo(informationImage: Asset.demo2.image,
+                       title: "",
+                       description: "when you have a panic attack, pressing this button will begin tracking your condition",
+                       pageIcon: Asset.key.image,
+                       color: UIColor(red:0.65, green:0.76, blue:0.93, alpha:1.0),
+                       titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
+    
+    OnboardingItemInfo(informationImage: Asset.demo3.image,
+                       title: "",
+                       description: "selecting a friend's name will send them a custom message with your location via iMessage",
+                       pageIcon: Asset.key.image,
                        color: UIColor(red:0.33, green:0.44, blue:0.62, alpha:1.0),
                        titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
     
+    OnboardingItemInfo(informationImage: Asset.demo4.image,
+                       title: "",
+                       description: "these buttons are to help you log how you feel during your attack & to keep you focused through it. Feel free to press the buttons as much as you want (like a punching bag!)",
+                       pageIcon: Asset.key.image,
+                       color: UIColor(red:0.33, green:0.44, blue:0.62, alpha:1.0),
+                       titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
+
+    
+
+    OnboardingItemInfo(informationImage: Asset.demo5.image,
+                       title: "",
+                       description: "press this button when your attack is over",
+                       pageIcon: Asset.key.image,
+                       color: UIColor(red:0.33, green:0.44, blue:0.62, alpha:1.0),
+                       titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
+
+    OnboardingItemInfo(informationImage: Asset.demo6.image,
+                       title: "",
+                       description: "here you can reflect on your attack, add notes and view other info",
+                       pageIcon: Asset.key.image,
+                       color: UIColor(red:0.65, green:0.76, blue:0.93, alpha:1.0),
+                       titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
+
+    OnboardingItemInfo(informationImage: Asset.demo7.image,
+                       title: "",
+                       description: "you can view all your reflections in this log under the LIST tab",
+                       pageIcon: Asset.key.image,
+                       color: UIColor(red:0.33, green:0.44, blue:0.62, alpha:1.0),
+                       titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
+
+    OnboardingItemInfo(informationImage: Asset.demo8.image,
+                       title: "",
+                       description: "see statistics gathered from a compilation of your attacks. swipe left for different graphs",
+                       pageIcon: Asset.key.image,
+                       color: UIColor(red:0.33, green:0.44, blue:0.62, alpha:1.0),
+                       titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont),
+    OnboardingItemInfo(informationImage: Asset.demo9.image,
+                       title: "thank you",
+                       description: "panic attacks can be scary but they don't have to be unpredictable. we hope you find this app helpful!",
+                       pageIcon: Asset.key.image,
+                       color: UIColor(red:0.33, green:0.44, blue:0.62, alpha:1.0),
+                       titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: titleFont, descriptionFont: descriptionFont)
     ]
 
     override func viewDidLoad() {
       super.viewDidLoad()
       
-      skipButton.isHidden = true
+      //skipButton.isHidden = true
     
       setupPaperOnboardingView()
       
@@ -94,9 +150,9 @@ extension DemoViewController {
 }
 extension DemoViewController: PaperOnboardingDelegate {
 
-  func onboardingWillTransitonToIndex(_ index: Int) {
-    skipButton.isHidden = index == 2 ? false : true
-  }
+  //func onboardingWillTransitonToIndex(_ index: Int) {
+    //skipButton.isHidden = index == 2 ? false : true
+  //}
   
   func onboardingDidTransitonToIndex(_: Int) {
   }
@@ -141,7 +197,7 @@ extension DemoViewController: PaperOnboardingDataSource {
   }
   
   func onboardingItemsCount() -> Int {
-    return 3
+    return 11
   }
   
   //    func onboardinPageItemRadius() -> CGFloat {
