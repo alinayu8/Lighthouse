@@ -17,8 +17,11 @@ class MonthGraphViewController: UIViewController {
     @IBOutlet weak var combinedChartView: CombinedChartView!
     var months: [String] = []
     
+    @IBOutlet weak var rotateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.rotateLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         months = getMonths()
         setChart(xValues: months, yValuesLineChart: avgPerMonth(months: months), yValuesBarChart: totalPerMonth(months: months))
     }
@@ -44,12 +47,14 @@ class MonthGraphViewController: UIViewController {
         
         barChartSet.colors = [NSUIColor(red:0.96, green:0.80, blue:0.40, alpha:1.0)]
         
-//        lineChartSet.colors = [NSUIColor(red:0.96, green:0.80, blue:0.40, alpha:1.0)]
+        lineChartSet.colors = [NSUIColor(red:0.325, green:0.443, blue:0.62, alpha:1.0)]
+        lineChartSet.setCircleColor(UIColor(red:0.325, green:0.443, blue:0.62, alpha:1.0))
         
         let data = CombinedChartData()
         data.setDrawValues(false)
         
         data.barData = BarChartData(dataSets: [barChartSet])
+        data.barData.setDrawValues(false)
         data.lineData = LineChartData(dataSets: [lineChartSet])
         
         combinedChartView.data = data
