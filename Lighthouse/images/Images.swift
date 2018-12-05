@@ -57,20 +57,31 @@ enum Asset {
   static let logicon = ImageAsset(name: "log_demo")
   static let welcome = ImageAsset(name: "welcome")
   static let key = ImageAsset(name: "Key")
-  static let shoppingCart = ImageAsset(name: "Shopping-cart")
-  static let stores = ImageAsset(name: "Stores")
-  static let wallet = ImageAsset(name: "Wallet")
+  static let demo1 = ImageAsset(name: "demo1")
+  static let demo2 = ImageAsset(name: "demo2")
+  static let demo3 = ImageAsset(name: "demo3")
+  static let demo4 = ImageAsset(name: "demo4")
+  static let demo5 = ImageAsset(name: "demo5")
+  static let demo6 = ImageAsset(name: "demo6")
+  static let demo7 = ImageAsset(name: "demo7")
+  static let demo8 = ImageAsset(name: "demo8")
+  static let demo9 = ImageAsset(name: "demo9")
   
   // swiftlint:disable trailing_comma
   static let allColors: [ColorAsset] = [
   ]
   static let allImages: [ImageAsset] = [
     logicon,
-    welcome,
     key,
-    shoppingCart,
-    stores,
-    wallet,
+    welcome,
+    demo1,
+    demo2,
+    demo3,
+    demo5,
+    demo6,
+    demo7,
+    demo8,
+    demo9
     ]
   // swiftlint:enable trailing_comma
   @available(*, deprecated, renamed: "allImages")
