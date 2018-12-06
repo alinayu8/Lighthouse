@@ -21,10 +21,8 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var notesField: UITextView!
     @IBOutlet weak var lineChart: LineChartView!
-  
-//    @IBAction func renderCharts() {
-//      lineChartUpdate()
-//    }
+    
+    @IBOutlet weak var rotateLabel: UILabel!
    
     // MARK: - Configure Entry details
     
@@ -53,23 +51,6 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
                                 let postalCode = pm.postalCode!
                                 //let locationString3 = pm.country! // USA users?
                                 location.text = ("\(address) \(street), \(city) \(postalCode)")
-                                
-//                                let attributedString = NSMutableAttributedString(string: "Just click here to register")
-//                                let url = URL(string: "https://www.apple.com")!
-//
-//                                // Set the 'click here' substring to be the link
-//                                attributedString.setAttributes([.link: url], range: NSMakeRange(5, 10))
-//
-//                                self.textView.attributedText = attributedString
-//                                self.textView.isUserInteractionEnabled = true
-//                                self.textView.isEditable = false
-//
-//                                // Set how links should appear: blue and underlined
-//                                self.textView.linkTextAttributes = [
-//                                    .foregroundColor: UIColor.blue,
-//                                    .underlineStyle: NSUnderlineStyle.single.rawValue
-//                                ]
-                                
                             }
                             else {
                                 print("Problem with the data received from geocoder")
@@ -242,10 +223,23 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         data.setDrawValues(false)
         // Color
       
-      dataSet.colors = [NSUIColor(red:0.96, green:0.80, blue:0.40, alpha:1.0)]
-      dataSet.setCircleColor(UIColor(red:0.96, green:0.80, blue:0.40, alpha:1.0))
+          dataSet.colors = [NSUIColor(red:0.96, green:0.80, blue:0.40, alpha:1.0)]
+          dataSet.setCircleColor(UIColor(red:0.96, green:0.80, blue:0.40, alpha:1.0))
         // Refresh chart with new data
         lineChart.notifyDataSetChanged()
+        
+        lineChart.leftAxis.axisMinimum = 0.0
+        lineChart.xAxis.labelPosition = .bottom
+        lineChart.legend.enabled = false
+        lineChart.rightAxis.enabled = false
+        lineChart.xAxis.drawGridLinesEnabled = false
+        lineChart.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: .easeInOutQuart)
+        lineChart.leftAxis.granularityEnabled = true
+        lineChart.leftAxis.granularity = 1.0
+        
+        lineChart.xAxis.axisMinimum = 0.0;
+        lineChart.xAxis.granularityEnabled = true
+        lineChart.xAxis.granularity = 1.0
     }
     
     // MARK: - Notes and Keyboard Functions
@@ -261,6 +255,10 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         if self.view.frame.origin.y == 0 {
             self.view.frame.origin.y -= keyboardFrame.height
         }
+        
+        if (notesField.text == "Write about how you felt~") {
+            notesField.text = ""
+        }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
@@ -268,6 +266,9 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
             self.view.frame.origin.y = 0
         }
         
+        if (notesField.text == "") {
+            notesField.text = "Write about how you felt~"
+        }
     }
     
     //Calls this function when the tap is recognized.
@@ -283,6 +284,7 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+        self.rotateLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         self.notesField.delegate = self as? UITextViewDelegate
         
         // Style text view

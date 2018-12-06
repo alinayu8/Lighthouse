@@ -9,10 +9,10 @@
 import UIKit
 import CoreData
 import CoreLocation
-
+import AVFoundation
 
 class HomeViewController: UIViewController {
-
+    
     // MARK: - Location
     let location = Location() // set lats and longs of place
 
@@ -24,6 +24,19 @@ class HomeViewController: UIViewController {
         entry.longitude = Double(location.longitude)
         saveEntry(entry: entry)
     }
+    
+    @IBAction func soundButton(_ sender: Any) {
+        if (SoundManager.playing) {
+            SoundManager.audioPlayer.pause()
+            SoundManager.playing = false
+            SoundManager.muted = true
+        } else {
+            SoundManager.audioPlayer.play()
+            SoundManager.playing = true
+            SoundManager.muted = false
+        }
+    }
+    
     // MARK: - CoreData functions for HomeView
     
     // Connect to the context for the container stack
@@ -47,11 +60,19 @@ class HomeViewController: UIViewController {
         }
     }
     
+
+    
     // MARK: - General
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         location.getCurrentLocation()
+        if (SoundManager.playing == false && SoundManager.muted == false) {
+            SoundManager.playMusic()
+            SoundManager.playing = true
+            SoundManager.muted = false
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

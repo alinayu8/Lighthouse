@@ -99,8 +99,6 @@ class TrackButtonsViewController: UIViewController {
             let result = try context.fetch(request)
             let entry = result[0] as! NSManagedObject
             
-            let currentDatapoints = entry.value(forKey: "datapoints") as? NSSet
-
             if let currentDatapoints = entry.value(forKey: "datapoints") as? NSSet {
                 let newDatapoints = currentDatapoints.adding(newDatapointEntity)
                 entry.setValue(newDatapoints, forKey: "datapoints") // set datapoint to this entry
