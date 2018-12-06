@@ -13,6 +13,10 @@ import Pastel
 //let data = NSData(contentsOf: qodURL as URL)!
 var colorArray = [UIColor]()
 class TrackButtonsViewController: UIViewController {
+    
+    var betterPressed: Bool? = nil
+    var numberPressed: Int = 0
+    let timeStart: Date = Date()
   
     // MARK: - Quote outlet
   @IBOutlet weak var quoteLabel: UILabel?
@@ -24,46 +28,29 @@ class TrackButtonsViewController: UIViewController {
     }
     
     @IBAction func betterButton(_ sender: UIButton) {
+        if (betterPressed != true) {
+            betterPressed = true
+            numberPressed += 1
+            self.viewDidAppear(true)
+        }
         let datapoint = Datapoint()
         datapoint.time = Date() //set start time of attack, time zone
         datapoint.value = 1
         addDatapoint(datapoint: datapoint)
-        randQuote()
-//        colorArray = [#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1),
-//                    #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1),
-//                    #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1),
-//                    #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1),
-//                    #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1),
-//                    #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)]
-        pastelView.setColors([#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1),
-                            #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1),
-                            #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1),
-                            #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1),
-                            #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1),
-                            #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)])
-      
+        //randQuote()
     }
     
     @IBAction func worseButton(_ sender: UIButton) {
+        if (betterPressed != false) {
+            betterPressed = false
+            numberPressed += 1
+            self.viewDidAppear(true)
+        }
         let datapoint = Datapoint()
         datapoint.time = Date() //set start time of attack, time zone
         datapoint.value = -1
         addDatapoint(datapoint: datapoint)
-        randQuote()
-//        colorArray = [UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
-//                                 UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
-//                                UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0),
-//                                UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1.0),
-//                                UIColor(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),
-//                                UIColor(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),
-//                                UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0)]
-        pastelView.setColors([UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
-                            UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
-                            UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0),
-                            UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1.0),
-                            UIColor(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),
-                            UIColor(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),
-                            UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0)])
+        //randQuote()
     }
     
     // MARK: - CoreData functions
@@ -99,7 +86,6 @@ class TrackButtonsViewController: UIViewController {
         let newDatapointEntity = NSManagedObject(entity: datapointEntity!, insertInto: context)
         newDatapointEntity.setValue(datapoint.time, forKey: "time")
         newDatapointEntity.setValue(datapoint.value, forKey: "value")
-        print("\(datapoint.value) at \(datapoint.time)")
         
         // Get the last created entry
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entries")
@@ -149,33 +135,28 @@ class TrackButtonsViewController: UIViewController {
   
   
   func setupBG() {
-    //MARK: -  Custom Direction
     let pastelView = PastelView(frame: view.bounds)
+    pastelView.animationDuration = 3.0
+    var colors = [#colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1), #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)]
+    //colors = [#colorLiteral(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),#colorLiteral(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0), #colorLiteral(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0),#colorLiteral(red: 32/255, green: 76/255, blue: 255/255, alpha: 1.0),#colorLiteral(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),#colorLiteral(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),#colorLiteral(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0)]
+    
+    if (betterPressed == nil) {
+        
+        
+    } else if (betterPressed == true) {
+        colors = [#colorLiteral(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),#colorLiteral(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),#colorLiteral(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0)]
+    } else if (betterPressed == false) {
+        colors = [#colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1), #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1), #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)]
+    }
+    
+    pastelView.setColors(colors)
     pastelView.startPastelPoint = .bottomLeft
     pastelView.endPastelPoint = .topRight
-
-    //MARK: -  Custom Duration
-
-    pastelView.animationDuration = 3.0
-
-    //MARK: -  Custom Color
-
-//    pastelView.setColors([UIColor(red: 156/255, green: 39/255, blue: 176/255, alpha: 1.0),
-//                          UIColor(red: 255/255, green: 64/255, blue: 129/255, alpha: 1.0),
-//                          UIColor(red: 123/255, green: 31/255, blue: 162/255, alpha: 1.0),
-//                          UIColor(red: 32/255, green: 76/255, blue: 255/255, alpha: 1.0),
-//                          UIColor(red: 32/255, green: 158/255, blue: 255/255, alpha: 1.0),
-//                          UIColor(red: 90/255, green: 120/255, blue: 127/255, alpha: 1.0),
-//                          UIColor(red: 58/255, green: 255/255, blue: 217/255, alpha: 1.0)])
-    
-    pastelView.setColors( [#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1), #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1), #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)])
-    //pastelView.setPastelGradient(winterNeva)
     pastelView.startAnimation()
+    view.insertSubview(pastelView, at: numberPressed)
     
-    view.insertSubview(pastelView, at: 0)
   }
     
-    //newPerson.setValue(NSSet(object: newAddress), forKey: "addresses")
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
@@ -187,8 +168,6 @@ class TrackButtonsViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         randQuote()
-        //setupBG()
-      
     }
     
     override func didReceiveMemoryWarning() {
