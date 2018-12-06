@@ -31,6 +31,8 @@
 		F24086C02194EC80007991A1 /* LogListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24086BF2194EC80007991A1 /* LogListTableViewController.swift */; };
 		F24086C32194ED81007991A1 /* LogListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24086C12194ED81007991A1 /* LogListViewCell.swift */; };
 		F24086C42194ED81007991A1 /* LogListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F24086C22194ED81007991A1 /* LogListViewCell.xib */; };
+		F2548FC621B9BA92004F802D /* Moon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F2548FC521B9BA92004F802D /* Moon.mp3 */; };
+		F2548FC821B9BF55004F802D /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2548FC721B9BF55004F802D /* SoundManager.swift */; };
 		F2741B6E21ADA5ED0022DB24 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2741B6D21ADA5ED0022DB24 /* SupportViewController.swift */; };
 		F2741B7121ADE4EA0022DB24 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2741B7021ADE4EA0022DB24 /* ContactViewController.swift */; };
 		F2741B7721AE628E0022DB24 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2741B7621AE628E0022DB24 /* Contact.swift */; };
@@ -108,6 +110,8 @@
 		F24086BF2194EC80007991A1 /* LogListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListTableViewController.swift; sourceTree = "<group>"; };
 		F24086C12194ED81007991A1 /* LogListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListViewCell.swift; sourceTree = "<group>"; };
 		F24086C22194ED81007991A1 /* LogListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogListViewCell.xib; sourceTree = "<group>"; };
+		F2548FC521B9BA92004F802D /* Moon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Moon.mp3; sourceTree = "<group>"; };
+		F2548FC721B9BF55004F802D /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		F2741B6D21ADA5ED0022DB24 /* SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 		F2741B7021ADE4EA0022DB24 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		F2741B7621AE628E0022DB24 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -278,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				F202CA772187DEAE00A2490F /* HomeViewController.swift */,
+				F2548FC521B9BA92004F802D /* Moon.mp3 */,
 			);
 			path = "Home Controller";
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				F29DE7B9218E904400F16F5A /* Location.swift */,
 				F2BC848D21AC74C200F05B97 /* Datapoint.swift */,
 				F2741B7621AE628E0022DB24 /* Contact.swift */,
+				F2548FC721B9BF55004F802D /* SoundManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -425,6 +431,11 @@
 					F202CA712187DEAE00A2490F = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					F202CA882187DEAE00A2490F = {
 						CreatedOnToolsVersion = 9.2;
@@ -465,6 +476,7 @@
 			files = (
 				F202CA832187DEAE00A2490F /* LaunchScreen.storyboard in Resources */,
 				F24086C42194ED81007991A1 /* LogListViewCell.xib in Resources */,
+				F2548FC621B9BA92004F802D /* Moon.mp3 in Resources */,
 				F202CA802187DEAE00A2490F /* Assets.xcassets in Resources */,
 				F202CA7B2187DEAE00A2490F /* Main.storyboard in Resources */,
 			);
@@ -625,6 +637,7 @@
 				46D3D9C721AB9F300021528E /* DemoViewController.swift in Sources */,
 				F202CA762187DEAE00A2490F /* AppDelegate.swift in Sources */,
 				F2741B7C21AF4D480022DB24 /* MonthGraphViewController.swift in Sources */,
+				F2548FC821B9BF55004F802D /* SoundManager.swift in Sources */,
 				F29DE7AB218CF2A000F16F5A /* LogViewController.swift in Sources */,
 				F2741B7E21AF4D620022DB24 /* DurationGraphViewController.swift in Sources */,
 				F2741B8021AF4D710022DB24 /* StartTimeGraphViewController.swift in Sources */,
