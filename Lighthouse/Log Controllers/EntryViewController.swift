@@ -228,7 +228,6 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         // Refresh chart with new data
         lineChart.notifyDataSetChanged()
         
-        lineChart.leftAxis.axisMinimum = 0.0
         lineChart.xAxis.labelPosition = .bottom
         lineChart.legend.enabled = false
         lineChart.rightAxis.enabled = false
