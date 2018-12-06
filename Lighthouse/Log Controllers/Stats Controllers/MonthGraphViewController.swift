@@ -147,7 +147,7 @@ class MonthGraphViewController: UIViewController {
                     let year = yearFormat(time: date)
                     let monthYear = month + " " + year
                     if (currentMonthYear != monthYear) {
-                        let index = months.index(of: monthYear)
+                        let index = months.index(of: currentMonthYear)
                         array[index!] = Double(total / (index! + 1))
                         currentMonthYear = monthYear
                     }
@@ -157,6 +157,8 @@ class MonthGraphViewController: UIViewController {
                 // last one
                 array[months.count-1] = Double(total / months.count)
             }
+            print(months)
+            print(array)
             return array
         } catch {
             print("Failed")

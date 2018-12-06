@@ -36,7 +36,7 @@ class DurationGraphViewController: UIViewController {
         }
 
         let barChartSet = BarChartDataSet(values: yVals, label: "Bar Data")
-        barChartSet.colors = [NSUIColor(red:0.96, green:0.80, blue:0.40, alpha:1.0), NSUIColor(red:0.325, green:0.443, blue:0.62, alpha:1.0)]
+        barChartSet.colors = [NSUIColor(red:0.325, green:0.443, blue:0.62, alpha:1.0)]
         
         let data = BarChartData(dataSets: [barChartSet])
         barChartView.data = data

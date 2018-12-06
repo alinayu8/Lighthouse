@@ -15,7 +15,8 @@ class HomeViewController: UIViewController {
     
     // MARK: - Location
     let location = Location() // set lats and longs of place
-
+    @IBOutlet weak var musicButton: UIButton!
+    
     // MARK: - Buttons
     @IBAction func beginEntry(_ sender: Any) {
         let entry = Entry()
@@ -74,6 +75,10 @@ class HomeViewController: UIViewController {
             SoundManager.playMusic()
             SoundManager.playing = true
             SoundManager.muted = false
+        }
+        
+        if (SoundManager.muted) {
+            musicButton.setImage(UIImage(named: "mute_icon"),for: UIControlState.normal);
         }
         
     }
