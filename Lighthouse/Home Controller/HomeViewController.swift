@@ -25,15 +25,18 @@ class HomeViewController: UIViewController {
         saveEntry(entry: entry)
     }
     
-    @IBAction func soundButton(_ sender: Any) {
+    @IBAction func soundButton(_ sender: UIButton) {
+      
         if (SoundManager.playing) {
             SoundManager.audioPlayer.pause()
             SoundManager.playing = false
             SoundManager.muted = true
+            sender.setImage(UIImage(named: "mute_icon"),for: UIControlState.normal);
         } else {
             SoundManager.audioPlayer.play()
             SoundManager.playing = true
             SoundManager.muted = false
+            sender.setImage(UIImage(named: "speaker"),for: UIControlState.normal);
         }
     }
     
