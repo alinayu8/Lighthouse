@@ -71,10 +71,12 @@ class DurationGraphViewController: UIViewController {
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
                 let startTime = data.value(forKey: "start_time") as! Date
-                let endTime = data.value(forKey: "end_time") as! Date
-                let duration = ceil(endTime.timeIntervalSince(startTime)/60)
-                if !(array.contains{ $0 == Double(duration)}) {
-                    array.append(Double(duration))
+                let endTime = data.value(forKey: "end_time") as? Date
+                if endTime != nil {
+                    let duration = ceil(endTime!.timeIntervalSince(startTime)/60)
+                    if !(array.contains{ $0 == Double(duration)}) {
+                        array.append(Double(duration))
+                    }
                 }
             }
             return array.sorted()
@@ -93,10 +95,12 @@ class DurationGraphViewController: UIViewController {
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
                 let startTime = data.value(forKey: "start_time") as! Date
-                let endTime = data.value(forKey: "end_time") as! Date
-                let duration = ceil(endTime.timeIntervalSince(startTime)/60)
-                let index = durations.index(of: Double(duration))
-                array[index!] += 1
+                let endTime = data.value(forKey: "end_time") as? Date
+                if endTime != nil {
+                    let duration = ceil(endTime!.timeIntervalSince(startTime)/60)
+                    let index = durations.index(of: Double(duration))
+                    array[index!] += 1
+                }
             }
             return array
         } catch {

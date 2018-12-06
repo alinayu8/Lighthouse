@@ -28,15 +28,15 @@ class LocationMapViewController: UIViewController {
         request.returnsObjectsAsFaults = false
         do {
             let result = try context.fetch(request)
-            var array: [MKPointAnnotation] = []
+            var array: [[Double]] = []
             for data in result as! [NSManagedObject] {
                 let annotation = MKPointAnnotation()
                 let lat = data.value(forKey: "latitude") as! Double
                 let long = data.value(forKey: "longitude") as! Double
                 annotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                if !(array.contains{ $0 == annotation}) {
+                if !(array.contains{ $0 == [lat, long]}) {
                     mapView.addAnnotation(annotation)
-                    array.append(annotation)
+                    array.append([lat, long])
                 }
             }
         } catch {
