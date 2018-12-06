@@ -47,7 +47,6 @@ class StartTimeGraphViewController: UIViewController {
         // formatting
         barChartView.leftAxis.axisMinimum = 0.0
         barChartView.xAxis.labelPosition = .bottom
-        //barChartView.xAxis.setLabelsToSkip(0)
         barChartView.legend.enabled = false
         barChartView.rightAxis.enabled = false
         barChartView.xAxis.drawGridLinesEnabled = false

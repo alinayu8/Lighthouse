@@ -16,25 +16,28 @@ class LocationMapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let annotation = MKPointAnnotation()
-        setupMap(annotation: annotation)
+        setupMap()
         mapView.fitAll()
     }
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    func setupMap(annotation: MKPointAnnotation) {
+    func setupMap() {
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Entries")
         request.returnsObjectsAsFaults = false
         do {
             let result = try context.fetch(request)
+            var array: [[Double]] = []
             for data in result as! [NSManagedObject] {
+                let annotation = MKPointAnnotation()
                 let lat = data.value(forKey: "latitude") as! Double
                 let long = data.value(forKey: "longitude") as! Double
-                
                 annotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                mapView.addAnnotation(annotation)
+                if !(array.contains{ $0 == [lat, long]}) {
+                    mapView.addAnnotation(annotation)
+                    array.append([lat, long])
+                }
             }
         } catch {
             print("Failed")

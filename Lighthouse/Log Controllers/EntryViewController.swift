@@ -89,7 +89,7 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
                 time.text = timeFormat(startTime: detail.startTime!)
             }
             if let duration = self.durationLabel {
-                duration.text = durationTime(startTime: detail.startTime!, endTime: detail.endTime!)
+                duration.text = durationTime(startTime: detail.startTime!, endTime: detail.endTime ?? nil)
             }
             if let notes = self.notesField {
                 notes.text = detail.notes ?? ""
@@ -112,17 +112,21 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         return dateFormatter.string(from: startTime)
     }
     
-    func durationTime(startTime: Date, endTime: Date) -> String {
-        let duration = endTime.timeIntervalSince(startTime)
-        let formatter = DateComponentsFormatter()
-        formatter.unitsStyle = .full
-        formatter.includesApproximationPhrase = false
-        formatter.includesTimeRemainingPhrase = false
-        formatter.allowedUnits = [.hour, .minute, .second]
-        
-        // Use the configured formatter to generate the string.
-        let timeString = formatter.string(from: duration) ?? ""
-        return timeString
+    func durationTime(startTime: Date, endTime: Date?) -> String {
+        if endTime != nil {
+            let duration = endTime!.timeIntervalSince(startTime)
+            let formatter = DateComponentsFormatter()
+            formatter.unitsStyle = .full
+            formatter.includesApproximationPhrase = false
+            formatter.includesTimeRemainingPhrase = false
+            formatter.allowedUnits = [.hour, .minute, .second]
+            
+            // Use the configured formatter to generate the string.
+            let timeString = formatter.string(from: duration) ?? ""
+            return timeString
+        } else {
+            return "User exited without ending attack"
+        }
     }
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -136,7 +140,7 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
             for data in result as! [NSManagedObject] {
                 if let detail: Entry = self.entryDetail {
                     if (detail.startTime == (data.value(forKey: "start_time") as! Date) &&
-                        detail.endTime == (data.value(forKey: "end_time") as! Date) &&
+                        detail.endTime == (data.value(forKey: "end_time") as? Date) &&
                         detail.latitude == (data.value(forKey: "latitude") as! Double) &&
                         detail.longitude == (data.value(forKey: "longitude") as? Double) &&
                         detail.notes == (data.value(forKey: "notes") as? String)) {
@@ -201,7 +205,7 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
             for data in result as! [NSManagedObject] {
                 if let detail: Entry = self.entryDetail {
                     if (detail.startTime == (data.value(forKey: "start_time") as! Date) &&
-                        detail.endTime == (data.value(forKey: "end_time") as! Date) &&
+                        detail.endTime == (data.value(forKey: "end_time") as? Date) &&
                         detail.latitude == (data.value(forKey: "latitude") as! Double) &&
                         detail.longitude == (data.value(forKey: "longitude") as? Double) &&
                         detail.notes == (data.value(forKey: "notes") as? String)) {

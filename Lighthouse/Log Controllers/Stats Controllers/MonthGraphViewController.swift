@@ -15,10 +15,14 @@ class MonthGraphViewController: UIViewController {
     // MARK: - Storyboard Interface
     
     @IBOutlet weak var combinedChartView: CombinedChartView!
+    var months: [String] = []
+    
+    @IBOutlet weak var rotateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let months = getMonths()
+        self.rotateLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+        months = getMonths()
         setChart(xValues: months, yValuesLineChart: avgPerMonth(months: months), yValuesBarChart: totalPerMonth(months: months))
     }
     
@@ -29,9 +33,10 @@ class MonthGraphViewController: UIViewController {
         
         var yVals1 : [ChartDataEntry] = [ChartDataEntry]()
         var yVals2 : [BarChartDataEntry] = [BarChartDataEntry]()
-
+    
         for i in 0..<xValues.count {
-
+            
+            print(i)
             yVals1.append(ChartDataEntry(x: Double(i), y: yValuesLineChart[i])) // are these x and y right
             yVals2.append(BarChartDataEntry(x: Double(i), y: yValuesBarChart[i]))
 
@@ -40,13 +45,35 @@ class MonthGraphViewController: UIViewController {
         let lineChartSet = LineChartDataSet(values: yVals1, label: "Line Data")
         let barChartSet = BarChartDataSet(values: yVals2, label: "Bar Data")
         
+        barChartSet.colors = [NSUIColor(red:0.96, green:0.80, blue:0.40, alpha:1.0)]
+        
+        lineChartSet.colors = [NSUIColor(red:0.325, green:0.443, blue:0.62, alpha:1.0)]
+        lineChartSet.setCircleColor(UIColor(red:0.325, green:0.443, blue:0.62, alpha:1.0))
         
         let data = CombinedChartData()
+        data.setDrawValues(false)
+        
         data.barData = BarChartData(dataSets: [barChartSet])
+        data.barData.setDrawValues(false)
         data.lineData = LineChartData(dataSets: [lineChartSet])
         
         combinedChartView.data = data
         
+        // formatting
+        combinedChartView.leftAxis.axisMinimum = 0.0
+        combinedChartView.xAxis.labelPosition = .bottom
+        combinedChartView.legend.enabled = false
+        combinedChartView.rightAxis.enabled = false
+        combinedChartView.xAxis.drawGridLinesEnabled = false
+        combinedChartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: .easeInOutQuart)
+        combinedChartView.leftAxis.granularityEnabled = true
+        combinedChartView.leftAxis.granularity = 1.0
+        
+        combinedChartView.xAxis.axisMinimum = 0;
+        combinedChartView.xAxis.granularityEnabled = true
+        combinedChartView.xAxis.granularity = 1.0
+        
+        combinedChartView.xAxis.valueFormatter = self
     }
     
     // MARK: - CoreData Functions
@@ -72,6 +99,7 @@ class MonthGraphViewController: UIViewController {
                     currentMonth = month
                 }
             }
+            print(array)
             return array
         } catch {
             print("Failed")
@@ -95,7 +123,6 @@ class MonthGraphViewController: UIViewController {
                 let index = months.index(of: monthYear)
                 array[index!] += 1
             }
-            print(array)
             return array
         } catch {
             print("Failed")
@@ -129,8 +156,6 @@ class MonthGraphViewController: UIViewController {
                 
                 // last one
                 array[months.count-1] = Double(total / months.count)
-        
-                print(array)
             }
             return array
         } catch {
@@ -154,4 +179,16 @@ class MonthGraphViewController: UIViewController {
     }
 
 
+}
+
+extension MonthGraphViewController: IAxisValueFormatter {
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        //print(months)
+        let count = months.count
+        if (Int(value) >= 0) && (Int(value) < count) {
+            return months[Int(value)]
+        } else {
+            return ""
+        }
+    }
 }
