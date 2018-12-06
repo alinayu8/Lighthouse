@@ -169,8 +169,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2o-dp-kJ3">
-                                <rect key="frame" x="16" y="610" width="26" height="37"/>
-                                <state key="normal" image="speaker_icon"/>
+                                <rect key="frame" x="16" y="605" width="42" height="42"/>
+                                <state key="normal" image="speaker"/>
                                 <connections>
                                     <action selector="soundButton:" destination="Yrc-go-WfF" eventType="touchUpInside" id="T58-Y9-7Ze"/>
                                 </connections>
@@ -207,6 +207,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F9u-wx-JxJ"/>
                     </view>
+                    <connections>
+                        <outlet property="musicButton" destination="Y2o-dp-kJ3" id="vOp-Nn-W7O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yo6-Qj-tch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -379,8 +382,8 @@
                                     <segue destination="Yrc-go-WfF" kind="show" id="Y4t-sa-haJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xe-6D-Q7P">
-                                <rect key="frame" x="0.0" y="20" width="375" height="491"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xe-6D-Q7P">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <state key="normal" image="completion"/>
                                 <connections>
                                     <segue destination="Yrc-go-WfF" kind="show" id="4Be-y3-cWg"/>
@@ -390,18 +393,18 @@
                         <color key="backgroundColor" red="0.4284813404083252" green="0.55671709775924683" blue="0.77094238996505737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JFB-Uh-NVi" firstAttribute="top" secondItem="HSi-HB-Ile" secondAttribute="top" id="AkC-Tq-to8"/>
+                            <constraint firstItem="HSi-HB-Ile" firstAttribute="trailing" secondItem="4Xe-6D-Q7P" secondAttribute="trailing" id="H6s-re-Mcr"/>
                             <constraint firstItem="JFB-Uh-NVi" firstAttribute="leading" secondItem="HSi-HB-Ile" secondAttribute="leading" constant="16" id="Jvm-yg-jQw"/>
                             <constraint firstItem="4Xe-6D-Q7P" firstAttribute="leading" secondItem="HSi-HB-Ile" secondAttribute="leading" id="KW4-7D-5vG"/>
-                            <constraint firstItem="4Xe-6D-Q7P" firstAttribute="top" secondItem="HSi-HB-Ile" secondAttribute="top" id="OEC-8G-BLP"/>
-                            <constraint firstItem="HSi-HB-Ile" firstAttribute="trailing" secondItem="4Xe-6D-Q7P" secondAttribute="trailing" id="c4n-fu-U9E"/>
-                            <constraint firstItem="HSi-HB-Ile" firstAttribute="bottom" secondItem="4Xe-6D-Q7P" secondAttribute="bottom" id="w5Y-A4-GBh"/>
+                            <constraint firstItem="4Xe-6D-Q7P" firstAttribute="top" secondItem="gDS-L3-e9s" secondAttribute="top" id="fwj-ZE-OWh"/>
+                            <constraint firstAttribute="bottom" secondItem="4Xe-6D-Q7P" secondAttribute="bottom" id="xrU-9T-gja"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HSi-HB-Ile"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ttR-O5-1WW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5052" y="-529.06403940886696"/>
+            <point key="canvasLocation" x="5052" y="-529.38530734632684"/>
         </scene>
         <!--Support View Controller-->
         <scene sceneID="hRP-sJ-xzN">
@@ -418,7 +421,7 @@
                                     <constraint firstAttribute="height" constant="301" id="QeD-3W-EN3"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" textLabel="t3H-87-iDM" style="IBUITableViewCellStyleDefault" id="m22-0V-3MO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" textLabel="t3H-87-iDM" style="IBUITableViewCellStyleDefault" id="m22-0V-3MO">
                                         <rect key="frame" x="0.0" y="28" width="321" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m22-0V-3MO" id="5Fz-mA-Q5y">
@@ -1025,7 +1028,7 @@
         <image name="panic_button" width="206" height="209"/>
         <image name="question_icon" width="36" height="36"/>
         <image name="quoteFrame1" width="449" height="296"/>
-        <image name="speaker_icon" width="26" height="37"/>
+        <image name="speaker" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5eU-8v-uJd"/>
